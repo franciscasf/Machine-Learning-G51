@@ -1,624 +1,624 @@
-[2025-12-08 15:56:17] # =============================
-[2025-12-08 15:56:17] # LINEAR REGRESSION - K-FOLD CV
-[2025-12-08 15:56:17] # =============================
-[2025-12-08 15:56:17] N_SPLITS = 8
-[2025-12-08 15:56:17] 
-[2025-12-08 15:56:17] ==== FOLD 1/8 ====
-[2025-12-08 15:56:17] [F1] X_train shape: (66476, 10), X_val shape: (9497, 10)
-[2025-12-08 15:56:17] [F1] y_train shape: (66476,), y_val shape: (9497,)
-[2025-12-08 15:56:17] [F1] NaNs before numeric imputation (num features):
-[2025-12-08 15:56:17] year              1306
+[2025-12-12 18:15:04] # =============================
+[2025-12-12 18:15:04] # LINEAR REGRESSION - K-FOLD CV
+[2025-12-12 18:15:04] # =============================
+[2025-12-12 18:15:04] N_SPLITS = 8
+[2025-12-12 18:15:04] 
+[2025-12-12 18:15:04] ==== FOLD 1/8 ====
+[2025-12-12 18:15:04] [F1] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[2025-12-12 18:15:04] [F1] y_train shape: (66476,), y_val shape: (9497,)
+[2025-12-12 18:15:04] [F1] NaNs before numeric imputation (num features):
+[2025-12-12 18:15:04] year              1306
 mileage           1252
 engineSize        1344
 tax               6940
 mpg               6961
 previousOwners    1331
 dtype: int64
-[2025-12-08 15:56:17] [F1] NaNs before (categoricals):
-[2025-12-08 15:56:17] Brand           0
+[2025-12-12 18:15:04] [F1] NaNs before (categoricals):
+[2025-12-12 18:15:04] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:17] [F1] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:56:17] Brand           1328
+[2025-12-12 18:15:04] [F1] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:15:04] Brand           1328
 model           1314
 transmission    1944
 fuelType        1296
 dtype: Int64
-[2025-12-08 15:56:17] [F1] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
-[2025-12-08 15:56:17] [F1] NaNs after numeric imputation (num features):
-[2025-12-08 15:56:17] year              0
+[2025-12-12 18:15:04] [F1] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
+[2025-12-12 18:15:04] [F1] NaNs after numeric imputation (num features):
+[2025-12-12 18:15:04] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:56:20] [F1] After solving Brand - still invalid (train): 0
-[2025-12-08 15:56:24] [F1] After solving model - still invalid (train): 1
-[2025-12-08 15:56:26] [F1] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:56:29] [F1] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:56:29] [F1] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:56:29]                         mean           std          min       max
+[2025-12-12 18:15:07] [F1] After solving Brand - still invalid (train): 0
+[2025-12-12 18:15:11] [F1] After solving model - still invalid (train): 1
+[2025-12-12 18:15:14] [F1] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:15:16] [F1] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:15:16] [F1] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:15:16]                         mean           std          min       max
 year             2017.084279      2.156783  1970.000000    2020.0
 mileage         23344.875003  21430.716139     1.000000  323000.0
 engineSize          1.663744      0.561832     0.103493       6.6
 tax               123.352967     61.651742     0.000000     580.0
 mpg                55.038918     13.683791    10.000000     200.0
 previousOwners      2.141811      1.275912     0.000000       6.0
-[2025-12-08 15:56:29] NaNs (train):
-[2025-12-08 15:56:29] year              0
+[2025-12-12 18:15:16] NaNs (train):
+[2025-12-12 18:15:16] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:56:29] [F1] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:56:29] NaNs (train):
-[2025-12-08 15:56:29] Brand           0
+[2025-12-12 18:15:16] [F1] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:15:16] NaNs (train):
+[2025-12-12 18:15:16] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:29] 'UNKNOWN' counts (train):
-[2025-12-08 15:56:29] Brand           0
+[2025-12-12 18:15:16] 'UNKNOWN' counts (train):
+[2025-12-12 18:15:16] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:29] [F1] high_card_features = ['Brand', 'model']
-[2025-12-08 15:56:29] [F1] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:56:29] [F1] X_train_cat shape: (66476, 10)
-[2025-12-08 15:56:29] [F1] X_val_cat   shape: (9497, 10)
-[2025-12-08 15:56:29] [F1] X_train_num_df shape: (66476, 6)
-[2025-12-08 15:56:29] [F1] X_val_num_df   shape: (9497, 6)
-[2025-12-08 15:56:29] [F1] X_train_final shape: (66476, 16)
-[2025-12-08 15:56:29] [F1] X_val_final   shape: (9497, 16)
-[2025-12-08 15:56:29] [F1] Training LinearRegression...
-[2025-12-08 15:56:29] [F1] TRAIN -> RMSE: 4176.00 | MAE: 2649.15 | R2: 0.8172 | Bias(pred-true): 0.00
-[2025-12-08 15:56:29] [F1] VAL   -> RMSE: 4044.04 | MAE: 2652.41 | R2: 0.8193 | Bias(pred-true): 37.75
-[2025-12-08 15:56:29] 
-[2025-12-08 15:56:29] ==== FOLD 2/8 ====
-[2025-12-08 15:56:29] [F2] X_train shape: (66476, 10), X_val shape: (9497, 10)
-[2025-12-08 15:56:29] [F2] y_train shape: (66476,), y_val shape: (9497,)
-[2025-12-08 15:56:29] [F2] NaNs before numeric imputation (num features):
-[2025-12-08 15:56:29] year              1312
+[2025-12-12 18:15:16] [F1] high_card_features = ['Brand', 'model']
+[2025-12-12 18:15:16] [F1] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:15:16] [F1] X_train_cat shape: (66476, 10)
+[2025-12-12 18:15:16] [F1] X_val_cat   shape: (9497, 10)
+[2025-12-12 18:15:16] [F1] X_train_num_df shape: (66476, 6)
+[2025-12-12 18:15:16] [F1] X_val_num_df   shape: (9497, 6)
+[2025-12-12 18:15:16] [F1] X_train_final shape: (66476, 16)
+[2025-12-12 18:15:16] [F1] X_val_final   shape: (9497, 16)
+[2025-12-12 18:15:16] [F1] Training LinearRegression...
+[2025-12-12 18:15:16] [F1] TRAIN -> RMSE: 4175.37 | MAE: 2649.15 | R2: 0.8173 | Bias(pred-true): 0.00
+[2025-12-12 18:15:16] [F1] VAL   -> RMSE: 4044.05 | MAE: 2652.38 | R2: 0.8193 | Bias(pred-true): 37.83
+[2025-12-12 18:15:16] 
+[2025-12-12 18:15:16] ==== FOLD 2/8 ====
+[2025-12-12 18:15:16] [F2] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[2025-12-12 18:15:16] [F2] y_train shape: (66476,), y_val shape: (9497,)
+[2025-12-12 18:15:16] [F2] NaNs before numeric imputation (num features):
+[2025-12-12 18:15:16] year              1312
 mileage           1289
 engineSize        1316
 tax               6942
 mpg               6941
 previousOwners    1363
 dtype: int64
-[2025-12-08 15:56:29] [F2] NaNs before (categoricals):
-[2025-12-08 15:56:29] Brand           0
+[2025-12-12 18:15:16] [F2] NaNs before (categoricals):
+[2025-12-12 18:15:16] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:29] [F2] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:56:29] Brand           1337
+[2025-12-12 18:15:16] [F2] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:15:16] Brand           1337
 model           1330
 transmission    1967
 fuelType        1310
 dtype: Int64
-[2025-12-08 15:56:29] [F2] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
-[2025-12-08 15:56:29] [F2] NaNs after numeric imputation (num features):
-[2025-12-08 15:56:29] year              0
+[2025-12-12 18:15:17] [F2] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
+[2025-12-12 18:15:17] [F2] NaNs after numeric imputation (num features):
+[2025-12-12 18:15:17] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:56:32] [F2] After solving Brand - still invalid (train): 0
-[2025-12-08 15:56:36] [F2] After solving model - still invalid (train): 1
-[2025-12-08 15:56:38] [F2] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:56:41] [F2] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:56:41] [F2] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:56:41]                         mean           std          min       max
+[2025-12-12 18:15:20] [F2] After solving Brand - still invalid (train): 0
+[2025-12-12 18:15:24] [F2] After solving model - still invalid (train): 1
+[2025-12-12 18:15:27] [F2] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:15:30] [F2] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:15:30] [F2] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:15:30]                         mean           std          min       max
 year             2017.084023      2.155818  1996.000000    2020.0
 mileage         23358.238911  21499.026336     1.000000  323000.0
 engineSize          1.661951      0.559794     0.103493       6.6
 tax               123.482049     61.334954     0.000000     580.0
 mpg                55.012768     13.698292    10.000000     200.0
 previousOwners      2.140697      1.277673     0.000000       6.0
-[2025-12-08 15:56:41] NaNs (train):
-[2025-12-08 15:56:41] year              0
+[2025-12-12 18:15:30] NaNs (train):
+[2025-12-12 18:15:30] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:56:41] [F2] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:56:41] NaNs (train):
-[2025-12-08 15:56:41] Brand           0
+[2025-12-12 18:15:30] [F2] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:15:30] NaNs (train):
+[2025-12-12 18:15:30] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:41] 'UNKNOWN' counts (train):
-[2025-12-08 15:56:41] Brand           0
+[2025-12-12 18:15:30] 'UNKNOWN' counts (train):
+[2025-12-12 18:15:30] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:41] [F2] high_card_features = ['Brand', 'model']
-[2025-12-08 15:56:41] [F2] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:56:41] [F2] X_train_cat shape: (66476, 10)
-[2025-12-08 15:56:41] [F2] X_val_cat   shape: (9497, 10)
-[2025-12-08 15:56:41] [F2] X_train_num_df shape: (66476, 6)
-[2025-12-08 15:56:41] [F2] X_val_num_df   shape: (9497, 6)
-[2025-12-08 15:56:41] [F2] X_train_final shape: (66476, 16)
-[2025-12-08 15:56:41] [F2] X_val_final   shape: (9497, 16)
-[2025-12-08 15:56:41] [F2] Training LinearRegression...
-[2025-12-08 15:56:41] [F2] TRAIN -> RMSE: 4161.96 | MAE: 2645.54 | R2: 0.8176 | Bias(pred-true): -0.00
-[2025-12-08 15:56:41] [F2] VAL   -> RMSE: 4131.30 | MAE: 2676.84 | R2: 0.8181 | Bias(pred-true): 74.82
-[2025-12-08 15:56:41] 
-[2025-12-08 15:56:41] ==== FOLD 3/8 ====
-[2025-12-08 15:56:41] [F3] X_train shape: (66476, 10), X_val shape: (9497, 10)
-[2025-12-08 15:56:41] [F3] y_train shape: (66476,), y_val shape: (9497,)
-[2025-12-08 15:56:41] [F3] NaNs before numeric imputation (num features):
-[2025-12-08 15:56:41] year              1297
+[2025-12-12 18:15:30] [F2] high_card_features = ['Brand', 'model']
+[2025-12-12 18:15:30] [F2] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:15:30] [F2] X_train_cat shape: (66476, 10)
+[2025-12-12 18:15:30] [F2] X_val_cat   shape: (9497, 10)
+[2025-12-12 18:15:30] [F2] X_train_num_df shape: (66476, 6)
+[2025-12-12 18:15:30] [F2] X_val_num_df   shape: (9497, 6)
+[2025-12-12 18:15:30] [F2] X_train_final shape: (66476, 16)
+[2025-12-12 18:15:30] [F2] X_val_final   shape: (9497, 16)
+[2025-12-12 18:15:30] [F2] Training LinearRegression...
+[2025-12-12 18:15:30] [F2] TRAIN -> RMSE: 4161.56 | MAE: 2645.79 | R2: 0.8176 | Bias(pred-true): -0.00
+[2025-12-12 18:15:30] [F2] VAL   -> RMSE: 4132.21 | MAE: 2677.37 | R2: 0.8180 | Bias(pred-true): 75.55
+[2025-12-12 18:15:30] 
+[2025-12-12 18:15:30] ==== FOLD 3/8 ====
+[2025-12-12 18:15:30] [F3] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[2025-12-12 18:15:30] [F3] y_train shape: (66476,), y_val shape: (9497,)
+[2025-12-12 18:15:30] [F3] NaNs before numeric imputation (num features):
+[2025-12-12 18:15:30] year              1297
 mileage           1292
 engineSize        1326
 tax               6911
 mpg               6935
 previousOwners    1370
 dtype: int64
-[2025-12-08 15:56:41] [F3] NaNs before (categoricals):
-[2025-12-08 15:56:41] Brand           0
+[2025-12-12 18:15:30] [F3] NaNs before (categoricals):
+[2025-12-12 18:15:30] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:41] [F3] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:56:41] Brand           1336
+[2025-12-12 18:15:30] [F3] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:15:30] Brand           1336
 model           1334
 transmission    1943
 fuelType        1323
 dtype: Int64
-[2025-12-08 15:56:41] [F3] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
-[2025-12-08 15:56:41] [F3] NaNs after numeric imputation (num features):
-[2025-12-08 15:56:41] year              0
+[2025-12-12 18:15:30] [F3] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
+[2025-12-12 18:15:30] [F3] NaNs after numeric imputation (num features):
+[2025-12-12 18:15:30] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:56:44] [F3] After solving Brand - still invalid (train): 0
-[2025-12-08 15:56:48] [F3] After solving model - still invalid (train): 1
-[2025-12-08 15:56:51] [F3] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:56:53] [F3] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:56:53] [F3] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:56:53]                         mean           std          min       max
+[2025-12-12 18:15:33] [F3] After solving Brand - still invalid (train): 0
+[2025-12-12 18:15:37] [F3] After solving model - still invalid (train): 1
+[2025-12-12 18:15:40] [F3] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:15:42] [F3] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:15:42] [F3] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:15:42]                         mean           std          min       max
 year             2017.083203      2.156390  1970.000000    2020.0
 mileage         23360.113093  21389.361897     1.000000  300000.0
 engineSize          1.662633      0.562184     0.103493       6.6
 tax               123.275028     61.557410     0.000000     580.0
 mpg                54.999149     13.700972    10.000000     200.0
 previousOwners      2.139253      1.274224     0.000000       6.0
-[2025-12-08 15:56:53] NaNs (train):
-[2025-12-08 15:56:53] year              0
+[2025-12-12 18:15:42] NaNs (train):
+[2025-12-12 18:15:42] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:56:53] [F3] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:56:53] NaNs (train):
-[2025-12-08 15:56:53] Brand           0
+[2025-12-12 18:15:42] [F3] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:15:42] NaNs (train):
+[2025-12-12 18:15:42] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:53] 'UNKNOWN' counts (train):
-[2025-12-08 15:56:53] Brand           0
+[2025-12-12 18:15:42] 'UNKNOWN' counts (train):
+[2025-12-12 18:15:42] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:53] [F3] high_card_features = ['Brand', 'model']
-[2025-12-08 15:56:53] [F3] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:56:53] [F3] X_train_cat shape: (66476, 10)
-[2025-12-08 15:56:53] [F3] X_val_cat   shape: (9497, 10)
-[2025-12-08 15:56:53] [F3] X_train_num_df shape: (66476, 6)
-[2025-12-08 15:56:53] [F3] X_val_num_df   shape: (9497, 6)
-[2025-12-08 15:56:53] [F3] X_train_final shape: (66476, 16)
-[2025-12-08 15:56:53] [F3] X_val_final   shape: (9497, 16)
-[2025-12-08 15:56:53] [F3] Training LinearRegression...
-[2025-12-08 15:56:54] [F3] TRAIN -> RMSE: 4168.55 | MAE: 2647.50 | R2: 0.8170 | Bias(pred-true): -0.00
-[2025-12-08 15:56:54] [F3] VAL   -> RMSE: 4164.06 | MAE: 2653.23 | R2: 0.8154 | Bias(pred-true): -15.71
-[2025-12-08 15:56:54] 
-[2025-12-08 15:56:54] ==== FOLD 4/8 ====
-[2025-12-08 15:56:54] [F4] X_train shape: (66476, 10), X_val shape: (9497, 10)
-[2025-12-08 15:56:54] [F4] y_train shape: (66476,), y_val shape: (9497,)
-[2025-12-08 15:56:54] [F4] NaNs before numeric imputation (num features):
-[2025-12-08 15:56:54] year              1283
+[2025-12-12 18:15:42] [F3] high_card_features = ['Brand', 'model']
+[2025-12-12 18:15:42] [F3] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:15:42] [F3] X_train_cat shape: (66476, 10)
+[2025-12-12 18:15:42] [F3] X_val_cat   shape: (9497, 10)
+[2025-12-12 18:15:42] [F3] X_train_num_df shape: (66476, 6)
+[2025-12-12 18:15:42] [F3] X_val_num_df   shape: (9497, 6)
+[2025-12-12 18:15:42] [F3] X_train_final shape: (66476, 16)
+[2025-12-12 18:15:42] [F3] X_val_final   shape: (9497, 16)
+[2025-12-12 18:15:42] [F3] Training LinearRegression...
+[2025-12-12 18:15:43] [F3] TRAIN -> RMSE: 4167.98 | MAE: 2647.45 | R2: 0.8170 | Bias(pred-true): -0.00
+[2025-12-12 18:15:43] [F3] VAL   -> RMSE: 4163.57 | MAE: 2653.55 | R2: 0.8154 | Bias(pred-true): -15.09
+[2025-12-12 18:15:43] 
+[2025-12-12 18:15:43] ==== FOLD 4/8 ====
+[2025-12-12 18:15:43] [F4] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[2025-12-12 18:15:43] [F4] y_train shape: (66476,), y_val shape: (9497,)
+[2025-12-12 18:15:43] [F4] NaNs before numeric imputation (num features):
+[2025-12-12 18:15:43] year              1283
 mileage           1272
 engineSize        1330
 tax               6959
 mpg               6976
 previousOwners    1346
 dtype: int64
-[2025-12-08 15:56:54] [F4] NaNs before (categoricals):
-[2025-12-08 15:56:54] Brand           0
+[2025-12-12 18:15:43] [F4] NaNs before (categoricals):
+[2025-12-12 18:15:43] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:56:54] [F4] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:56:54] Brand           1340
+[2025-12-12 18:15:43] [F4] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:15:43] Brand           1340
 model           1320
 transmission    1935
 fuelType        1323
 dtype: Int64
-[2025-12-08 15:56:54] [F4] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
-[2025-12-08 15:56:54] [F4] NaNs after numeric imputation (num features):
-[2025-12-08 15:56:54] year              0
+[2025-12-12 18:15:43] [F4] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
+[2025-12-12 18:15:43] [F4] NaNs after numeric imputation (num features):
+[2025-12-12 18:15:43] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:56:56] [F4] After solving Brand - still invalid (train): 0
-[2025-12-08 15:57:00] [F4] After solving model - still invalid (train): 0
-[2025-12-08 15:57:03] [F4] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:57:05] [F4] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:57:05] [F4] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:57:05]                         mean           std          min       max
+[2025-12-12 18:15:45] [F4] After solving Brand - still invalid (train): 0
+[2025-12-12 18:15:50] [F4] After solving model - still invalid (train): 0
+[2025-12-12 18:15:52] [F4] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:15:55] [F4] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:15:55] [F4] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:15:55]                         mean           std          min       max
 year             2017.079766      2.167842  1970.000000    2020.0
 mileage         23362.968053  21456.108654     1.000000  323000.0
 engineSize          1.662632      0.560861     0.103493       6.6
 tax               123.341808     61.537904     0.000000     580.0
 mpg                55.002529     13.586622    10.000000     200.0
 previousOwners      2.142864      1.278222     0.000000       6.0
-[2025-12-08 15:57:05] NaNs (train):
-[2025-12-08 15:57:05] year              0
+[2025-12-12 18:15:55] NaNs (train):
+[2025-12-12 18:15:55] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:05] [F4] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:57:05] NaNs (train):
-[2025-12-08 15:57:05] Brand           0
+[2025-12-12 18:15:55] [F4] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:15:55] NaNs (train):
+[2025-12-12 18:15:55] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:05] 'UNKNOWN' counts (train):
-[2025-12-08 15:57:05] Brand           0
+[2025-12-12 18:15:55] 'UNKNOWN' counts (train):
+[2025-12-12 18:15:55] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:05] [F4] high_card_features = ['Brand', 'model']
-[2025-12-08 15:57:05] [F4] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:57:06] [F4] X_train_cat shape: (66476, 10)
-[2025-12-08 15:57:06] [F4] X_val_cat   shape: (9497, 10)
-[2025-12-08 15:57:06] [F4] X_train_num_df shape: (66476, 6)
-[2025-12-08 15:57:06] [F4] X_val_num_df   shape: (9497, 6)
-[2025-12-08 15:57:06] [F4] X_train_final shape: (66476, 16)
-[2025-12-08 15:57:06] [F4] X_val_final   shape: (9497, 16)
-[2025-12-08 15:57:06] [F4] Training LinearRegression...
-[2025-12-08 15:57:06] [F4] TRAIN -> RMSE: 4125.34 | MAE: 2640.62 | R2: 0.8183 | Bias(pred-true): -0.00
-[2025-12-08 15:57:06] [F4] VAL   -> RMSE: 4384.01 | MAE: 2679.76 | R2: 0.8129 | Bias(pred-true): -85.62
-[2025-12-08 15:57:06] 
-[2025-12-08 15:57:06] ==== FOLD 5/8 ====
-[2025-12-08 15:57:06] [F5] X_train shape: (66476, 10), X_val shape: (9497, 10)
-[2025-12-08 15:57:06] [F5] y_train shape: (66476,), y_val shape: (9497,)
-[2025-12-08 15:57:06] [F5] NaNs before numeric imputation (num features):
-[2025-12-08 15:57:06] year              1307
+[2025-12-12 18:15:55] [F4] high_card_features = ['Brand', 'model']
+[2025-12-12 18:15:55] [F4] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:15:55] [F4] X_train_cat shape: (66476, 10)
+[2025-12-12 18:15:55] [F4] X_val_cat   shape: (9497, 10)
+[2025-12-12 18:15:55] [F4] X_train_num_df shape: (66476, 6)
+[2025-12-12 18:15:55] [F4] X_val_num_df   shape: (9497, 6)
+[2025-12-12 18:15:55] [F4] X_train_final shape: (66476, 16)
+[2025-12-12 18:15:55] [F4] X_val_final   shape: (9497, 16)
+[2025-12-12 18:15:55] [F4] Training LinearRegression...
+[2025-12-12 18:15:55] [F4] TRAIN -> RMSE: 4124.67 | MAE: 2640.55 | R2: 0.8184 | Bias(pred-true): -0.00
+[2025-12-12 18:15:55] [F4] VAL   -> RMSE: 4384.10 | MAE: 2679.67 | R2: 0.8129 | Bias(pred-true): -85.61
+[2025-12-12 18:15:55] 
+[2025-12-12 18:15:55] ==== FOLD 5/8 ====
+[2025-12-12 18:15:55] [F5] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[2025-12-12 18:15:55] [F5] y_train shape: (66476,), y_val shape: (9497,)
+[2025-12-12 18:15:55] [F5] NaNs before numeric imputation (num features):
+[2025-12-12 18:15:55] year              1307
 mileage           1273
 engineSize        1310
 tax               6902
 mpg               6954
 previousOwners    1357
 dtype: int64
-[2025-12-08 15:57:06] [F5] NaNs before (categoricals):
-[2025-12-08 15:57:06] Brand           0
+[2025-12-12 18:15:55] [F5] NaNs before (categoricals):
+[2025-12-12 18:15:55] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:06] [F5] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:57:06] Brand           1321
+[2025-12-12 18:15:55] [F5] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:15:55] Brand           1321
 model           1332
 transmission    1945
 fuelType        1345
 dtype: Int64
-[2025-12-08 15:57:06] [F5] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
-[2025-12-08 15:57:06] [F5] NaNs after numeric imputation (num features):
-[2025-12-08 15:57:06] year              0
+[2025-12-12 18:15:55] [F5] After numeric imputation: X_train shape = (66476, 10), X_val shape = (9497, 10)
+[2025-12-12 18:15:55] [F5] NaNs after numeric imputation (num features):
+[2025-12-12 18:15:55] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:08] [F5] After solving Brand - still invalid (train): 0
-[2025-12-08 15:57:12] [F5] After solving model - still invalid (train): 2
-[2025-12-08 15:57:15] [F5] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:57:17] [F5] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:57:17] [F5] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:57:17]                         mean           std          min       max
+[2025-12-12 18:15:58] [F5] After solving Brand - still invalid (train): 0
+[2025-12-12 18:16:02] [F5] After solving model - still invalid (train): 2
+[2025-12-12 18:16:04] [F5] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:16:07] [F5] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:16:07] [F5] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:16:07]                         mean           std          min       max
 year             2017.078765      2.169180  1970.000000    2020.0
 mileage         23389.072168  21513.687888     1.000000  323000.0
 engineSize          1.663765      0.562742     0.103493       6.6
 tax               123.398574     61.568845     0.000000     580.0
 mpg                54.985149     13.584603    10.000000     200.0
 previousOwners      2.136771      1.274345     0.000000       6.0
-[2025-12-08 15:57:17] NaNs (train):
-[2025-12-08 15:57:17] year              0
+[2025-12-12 18:16:07] NaNs (train):
+[2025-12-12 18:16:07] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:17] [F5] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:57:17] NaNs (train):
-[2025-12-08 15:57:18] Brand           0
+[2025-12-12 18:16:07] [F5] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:16:07] NaNs (train):
+[2025-12-12 18:16:07] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:18] 'UNKNOWN' counts (train):
-[2025-12-08 15:57:18] Brand           0
+[2025-12-12 18:16:07] 'UNKNOWN' counts (train):
+[2025-12-12 18:16:07] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:18] [F5] high_card_features = ['Brand', 'model']
-[2025-12-08 15:57:18] [F5] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:57:18] [F5] X_train_cat shape: (66476, 10)
-[2025-12-08 15:57:18] [F5] X_val_cat   shape: (9497, 10)
-[2025-12-08 15:57:18] [F5] X_train_num_df shape: (66476, 6)
-[2025-12-08 15:57:18] [F5] X_val_num_df   shape: (9497, 6)
-[2025-12-08 15:57:18] [F5] X_train_final shape: (66476, 16)
-[2025-12-08 15:57:18] [F5] X_val_final   shape: (9497, 16)
-[2025-12-08 15:57:18] [F5] Training LinearRegression...
-[2025-12-08 15:57:18] [F5] TRAIN -> RMSE: 4178.27 | MAE: 2654.62 | R2: 0.8155 | Bias(pred-true): 0.00
-[2025-12-08 15:57:18] [F5] VAL   -> RMSE: 4187.49 | MAE: 2621.15 | R2: 0.8177 | Bias(pred-true): -7.83
-[2025-12-08 15:57:18] 
-[2025-12-08 15:57:18] ==== FOLD 6/8 ====
-[2025-12-08 15:57:18] [F6] X_train shape: (66477, 10), X_val shape: (9496, 10)
-[2025-12-08 15:57:18] [F6] y_train shape: (66477,), y_val shape: (9496,)
-[2025-12-08 15:57:18] [F6] NaNs before numeric imputation (num features):
-[2025-12-08 15:57:18] year              1307
+[2025-12-12 18:16:07] [F5] high_card_features = ['Brand', 'model']
+[2025-12-12 18:16:07] [F5] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:16:07] [F5] X_train_cat shape: (66476, 10)
+[2025-12-12 18:16:07] [F5] X_val_cat   shape: (9497, 10)
+[2025-12-12 18:16:07] [F5] X_train_num_df shape: (66476, 6)
+[2025-12-12 18:16:07] [F5] X_val_num_df   shape: (9497, 6)
+[2025-12-12 18:16:07] [F5] X_train_final shape: (66476, 16)
+[2025-12-12 18:16:07] [F5] X_val_final   shape: (9497, 16)
+[2025-12-12 18:16:07] [F5] Training LinearRegression...
+[2025-12-12 18:16:07] [F5] TRAIN -> RMSE: 4177.70 | MAE: 2654.62 | R2: 0.8155 | Bias(pred-true): 0.00
+[2025-12-12 18:16:07] [F5] VAL   -> RMSE: 4187.15 | MAE: 2621.04 | R2: 0.8178 | Bias(pred-true): -7.61
+[2025-12-12 18:16:07] 
+[2025-12-12 18:16:07] ==== FOLD 6/8 ====
+[2025-12-12 18:16:07] [F6] X_train shape: (66477, 10), X_val shape: (9496, 10)
+[2025-12-12 18:16:07] [F6] y_train shape: (66477,), y_val shape: (9496,)
+[2025-12-12 18:16:07] [F6] NaNs before numeric imputation (num features):
+[2025-12-12 18:16:07] year              1307
 mileage           1288
 engineSize        1352
 tax               6887
 mpg               6893
 previousOwners    1358
 dtype: int64
-[2025-12-08 15:57:18] [F6] NaNs before (categoricals):
-[2025-12-08 15:57:18] Brand           0
+[2025-12-12 18:16:07] [F6] NaNs before (categoricals):
+[2025-12-12 18:16:07] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:18] [F6] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:57:18] Brand           1320
+[2025-12-12 18:16:07] [F6] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:16:07] Brand           1320
 model           1348
 transmission    1963
 fuelType        1328
 dtype: Int64
-[2025-12-08 15:57:18] [F6] After numeric imputation: X_train shape = (66477, 10), X_val shape = (9496, 10)
-[2025-12-08 15:57:18] [F6] NaNs after numeric imputation (num features):
-[2025-12-08 15:57:18] year              0
+[2025-12-12 18:16:07] [F6] After numeric imputation: X_train shape = (66477, 10), X_val shape = (9496, 10)
+[2025-12-12 18:16:07] [F6] NaNs after numeric imputation (num features):
+[2025-12-12 18:16:07] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:20] [F6] After solving Brand - still invalid (train): 0
-[2025-12-08 15:57:25] [F6] After solving model - still invalid (train): 1
-[2025-12-08 15:57:27] [F6] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:57:30] [F6] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:57:30] [F6] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:57:30]                         mean           std          min       max
+[2025-12-12 18:16:10] [F6] After solving Brand - still invalid (train): 0
+[2025-12-12 18:16:14] [F6] After solving model - still invalid (train): 1
+[2025-12-12 18:16:17] [F6] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:16:19] [F6] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:16:19] [F6] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:16:19]                         mean           std          min       max
 year             2017.081036      2.168353  1970.000000    2020.0
 mileage         23328.250232  21396.085902     1.000000  323000.0
 engineSize          1.662166      0.559330     0.103493       6.6
 tax               123.339485     61.666952     0.000000     580.0
 mpg                54.995083     13.607866    10.000000     200.0
 previousOwners      2.139657      1.276912     0.000000       6.0
-[2025-12-08 15:57:30] NaNs (train):
-[2025-12-08 15:57:30] year              0
+[2025-12-12 18:16:19] NaNs (train):
+[2025-12-12 18:16:19] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:30] [F6] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:57:30] NaNs (train):
-[2025-12-08 15:57:30] Brand           0
+[2025-12-12 18:16:19] [F6] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:16:19] NaNs (train):
+[2025-12-12 18:16:19] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:30] 'UNKNOWN' counts (train):
-[2025-12-08 15:57:30] Brand           0
+[2025-12-12 18:16:19] 'UNKNOWN' counts (train):
+[2025-12-12 18:16:19] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:30] [F6] high_card_features = ['Brand', 'model']
-[2025-12-08 15:57:30] [F6] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:57:30] [F6] X_train_cat shape: (66477, 10)
-[2025-12-08 15:57:30] [F6] X_val_cat   shape: (9496, 10)
-[2025-12-08 15:57:30] [F6] X_train_num_df shape: (66477, 6)
-[2025-12-08 15:57:30] [F6] X_val_num_df   shape: (9496, 6)
-[2025-12-08 15:57:30] [F6] X_train_final shape: (66477, 16)
-[2025-12-08 15:57:30] [F6] X_val_final   shape: (9496, 16)
-[2025-12-08 15:57:30] [F6] Training LinearRegression...
-[2025-12-08 15:57:30] [F6] TRAIN -> RMSE: 4135.59 | MAE: 2641.00 | R2: 0.8192 | Bias(pred-true): 0.00
-[2025-12-08 15:57:30] [F6] VAL   -> RMSE: 4286.66 | MAE: 2686.20 | R2: 0.8094 | Bias(pred-true): -41.09
-[2025-12-08 15:57:30] 
-[2025-12-08 15:57:30] ==== FOLD 7/8 ====
-[2025-12-08 15:57:30] [F7] X_train shape: (66477, 10), X_val shape: (9496, 10)
-[2025-12-08 15:57:30] [F7] y_train shape: (66477,), y_val shape: (9496,)
-[2025-12-08 15:57:30] [F7] NaNs before numeric imputation (num features):
-[2025-12-08 15:57:30] year              1311
+[2025-12-12 18:16:19] [F6] high_card_features = ['Brand', 'model']
+[2025-12-12 18:16:19] [F6] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:16:19] [F6] X_train_cat shape: (66477, 10)
+[2025-12-12 18:16:19] [F6] X_val_cat   shape: (9496, 10)
+[2025-12-12 18:16:19] [F6] X_train_num_df shape: (66477, 6)
+[2025-12-12 18:16:19] [F6] X_val_num_df   shape: (9496, 6)
+[2025-12-12 18:16:19] [F6] X_train_final shape: (66477, 16)
+[2025-12-12 18:16:19] [F6] X_val_final   shape: (9496, 16)
+[2025-12-12 18:16:19] [F6] Training LinearRegression...
+[2025-12-12 18:16:19] [F6] TRAIN -> RMSE: 4135.09 | MAE: 2641.02 | R2: 0.8192 | Bias(pred-true): -0.00
+[2025-12-12 18:16:19] [F6] VAL   -> RMSE: 4286.05 | MAE: 2686.33 | R2: 0.8094 | Bias(pred-true): -40.67
+[2025-12-12 18:16:19] 
+[2025-12-12 18:16:19] ==== FOLD 7/8 ====
+[2025-12-12 18:16:19] [F7] X_train shape: (66477, 10), X_val shape: (9496, 10)
+[2025-12-12 18:16:19] [F7] y_train shape: (66477,), y_val shape: (9496,)
+[2025-12-12 18:16:19] [F7] NaNs before numeric imputation (num features):
+[2025-12-12 18:16:19] year              1311
 mileage           1272
 engineSize        1319
 tax               6885
 mpg               6903
 previousOwners    1358
 dtype: int64
-[2025-12-08 15:57:30] [F7] NaNs before (categoricals):
-[2025-12-08 15:57:30] Brand           0
+[2025-12-12 18:16:19] [F7] NaNs before (categoricals):
+[2025-12-12 18:16:20] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:30] [F7] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:57:30] Brand           1322
+[2025-12-12 18:16:20] [F7] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:16:20] Brand           1322
 model           1302
 transmission    1937
 fuelType        1334
 dtype: Int64
-[2025-12-08 15:57:30] [F7] After numeric imputation: X_train shape = (66477, 10), X_val shape = (9496, 10)
-[2025-12-08 15:57:30] [F7] NaNs after numeric imputation (num features):
-[2025-12-08 15:57:30] year              0
+[2025-12-12 18:16:20] [F7] After numeric imputation: X_train shape = (66477, 10), X_val shape = (9496, 10)
+[2025-12-12 18:16:20] [F7] NaNs after numeric imputation (num features):
+[2025-12-12 18:16:20] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:33] [F7] After solving Brand - still invalid (train): 0
-[2025-12-08 15:57:37] [F7] After solving model - still invalid (train): 0
-[2025-12-08 15:57:40] [F7] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:57:43] [F7] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:57:43] [F7] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:57:43]                         mean           std          min       max
+[2025-12-12 18:16:22] [F7] After solving Brand - still invalid (train): 0
+[2025-12-12 18:16:26] [F7] After solving model - still invalid (train): 0
+[2025-12-12 18:16:29] [F7] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:16:32] [F7] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:16:32] [F7] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:16:32]                         mean           std          min       max
 year             2017.081637      2.170444  1970.000000    2020.0
 mileage         23361.289580  21415.706519     1.000000  323000.0
 engineSize          1.663505      0.561171     0.103493       6.2
 tax               123.238903     61.570878     0.000000     580.0
 mpg                55.031775     13.718873    10.000000     200.0
 previousOwners      2.136077      1.277911     0.000000       6.0
-[2025-12-08 15:57:43] NaNs (train):
-[2025-12-08 15:57:43] year              0
+[2025-12-12 18:16:32] NaNs (train):
+[2025-12-12 18:16:32] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:43] [F7] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:57:43] NaNs (train):
-[2025-12-08 15:57:43] Brand           0
+[2025-12-12 18:16:32] [F7] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:16:32] NaNs (train):
+[2025-12-12 18:16:32] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:43] 'UNKNOWN' counts (train):
-[2025-12-08 15:57:43] Brand           0
+[2025-12-12 18:16:32] 'UNKNOWN' counts (train):
+[2025-12-12 18:16:32] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:43] [F7] high_card_features = ['Brand', 'model']
-[2025-12-08 15:57:43] [F7] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:57:43] [F7] X_train_cat shape: (66477, 10)
-[2025-12-08 15:57:43] [F7] X_val_cat   shape: (9496, 10)
-[2025-12-08 15:57:43] [F7] X_train_num_df shape: (66477, 6)
-[2025-12-08 15:57:43] [F7] X_val_num_df   shape: (9496, 6)
-[2025-12-08 15:57:43] [F7] X_train_final shape: (66477, 16)
-[2025-12-08 15:57:43] [F7] X_val_final   shape: (9496, 16)
-[2025-12-08 15:57:43] [F7] Training LinearRegression...
-[2025-12-08 15:57:43] [F7] TRAIN -> RMSE: 4142.76 | MAE: 2645.53 | R2: 0.8190 | Bias(pred-true): 0.00
-[2025-12-08 15:57:43] [F7] VAL   -> RMSE: 4264.74 | MAE: 2645.13 | R2: 0.8078 | Bias(pred-true): 7.11
-[2025-12-08 15:57:43] 
-[2025-12-08 15:57:43] ==== FOLD 8/8 ====
-[2025-12-08 15:57:43] [F8] X_train shape: (66477, 10), X_val shape: (9496, 10)
-[2025-12-08 15:57:43] [F8] y_train shape: (66477,), y_val shape: (9496,)
-[2025-12-08 15:57:43] [F8] NaNs before numeric imputation (num features):
-[2025-12-08 15:57:43] year              1314
+[2025-12-12 18:16:32] [F7] high_card_features = ['Brand', 'model']
+[2025-12-12 18:16:32] [F7] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:16:32] [F7] X_train_cat shape: (66477, 10)
+[2025-12-12 18:16:32] [F7] X_val_cat   shape: (9496, 10)
+[2025-12-12 18:16:32] [F7] X_train_num_df shape: (66477, 6)
+[2025-12-12 18:16:32] [F7] X_val_num_df   shape: (9496, 6)
+[2025-12-12 18:16:32] [F7] X_train_final shape: (66477, 16)
+[2025-12-12 18:16:32] [F7] X_val_final   shape: (9496, 16)
+[2025-12-12 18:16:32] [F7] Training LinearRegression...
+[2025-12-12 18:16:32] [F7] TRAIN -> RMSE: 4143.27 | MAE: 2645.69 | R2: 0.8190 | Bias(pred-true): -0.00
+[2025-12-12 18:16:32] [F7] VAL   -> RMSE: 4258.79 | MAE: 2643.56 | R2: 0.8083 | Bias(pred-true): 5.45
+[2025-12-12 18:16:32] 
+[2025-12-12 18:16:32] ==== FOLD 8/8 ====
+[2025-12-12 18:16:32] [F8] X_train shape: (66477, 10), X_val shape: (9496, 10)
+[2025-12-12 18:16:32] [F8] y_train shape: (66477,), y_val shape: (9496,)
+[2025-12-12 18:16:32] [F8] NaNs before numeric imputation (num features):
+[2025-12-12 18:16:32] year              1314
 mileage           1303
 engineSize        1315
 tax               6902
 mpg               6919
 previousOwners    1367
 dtype: int64
-[2025-12-08 15:57:43] [F8] NaNs before (categoricals):
-[2025-12-08 15:57:43] Brand           0
+[2025-12-12 18:16:32] [F8] NaNs before (categoricals):
+[2025-12-12 18:16:32] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:43] [F8] 'UNKNOWN' before (categoricals):
-[2025-12-08 15:57:43] Brand           1343
+[2025-12-12 18:16:32] [F8] 'UNKNOWN' before (categoricals):
+[2025-12-12 18:16:32] Brand           1343
 model           1339
 transmission    1948
 fuelType        1318
 dtype: Int64
-[2025-12-08 15:57:43] [F8] After numeric imputation: X_train shape = (66477, 10), X_val shape = (9496, 10)
-[2025-12-08 15:57:43] [F8] NaNs after numeric imputation (num features):
-[2025-12-08 15:57:43] year              0
+[2025-12-12 18:16:32] [F8] After numeric imputation: X_train shape = (66477, 10), X_val shape = (9496, 10)
+[2025-12-12 18:16:32] [F8] NaNs after numeric imputation (num features):
+[2025-12-12 18:16:32] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:46] [F8] After solving Brand - still invalid (train): 0
-[2025-12-08 15:57:50] [F8] After solving model - still invalid (train): 0
-[2025-12-08 15:57:53] [F8] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
-[2025-12-08 15:57:55] [F8] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
-[2025-12-08 15:57:55] [F8] --- NUMERICAL (train, after imputation) ---
-[2025-12-08 15:57:55]                         mean           std          min       max
+[2025-12-12 18:16:34] [F8] After solving Brand - still invalid (train): 0
+[2025-12-12 18:16:39] [F8] After solving model - still invalid (train): 0
+[2025-12-12 18:16:41] [F8] After solving transmission - distinct (train): ['AUTOMATIC', 'MANUAL', 'SEMIAUTO']
+[2025-12-12 18:16:44] [F8] After solving fuelType - distinct (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[2025-12-12 18:16:44] [F8] --- NUMERICAL (train, after imputation) ---
+[2025-12-12 18:16:44]                         mean           std          min       max
 year             2017.084240      2.163962  1970.000000    2020.0
 mileage         23341.420061  21428.813662     1.000000  323000.0
 engineSize          1.663250      0.562628     0.103493       6.6
 tax               123.418973     61.601155     0.000000     580.0
 mpg                55.016052     13.684074    10.000000     200.0
 previousOwners      2.141523      1.275776     0.000000       6.0
-[2025-12-08 15:57:55] NaNs (train):
-[2025-12-08 15:57:55] year              0
+[2025-12-12 18:16:44] NaNs (train):
+[2025-12-12 18:16:44] year              0
 mileage           0
 engineSize        0
 tax               0
 mpg               0
 previousOwners    0
 dtype: int64
-[2025-12-08 15:57:55] [F8] --- CATEGORICAL (train, after resolvers) ---
-[2025-12-08 15:57:55] NaNs (train):
-[2025-12-08 15:57:55] Brand           0
+[2025-12-12 18:16:44] [F8] --- CATEGORICAL (train, after resolvers) ---
+[2025-12-12 18:16:44] NaNs (train):
+[2025-12-12 18:16:44] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:55] 'UNKNOWN' counts (train):
-[2025-12-08 15:57:55] Brand           0
+[2025-12-12 18:16:44] 'UNKNOWN' counts (train):
+[2025-12-12 18:16:44] Brand           0
 model           0
 transmission    0
 fuelType        0
 dtype: int64
-[2025-12-08 15:57:55] [F8] high_card_features = ['Brand', 'model']
-[2025-12-08 15:57:55] [F8] low_card_features  = ['transmission', 'fuelType']
-[2025-12-08 15:57:55] [F8] X_train_cat shape: (66477, 10)
-[2025-12-08 15:57:55] [F8] X_val_cat   shape: (9496, 10)
-[2025-12-08 15:57:55] [F8] X_train_num_df shape: (66477, 6)
-[2025-12-08 15:57:55] [F8] X_val_num_df   shape: (9496, 6)
-[2025-12-08 15:57:55] [F8] X_train_final shape: (66477, 16)
-[2025-12-08 15:57:55] [F8] X_val_final   shape: (9496, 16)
-[2025-12-08 15:57:55] [F8] Training LinearRegression...
-[2025-12-08 15:57:56] [F8] TRAIN -> RMSE: 4178.02 | MAE: 2653.89 | R2: 0.8171 | Bias(pred-true): -0.00
-[2025-12-08 15:57:56] [F8] VAL   -> RMSE: 4003.65 | MAE: 2612.49 | R2: 0.8223 | Bias(pred-true): 31.71
-[2025-12-08 15:57:56] 
-[2025-12-08 15:57:56] # ========== CV SUMMARY (LINEAR REGRESSION) ==========
-[2025-12-08 15:57:56] TRAIN -> RMSE mean: 4158.31 | MAE mean: 2647.23 | R2 mean: 0.8176 | Bias mean: 0.00
-[2025-12-08 15:57:56] VAL   -> RMSE mean: 4183.24 | MAE mean: 2653.40 | R2 mean: 0.8154 | Bias mean: 0.14
+[2025-12-12 18:16:44] [F8] high_card_features = ['Brand', 'model']
+[2025-12-12 18:16:44] [F8] low_card_features  = ['transmission', 'fuelType']
+[2025-12-12 18:16:44] [F8] X_train_cat shape: (66477, 10)
+[2025-12-12 18:16:44] [F8] X_val_cat   shape: (9496, 10)
+[2025-12-12 18:16:44] [F8] X_train_num_df shape: (66477, 6)
+[2025-12-12 18:16:44] [F8] X_val_num_df   shape: (9496, 6)
+[2025-12-12 18:16:44] [F8] X_train_final shape: (66477, 16)
+[2025-12-12 18:16:44] [F8] X_val_final   shape: (9496, 16)
+[2025-12-12 18:16:44] [F8] Training LinearRegression...
+[2025-12-12 18:16:44] [F8] TRAIN -> RMSE: 4176.52 | MAE: 2653.57 | R2: 0.8173 | Bias(pred-true): -0.00
+[2025-12-12 18:16:44] [F8] VAL   -> RMSE: 4010.38 | MAE: 2614.65 | R2: 0.8217 | Bias(pred-true): 29.71
+[2025-12-12 18:16:44] 
+[2025-12-12 18:16:44] # ========== CV SUMMARY (LINEAR REGRESSION) ==========
+[2025-12-12 18:16:44] TRAIN -> RMSE mean: 4157.77 | MAE mean: 2647.23 | R2 mean: 0.8177 | Bias mean: -0.00
+[2025-12-12 18:16:44] VAL   -> RMSE mean: 4183.29 | MAE mean: 2653.57 | R2 mean: 0.8154 | Bias mean: -0.05

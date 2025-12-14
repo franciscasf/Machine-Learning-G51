@@ -1,0 +1,14 @@
+2025-12-14 16:18:56,388 - cv started
+2025-12-14 16:18:56,390 - config params: {'min_samples_leaf': 20, 'max_leaf_nodes': 127, 'max_iter': 600, 'max_depth': 25, 'learning_rate': 0.09, 'l2_regularization': 1.4, 'max_bins': 255, 'random_state': 42}
+2025-12-14 16:19:08,281 - fold 1 | train_mae=1034.911857 | val_mae=1251.494587 | selected=17
+2025-12-14 16:19:19,597 - fold 2 | train_mae=1050.086667 | val_mae=1280.604208 | selected=17
+2025-12-14 16:19:31,019 - fold 3 | train_mae=1051.060910 | val_mae=1279.681189 | selected=17
+2025-12-14 16:19:42,768 - fold 4 | train_mae=1041.679320 | val_mae=1302.157169 | selected=17
+2025-12-14 16:19:54,559 - fold 5 | train_mae=1024.401016 | val_mae=1253.676908 | selected=17
+2025-12-14 16:20:06,753 - fold 6 | train_mae=1029.060805 | val_mae=1250.093565 | selected=17
+2025-12-14 16:20:18,310 - fold 7 | train_mae=1047.779499 | val_mae=1233.489030 | selected=17
+2025-12-14 16:20:30,051 - fold 8 | train_mae=1022.517245 | val_mae=1225.236319 | selected=17
+2025-12-14 16:20:30,051 - done | train_mae_mean=1037.687165 | val_mae_mean=1259.554122
+2025-12-14 16:20:30,095 - saved folds: /Users/franciscafernandes/Desktop/MachineLearning/projeto/Machine-Learning-G51/notebooks/model_assessment_optimazation/outputs/final_config_cv_folds1607.csv
+2025-12-14 16:20:30,095 - saved summary: /Users/franciscafernandes/Desktop/MachineLearning/projeto/Machine-Learning-G51/notebooks/model_assessment_optimazation/outputs/final_config_cv_summary1607.csv
+2025-12-14 16:20:30,096 - cv finished

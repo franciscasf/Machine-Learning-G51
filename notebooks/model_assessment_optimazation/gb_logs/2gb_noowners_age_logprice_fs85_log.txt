@@ -1,0 +1,1061 @@
+# =============================
+# START OF HGB SEARCH (LOG TARGET + AGE FEATURE + FS 90%)
+# METRICS ON ORIGINAL SCALE: R2, RMSE, MAE, BIAS
+# LOG FILE SAVED TO: gb_logs/2gb_noowners_age_logprice_fs85_log.txt
+# =============================
+
+######## CONFIG 1/25 ########
+Parameters: {'min_samples_leaf': 12, 'max_leaf_nodes': 255, 'max_iter': 800, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.115, 'l2_regularization': 0.3}
+
+[C1|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9715 | RMSE: 1649 | MAE: 927 | Bias: 78.8
+  > [VAL]   R2: 0.9590 | RMSE: 1927 | MAE: 1230 | Bias: 50.0
+
+[C1|F2] Processing fold...
+  > [TRAIN] R2: 0.9717 | RMSE: 1639 | MAE: 1005 | Bias: 80.2
+  > [VAL]   R2: 0.9496 | RMSE: 2175 | MAE: 1269 | Bias: 95.7
+
+[C1|F3] Processing fold...
+  > [TRAIN] R2: 0.9745 | RMSE: 1555 | MAE: 911 | Bias: 74.4
+  > [VAL]   R2: 0.9482 | RMSE: 2205 | MAE: 1256 | Bias: 131.0
+
+[C1|F4] Processing fold...
+  > [TRAIN] R2: 0.9784 | RMSE: 1423 | MAE: 902 | Bias: 67.5
+  > [VAL]   R2: 0.9349 | RMSE: 2586 | MAE: 1273 | Bias: 129.8
+
+[C1|F5] Processing fold...
+  > [TRAIN] R2: 0.9768 | RMSE: 1480 | MAE: 907 | Bias: 65.7
+  > [VAL]   R2: 0.9575 | RMSE: 2022 | MAE: 1230 | Bias: 82.0
+
+[C1|F6] Processing fold...
+  > [TRAIN] R2: 0.9726 | RMSE: 1611 | MAE: 974 | Bias: 79.3
+  > [VAL]   R2: 0.9510 | RMSE: 2173 | MAE: 1236 | Bias: 115.8
+
+[C1|F7] Processing fold...
+  > [TRAIN] R2: 0.9728 | RMSE: 1607 | MAE: 976 | Bias: 80.8
+  > [VAL]   R2: 0.9575 | RMSE: 2004 | MAE: 1216 | Bias: 129.3
+
+[C1|F8] Processing fold...
+  > [TRAIN] R2: 0.9731 | RMSE: 1602 | MAE: 992 | Bias: 82.4
+  > [VAL]   R2: 0.9559 | RMSE: 1994 | MAE: 1213 | Bias: 71.9
+
+Config 1 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 949.2 | R2: 0.9739 | Bias: 76.1
+  [VAL AVG]   MAE: 1240.5 | R2: 0.9517 | Bias: 100.7 | RMSE: 2135.8
+[NEW BEST RMSE] Config 1
+
+######## CONFIG 2/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 255, 'max_iter': 600, 'max_depth': 15, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 1.0}
+
+[C2|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9690 | RMSE: 1720 | MAE: 977 | Bias: 81.7
+  > [VAL]   R2: 0.9600 | RMSE: 1904 | MAE: 1221 | Bias: 49.7
+
+[C2|F2] Processing fold...
+  > [TRAIN] R2: 0.9701 | RMSE: 1685 | MAE: 1031 | Bias: 80.9
+  > [VAL]   R2: 0.9480 | RMSE: 2210 | MAE: 1274 | Bias: 87.8
+
+[C2|F3] Processing fold...
+  > [TRAIN] R2: 0.9698 | RMSE: 1694 | MAE: 1003 | Bias: 81.3
+  > [VAL]   R2: 0.9474 | RMSE: 2223 | MAE: 1260 | Bias: 132.7
+
+[C2|F4] Processing fold...
+  > [TRAIN] R2: 0.9749 | RMSE: 1535 | MAE: 975 | Bias: 72.6
+  > [VAL]   R2: 0.9340 | RMSE: 2604 | MAE: 1278 | Bias: 134.8
+
+[C2|F5] Processing fold...
+  > [TRAIN] R2: 0.9768 | RMSE: 1480 | MAE: 908 | Bias: 63.7
+  > [VAL]   R2: 0.9585 | RMSE: 1999 | MAE: 1227 | Bias: 77.4
+
+[C2|F6] Processing fold...
+  > [TRAIN] R2: 0.9728 | RMSE: 1603 | MAE: 973 | Bias: 76.6
+  > [VAL]   R2: 0.9538 | RMSE: 2111 | MAE: 1233 | Bias: 108.8
+
+[C2|F7] Processing fold...
+  > [TRAIN] R2: 0.9648 | RMSE: 1827 | MAE: 1098 | Bias: 92.9
+  > [VAL]   R2: 0.9559 | RMSE: 2043 | MAE: 1242 | Bias: 129.2
+
+[C2|F8] Processing fold...
+  > [TRAIN] R2: 0.9738 | RMSE: 1580 | MAE: 977 | Bias: 77.3
+  > [VAL]   R2: 0.9571 | RMSE: 1968 | MAE: 1204 | Bias: 65.1
+
+Config 2 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 992.8 | R2: 0.9715 | Bias: 78.4
+  [VAL AVG]   MAE: 1242.3 | R2: 0.9518 | Bias: 98.2 | RMSE: 2132.6
+[NEW BEST RMSE] Config 2
+
+######## CONFIG 3/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 191, 'max_iter': 1000, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 1.0}
+
+[C3|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9700 | RMSE: 1692 | MAE: 952 | Bias: 81.0
+  > [VAL]   R2: 0.9601 | RMSE: 1900 | MAE: 1215 | Bias: 44.7
+
+[C3|F2] Processing fold...
+  > [TRAIN] R2: 0.9697 | RMSE: 1696 | MAE: 1037 | Bias: 83.1
+  > [VAL]   R2: 0.9496 | RMSE: 2176 | MAE: 1271 | Bias: 88.9
+
+[C3|F3] Processing fold...
+  > [TRAIN] R2: 0.9696 | RMSE: 1699 | MAE: 1002 | Bias: 82.5
+  > [VAL]   R2: 0.9474 | RMSE: 2223 | MAE: 1257 | Bias: 135.7
+
+[C3|F4] Processing fold...
+  > [TRAIN] R2: 0.9756 | RMSE: 1511 | MAE: 953 | Bias: 72.1
+  > [VAL]   R2: 0.9332 | RMSE: 2620 | MAE: 1277 | Bias: 126.8
+
+[C3|F5] Processing fold...
+  > [TRAIN] R2: 0.9719 | RMSE: 1631 | MAE: 991 | Bias: 74.7
+  > [VAL]   R2: 0.9574 | RMSE: 2025 | MAE: 1235 | Bias: 84.7
+
+[C3|F6] Processing fold...
+  > [TRAIN] R2: 0.9748 | RMSE: 1543 | MAE: 933 | Bias: 72.4
+  > [VAL]   R2: 0.9549 | RMSE: 2085 | MAE: 1225 | Bias: 98.3
+
+[C3|F7] Processing fold...
+  > [TRAIN] R2: 0.9715 | RMSE: 1644 | MAE: 1001 | Bias: 82.1
+  > [VAL]   R2: 0.9578 | RMSE: 1999 | MAE: 1209 | Bias: 114.6
+
+[C3|F8] Processing fold...
+  > [TRAIN] R2: 0.9699 | RMSE: 1696 | MAE: 1044 | Bias: 86.8
+  > [VAL]   R2: 0.9563 | RMSE: 1986 | MAE: 1217 | Bias: 75.0
+
+Config 3 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 988.9 | R2: 0.9716 | Bias: 79.3
+  [VAL AVG]   MAE: 1238.1 | R2: 0.9521 | Bias: 96.1 | RMSE: 2126.7
+[NEW BEST RMSE] Config 3
+
+######## CONFIG 4/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 127, 'max_iter': 600, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 1.0}
+
+[C4|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9616 | RMSE: 1913 | MAE: 1105 | Bias: 97.1
+  > [VAL]   R2: 0.9577 | RMSE: 1957 | MAE: 1252 | Bias: 65.2
+
+[C4|F2] Processing fold...
+  > [TRAIN] R2: 0.9676 | RMSE: 1753 | MAE: 1066 | Bias: 85.8
+  > [VAL]   R2: 0.9494 | RMSE: 2179 | MAE: 1275 | Bias: 89.9
+
+[C4|F3] Processing fold...
+  > [TRAIN] R2: 0.9665 | RMSE: 1784 | MAE: 1055 | Bias: 88.4
+  > [VAL]   R2: 0.9469 | RMSE: 2234 | MAE: 1264 | Bias: 141.9
+
+[C4|F4] Processing fold...
+  > [TRAIN] R2: 0.9713 | RMSE: 1641 | MAE: 1031 | Bias: 79.8
+  > [VAL]   R2: 0.9338 | RMSE: 2608 | MAE: 1283 | Bias: 129.5
+
+[C4|F5] Processing fold...
+  > [TRAIN] R2: 0.9717 | RMSE: 1636 | MAE: 996 | Bias: 73.2
+  > [VAL]   R2: 0.9573 | RMSE: 2027 | MAE: 1238 | Bias: 78.7
+
+[C4|F6] Processing fold...
+  > [TRAIN] R2: 0.9701 | RMSE: 1681 | MAE: 1020 | Bias: 82.4
+  > [VAL]   R2: 0.9533 | RMSE: 2121 | MAE: 1230 | Bias: 110.9
+
+[C4|F7] Processing fold...
+  > [TRAIN] R2: 0.9671 | RMSE: 1766 | MAE: 1066 | Bias: 89.5
+  > [VAL]   R2: 0.9565 | RMSE: 2028 | MAE: 1230 | Bias: 125.0
+
+[C4|F8] Processing fold...
+  > [TRAIN] R2: 0.9716 | RMSE: 1647 | MAE: 1011 | Bias: 82.9
+  > [VAL]   R2: 0.9574 | RMSE: 1962 | MAE: 1200 | Bias: 66.1
+
+Config 4 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1043.8 | R2: 0.9684 | Bias: 84.9
+  [VAL AVG]   MAE: 1246.5 | R2: 0.9515 | Bias: 100.9 | RMSE: 2139.3
+
+######## CONFIG 5/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 127, 'max_iter': 1000, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.1, 'l2_regularization': 1.0}
+
+[C5|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9674 | RMSE: 1763 | MAE: 1009 | Bias: 87.2
+  > [VAL]   R2: 0.9586 | RMSE: 1935 | MAE: 1235 | Bias: 57.5
+
+[C5|F2] Processing fold...
+  > [TRAIN] R2: 0.9683 | RMSE: 1735 | MAE: 1065 | Bias: 85.7
+  > [VAL]   R2: 0.9503 | RMSE: 2160 | MAE: 1277 | Bias: 87.2
+
+[C5|F3] Processing fold...
+  > [TRAIN] R2: 0.9678 | RMSE: 1749 | MAE: 1038 | Bias: 86.5
+  > [VAL]   R2: 0.9471 | RMSE: 2228 | MAE: 1264 | Bias: 141.3
+
+[C5|F4] Processing fold...
+  > [TRAIN] R2: 0.9734 | RMSE: 1578 | MAE: 997 | Bias: 76.3
+  > [VAL]   R2: 0.9333 | RMSE: 2617 | MAE: 1282 | Bias: 126.5
+
+[C5|F5] Processing fold...
+  > [TRAIN] R2: 0.9702 | RMSE: 1680 | MAE: 1026 | Bias: 77.3
+  > [VAL]   R2: 0.9575 | RMSE: 2022 | MAE: 1242 | Bias: 82.9
+
+[C5|F6] Processing fold...
+  > [TRAIN] R2: 0.9723 | RMSE: 1619 | MAE: 985 | Bias: 78.5
+  > [VAL]   R2: 0.9528 | RMSE: 2134 | MAE: 1231 | Bias: 108.6
+
+[C5|F7] Processing fold...
+  > [TRAIN] R2: 0.9697 | RMSE: 1696 | MAE: 1035 | Bias: 86.6
+  > [VAL]   R2: 0.9578 | RMSE: 1998 | MAE: 1217 | Bias: 128.3
+
+[C5|F8] Processing fold...
+  > [TRAIN] R2: 0.9708 | RMSE: 1670 | MAE: 1030 | Bias: 84.2
+  > [VAL]   R2: 0.9574 | RMSE: 1961 | MAE: 1209 | Bias: 65.8
+
+Config 5 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1023.3 | R2: 0.9700 | Bias: 82.8
+  [VAL AVG]   MAE: 1244.5 | R2: 0.9519 | Bias: 99.8 | RMSE: 2131.9
+
+######## CONFIG 6/25 ########
+Parameters: {'min_samples_leaf': 16, 'max_leaf_nodes': 191, 'max_iter': 1200, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 3.0}
+
+[C6|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9684 | RMSE: 1738 | MAE: 988 | Bias: 86.0
+  > [VAL]   R2: 0.9596 | RMSE: 1913 | MAE: 1222 | Bias: 53.6
+
+[C6|F2] Processing fold...
+  > [TRAIN] R2: 0.9713 | RMSE: 1652 | MAE: 1012 | Bias: 81.9
+  > [VAL]   R2: 0.9512 | RMSE: 2141 | MAE: 1265 | Bias: 89.2
+
+[C6|F3] Processing fold...
+  > [TRAIN] R2: 0.9696 | RMSE: 1698 | MAE: 1003 | Bias: 83.3
+  > [VAL]   R2: 0.9466 | RMSE: 2241 | MAE: 1260 | Bias: 134.1
+
+[C6|F4] Processing fold...
+  > [TRAIN] R2: 0.9743 | RMSE: 1551 | MAE: 981 | Bias: 75.1
+  > [VAL]   R2: 0.9346 | RMSE: 2592 | MAE: 1277 | Bias: 130.4
+
+[C6|F5] Processing fold...
+  > [TRAIN] R2: 0.9752 | RMSE: 1530 | MAE: 938 | Bias: 68.7
+  > [VAL]   R2: 0.9580 | RMSE: 2009 | MAE: 1225 | Bias: 79.6
+
+[C6|F6] Processing fold...
+  > [TRAIN] R2: 0.9722 | RMSE: 1621 | MAE: 979 | Bias: 79.8
+  > [VAL]   R2: 0.9527 | RMSE: 2135 | MAE: 1230 | Bias: 113.3
+
+[C6|F7] Processing fold...
+  > [TRAIN] R2: 0.9735 | RMSE: 1584 | MAE: 964 | Bias: 78.9
+  > [VAL]   R2: 0.9581 | RMSE: 1991 | MAE: 1204 | Bias: 119.8
+
+[C6|F8] Processing fold...
+  > [TRAIN] R2: 0.9733 | RMSE: 1597 | MAE: 983 | Bias: 81.3
+  > [VAL]   R2: 0.9579 | RMSE: 1949 | MAE: 1196 | Bias: 73.6
+
+Config 6 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 980.7 | R2: 0.9722 | Bias: 79.4
+  [VAL AVG]   MAE: 1234.8 | R2: 0.9523 | Bias: 99.2 | RMSE: 2121.3
+[NEW BEST RMSE] Config 6
+
+######## CONFIG 7/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 63, 'max_iter': 800, 'max_depth': None, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 0.3}
+
+[C7|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9641 | RMSE: 1851 | MAE: 1086 | Bias: 94.9
+  > [VAL]   R2: 0.9578 | RMSE: 1955 | MAE: 1252 | Bias: 61.2
+
+[C7|F2] Processing fold...
+  > [TRAIN] R2: 0.9692 | RMSE: 1710 | MAE: 1056 | Bias: 85.5
+  > [VAL]   R2: 0.9513 | RMSE: 2137 | MAE: 1265 | Bias: 91.2
+
+[C7|F3] Processing fold...
+  > [TRAIN] R2: 0.9663 | RMSE: 1788 | MAE: 1076 | Bias: 89.9
+  > [VAL]   R2: 0.9475 | RMSE: 2220 | MAE: 1272 | Bias: 140.0
+
+[C7|F4] Processing fold...
+  > [TRAIN] R2: 0.9680 | RMSE: 1732 | MAE: 1097 | Bias: 87.9
+  > [VAL]   R2: 0.9347 | RMSE: 2591 | MAE: 1296 | Bias: 135.5
+
+[C7|F5] Processing fold...
+  > [TRAIN] R2: 0.9691 | RMSE: 1711 | MAE: 1054 | Bias: 79.7
+  > [VAL]   R2: 0.9581 | RMSE: 2007 | MAE: 1239 | Bias: 88.1
+
+[C7|F6] Processing fold...
+  > [TRAIN] R2: 0.9699 | RMSE: 1688 | MAE: 1030 | Bias: 83.3
+  > [VAL]   R2: 0.9550 | RMSE: 2082 | MAE: 1233 | Bias: 113.9
+
+[C7|F7] Processing fold...
+  > [TRAIN] R2: 0.9660 | RMSE: 1795 | MAE: 1100 | Bias: 94.2
+  > [VAL]   R2: 0.9586 | RMSE: 1980 | MAE: 1231 | Bias: 120.6
+
+[C7|F8] Processing fold...
+  > [TRAIN] R2: 0.9622 | RMSE: 1901 | MAE: 1170 | Bias: 103.2
+  > [VAL]   R2: 0.9540 | RMSE: 2038 | MAE: 1264 | Bias: 85.4
+
+Config 7 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1083.6 | R2: 0.9668 | Bias: 89.8
+  [VAL AVG]   MAE: 1256.5 | R2: 0.9521 | Bias: 104.5 | RMSE: 2126.3
+
+######## CONFIG 8/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 127, 'max_iter': 800, 'max_depth': None, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 1.0}
+
+[C8|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9676 | RMSE: 1757 | MAE: 1008 | Bias: 87.8
+  > [VAL]   R2: 0.9588 | RMSE: 1932 | MAE: 1232 | Bias: 52.3
+
+[C8|F2] Processing fold...
+  > [TRAIN] R2: 0.9696 | RMSE: 1699 | MAE: 1047 | Bias: 85.3
+  > [VAL]   R2: 0.9501 | RMSE: 2164 | MAE: 1275 | Bias: 87.1
+
+[C8|F3] Processing fold...
+  > [TRAIN] R2: 0.9686 | RMSE: 1725 | MAE: 1023 | Bias: 86.0
+  > [VAL]   R2: 0.9474 | RMSE: 2222 | MAE: 1258 | Bias: 139.2
+
+[C8|F4] Processing fold...
+  > [TRAIN] R2: 0.9719 | RMSE: 1623 | MAE: 1019 | Bias: 79.3
+  > [VAL]   R2: 0.9337 | RMSE: 2610 | MAE: 1278 | Bias: 128.2
+
+[C8|F5] Processing fold...
+  > [TRAIN] R2: 0.9715 | RMSE: 1642 | MAE: 1001 | Bias: 75.9
+  > [VAL]   R2: 0.9576 | RMSE: 2020 | MAE: 1236 | Bias: 83.1
+
+[C8|F6] Processing fold...
+  > [TRAIN] R2: 0.9683 | RMSE: 1732 | MAE: 1047 | Bias: 86.2
+  > [VAL]   R2: 0.9503 | RMSE: 2188 | MAE: 1245 | Bias: 114.4
+
+[C8|F7] Processing fold...
+  > [TRAIN] R2: 0.9665 | RMSE: 1781 | MAE: 1080 | Bias: 92.8
+  > [VAL]   R2: 0.9573 | RMSE: 2010 | MAE: 1233 | Bias: 127.7
+
+[C8|F8] Processing fold...
+  > [TRAIN] R2: 0.9712 | RMSE: 1659 | MAE: 1021 | Bias: 85.5
+  > [VAL]   R2: 0.9570 | RMSE: 1969 | MAE: 1207 | Bias: 74.6
+
+Config 8 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1030.8 | R2: 0.9694 | Bias: 84.8
+  [VAL AVG]   MAE: 1245.6 | R2: 0.9515 | Bias: 100.8 | RMSE: 2139.3
+
+######## CONFIG 9/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 191, 'max_iter': 600, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 0.3}
+
+[C9|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9675 | RMSE: 1762 | MAE: 1006 | Bias: 85.6
+  > [VAL]   R2: 0.9592 | RMSE: 1921 | MAE: 1227 | Bias: 54.5
+
+[C9|F2] Processing fold...
+  > [TRAIN] R2: 0.9735 | RMSE: 1586 | MAE: 970 | Bias: 75.8
+  > [VAL]   R2: 0.9493 | RMSE: 2181 | MAE: 1260 | Bias: 88.5
+
+[C9|F3] Processing fold...
+  > [TRAIN] R2: 0.9701 | RMSE: 1684 | MAE: 994 | Bias: 81.5
+  > [VAL]   R2: 0.9484 | RMSE: 2201 | MAE: 1253 | Bias: 137.2
+
+[C9|F4] Processing fold...
+  > [TRAIN] R2: 0.9736 | RMSE: 1574 | MAE: 988 | Bias: 75.2
+  > [VAL]   R2: 0.9336 | RMSE: 2611 | MAE: 1281 | Bias: 129.0
+
+[C9|F5] Processing fold...
+  > [TRAIN] R2: 0.9714 | RMSE: 1646 | MAE: 1002 | Bias: 74.4
+  > [VAL]   R2: 0.9582 | RMSE: 2006 | MAE: 1236 | Bias: 79.0
+
+[C9|F6] Processing fold...
+  > [TRAIN] R2: 0.9695 | RMSE: 1699 | MAE: 1023 | Bias: 82.7
+  > [VAL]   R2: 0.9506 | RMSE: 2182 | MAE: 1249 | Bias: 113.5
+
+[C9|F7] Processing fold...
+  > [TRAIN] R2: 0.9693 | RMSE: 1707 | MAE: 1035 | Bias: 86.1
+  > [VAL]   R2: 0.9572 | RMSE: 2012 | MAE: 1219 | Bias: 127.0
+
+[C9|F8] Processing fold...
+  > [TRAIN] R2: 0.9704 | RMSE: 1680 | MAE: 1029 | Bias: 85.0
+  > [VAL]   R2: 0.9559 | RMSE: 1995 | MAE: 1217 | Bias: 72.3
+
+Config 9 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1005.9 | R2: 0.9707 | Bias: 80.8
+  [VAL AVG]   MAE: 1242.8 | R2: 0.9516 | Bias: 100.1 | RMSE: 2138.7
+
+######## CONFIG 10/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 191, 'max_iter': 600, 'max_depth': None, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 1.0}
+
+[C10|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9685 | RMSE: 1734 | MAE: 980 | Bias: 84.4
+  > [VAL]   R2: 0.9598 | RMSE: 1909 | MAE: 1222 | Bias: 55.0
+
+[C10|F2] Processing fold...
+  > [TRAIN] R2: 0.9724 | RMSE: 1619 | MAE: 993 | Bias: 78.3
+  > [VAL]   R2: 0.9501 | RMSE: 2165 | MAE: 1272 | Bias: 86.8
+
+[C10|F3] Processing fold...
+  > [TRAIN] R2: 0.9706 | RMSE: 1671 | MAE: 983 | Bias: 81.7
+  > [VAL]   R2: 0.9476 | RMSE: 2219 | MAE: 1251 | Bias: 139.2
+
+[C10|F4] Processing fold...
+  > [TRAIN] R2: 0.9740 | RMSE: 1560 | MAE: 980 | Bias: 75.4
+  > [VAL]   R2: 0.9336 | RMSE: 2612 | MAE: 1281 | Bias: 129.5
+
+[C10|F5] Processing fold...
+  > [TRAIN] R2: 0.9765 | RMSE: 1491 | MAE: 905 | Bias: 65.3
+  > [VAL]   R2: 0.9572 | RMSE: 2028 | MAE: 1228 | Bias: 78.1
+
+[C10|F6] Processing fold...
+  > [TRAIN] R2: 0.9675 | RMSE: 1753 | MAE: 1058 | Bias: 87.0
+  > [VAL]   R2: 0.9492 | RMSE: 2213 | MAE: 1255 | Bias: 116.1
+
+[C10|F7] Processing fold...
+  > [TRAIN] R2: 0.9700 | RMSE: 1687 | MAE: 1021 | Bias: 84.6
+  > [VAL]   R2: 0.9586 | RMSE: 1978 | MAE: 1212 | Bias: 118.8
+
+[C10|F8] Processing fold...
+  > [TRAIN] R2: 0.9716 | RMSE: 1648 | MAE: 1013 | Bias: 82.8
+  > [VAL]   R2: 0.9574 | RMSE: 1961 | MAE: 1208 | Bias: 72.4
+
+Config 10 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 991.5 | R2: 0.9714 | Bias: 79.9
+  [VAL AVG]   MAE: 1241.1 | R2: 0.9517 | Bias: 99.5 | RMSE: 2135.6
+
+######## CONFIG 11/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 127, 'max_iter': 800, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 3.0}
+
+[C11|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9664 | RMSE: 1789 | MAE: 1023 | Bias: 87.6
+  > [VAL]   R2: 0.9586 | RMSE: 1935 | MAE: 1235 | Bias: 49.2
+
+[C11|F2] Processing fold...
+  > [TRAIN] R2: 0.9668 | RMSE: 1776 | MAE: 1080 | Bias: 87.9
+  > [VAL]   R2: 0.9503 | RMSE: 2159 | MAE: 1278 | Bias: 91.4
+
+[C11|F3] Processing fold...
+  > [TRAIN] R2: 0.9687 | RMSE: 1724 | MAE: 1019 | Bias: 83.1
+  > [VAL]   R2: 0.9490 | RMSE: 2189 | MAE: 1254 | Bias: 139.6
+
+[C11|F4] Processing fold...
+  > [TRAIN] R2: 0.9701 | RMSE: 1673 | MAE: 1048 | Bias: 81.0
+  > [VAL]   R2: 0.9336 | RMSE: 2611 | MAE: 1284 | Bias: 135.9
+
+[C11|F5] Processing fold...
+  > [TRAIN] R2: 0.9706 | RMSE: 1667 | MAE: 1014 | Bias: 75.7
+  > [VAL]   R2: 0.9575 | RMSE: 2023 | MAE: 1232 | Bias: 82.1
+
+[C11|F6] Processing fold...
+  > [TRAIN] R2: 0.9685 | RMSE: 1726 | MAE: 1048 | Bias: 85.5
+  > [VAL]   R2: 0.9529 | RMSE: 2130 | MAE: 1241 | Bias: 114.5
+
+[C11|F7] Processing fold...
+  > [TRAIN] R2: 0.9654 | RMSE: 1812 | MAE: 1094 | Bias: 92.8
+  > [VAL]   R2: 0.9574 | RMSE: 2007 | MAE: 1232 | Bias: 123.6
+
+[C11|F8] Processing fold...
+  > [TRAIN] R2: 0.9704 | RMSE: 1680 | MAE: 1030 | Bias: 84.9
+  > [VAL]   R2: 0.9568 | RMSE: 1975 | MAE: 1209 | Bias: 72.2
+
+Config 11 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1044.5 | R2: 0.9684 | Bias: 84.8
+  [VAL AVG]   MAE: 1245.5 | R2: 0.9520 | Bias: 101.0 | RMSE: 2128.9
+
+######## CONFIG 12/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 127, 'max_iter': 1000, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.115, 'l2_regularization': 3.0}
+
+[C12|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9680 | RMSE: 1748 | MAE: 994 | Bias: 82.6
+  > [VAL]   R2: 0.9598 | RMSE: 1908 | MAE: 1226 | Bias: 47.0
+
+[C12|F2] Processing fold...
+  > [TRAIN] R2: 0.9637 | RMSE: 1856 | MAE: 1127 | Bias: 93.5
+  > [VAL]   R2: 0.9485 | RMSE: 2199 | MAE: 1299 | Bias: 87.9
+
+[C12|F3] Processing fold...
+  > [TRAIN] R2: 0.9708 | RMSE: 1665 | MAE: 982 | Bias: 79.0
+  > [VAL]   R2: 0.9486 | RMSE: 2198 | MAE: 1259 | Bias: 134.6
+
+[C12|F4] Processing fold...
+  > [TRAIN] R2: 0.9728 | RMSE: 1597 | MAE: 1007 | Bias: 75.9
+  > [VAL]   R2: 0.9353 | RMSE: 2578 | MAE: 1277 | Bias: 126.9
+
+[C12|F5] Processing fold...
+  > [TRAIN] R2: 0.9717 | RMSE: 1636 | MAE: 999 | Bias: 72.9
+  > [VAL]   R2: 0.9569 | RMSE: 2035 | MAE: 1241 | Bias: 81.8
+
+[C12|F6] Processing fold...
+  > [TRAIN] R2: 0.9709 | RMSE: 1660 | MAE: 1004 | Bias: 78.2
+  > [VAL]   R2: 0.9535 | RMSE: 2117 | MAE: 1238 | Bias: 109.2
+
+[C12|F7] Processing fold...
+  > [TRAIN] R2: 0.9660 | RMSE: 1794 | MAE: 1085 | Bias: 90.9
+  > [VAL]   R2: 0.9568 | RMSE: 2022 | MAE: 1233 | Bias: 124.6
+
+[C12|F8] Processing fold...
+  > [TRAIN] R2: 0.9705 | RMSE: 1679 | MAE: 1029 | Bias: 84.0
+  > [VAL]   R2: 0.9564 | RMSE: 1983 | MAE: 1216 | Bias: 67.9
+
+Config 12 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1028.3 | R2: 0.9693 | Bias: 82.1
+  [VAL AVG]   MAE: 1248.7 | R2: 0.9520 | Bias: 97.5 | RMSE: 2130.1
+
+######## CONFIG 13/25 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 63, 'max_iter': 600, 'max_depth': 25, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 0.3}
+
+[C13|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9631 | RMSE: 1877 | MAE: 1097 | Bias: 95.6
+  > [VAL]   R2: 0.9585 | RMSE: 1938 | MAE: 1248 | Bias: 56.6
+
+[C13|F2] Processing fold...
+  > [TRAIN] R2: 0.9670 | RMSE: 1770 | MAE: 1093 | Bias: 91.3
+  > [VAL]   R2: 0.9512 | RMSE: 2139 | MAE: 1273 | Bias: 97.0
+
+[C13|F3] Processing fold...
+  > [TRAIN] R2: 0.9648 | RMSE: 1827 | MAE: 1101 | Bias: 93.9
+  > [VAL]   R2: 0.9467 | RMSE: 2237 | MAE: 1281 | Bias: 147.3
+
+[C13|F4] Processing fold...
+  > [TRAIN] R2: 0.9682 | RMSE: 1725 | MAE: 1090 | Bias: 87.5
+  > [VAL]   R2: 0.9340 | RMSE: 2604 | MAE: 1297 | Bias: 130.9
+
+[C13|F5] Processing fold...
+  > [TRAIN] R2: 0.9664 | RMSE: 1782 | MAE: 1092 | Bias: 85.5
+  > [VAL]   R2: 0.9571 | RMSE: 2032 | MAE: 1251 | Bias: 86.6
+
+[C13|F6] Processing fold...
+  > [TRAIN] R2: 0.9659 | RMSE: 1797 | MAE: 1094 | Bias: 91.7
+  > [VAL]   R2: 0.9511 | RMSE: 2170 | MAE: 1259 | Bias: 122.2
+
+[C13|F7] Processing fold...
+  > [TRAIN] R2: 0.9637 | RMSE: 1856 | MAE: 1132 | Bias: 99.2
+  > [VAL]   R2: 0.9568 | RMSE: 2021 | MAE: 1251 | Bias: 122.9
+
+[C13|F8] Processing fold...
+  > [TRAIN] R2: 0.9670 | RMSE: 1776 | MAE: 1097 | Bias: 93.3
+  > [VAL]   R2: 0.9554 | RMSE: 2005 | MAE: 1237 | Bias: 79.3
+
+Config 13 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1099.6 | R2: 0.9658 | Bias: 92.3
+  [VAL AVG]   MAE: 1261.9 | R2: 0.9514 | Bias: 105.4 | RMSE: 2143.3
+
+######## CONFIG 14/25 ########
+Parameters: {'min_samples_leaf': 16, 'max_leaf_nodes': 127, 'max_iter': 800, 'max_depth': 25, 'loss': 'squared_error', 'learning_rate': 0.1, 'l2_regularization': 1.0}
+
+[C14|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9682 | RMSE: 1741 | MAE: 995 | Bias: 85.5
+  > [VAL]   R2: 0.9590 | RMSE: 1927 | MAE: 1231 | Bias: 58.5
+
+[C14|F2] Processing fold...
+  > [TRAIN] R2: 0.9724 | RMSE: 1619 | MAE: 992 | Bias: 79.8
+  > [VAL]   R2: 0.9514 | RMSE: 2136 | MAE: 1260 | Bias: 88.5
+
+[C14|F3] Processing fold...
+  > [TRAIN] R2: 0.9703 | RMSE: 1678 | MAE: 998 | Bias: 83.0
+  > [VAL]   R2: 0.9474 | RMSE: 2222 | MAE: 1261 | Bias: 143.7
+
+[C14|F4] Processing fold...
+  > [TRAIN] R2: 0.9730 | RMSE: 1590 | MAE: 1006 | Bias: 78.5
+  > [VAL]   R2: 0.9351 | RMSE: 2582 | MAE: 1284 | Bias: 128.8
+
+[C14|F5] Processing fold...
+  > [TRAIN] R2: 0.9732 | RMSE: 1593 | MAE: 976 | Bias: 71.8
+  > [VAL]   R2: 0.9576 | RMSE: 2019 | MAE: 1230 | Bias: 78.8
+
+[C14|F6] Processing fold...
+  > [TRAIN] R2: 0.9697 | RMSE: 1693 | MAE: 1028 | Bias: 83.9
+  > [VAL]   R2: 0.9514 | RMSE: 2163 | MAE: 1245 | Bias: 118.1
+
+[C14|F7] Processing fold...
+  > [TRAIN] R2: 0.9680 | RMSE: 1741 | MAE: 1060 | Bias: 90.7
+  > [VAL]   R2: 0.9576 | RMSE: 2002 | MAE: 1225 | Bias: 127.2
+
+[C14|F8] Processing fold...
+  > [TRAIN] R2: 0.9724 | RMSE: 1623 | MAE: 1005 | Bias: 84.1
+  > [VAL]   R2: 0.9568 | RMSE: 1973 | MAE: 1207 | Bias: 74.0
+
+Config 14 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1007.4 | R2: 0.9709 | Bias: 82.2
+  [VAL AVG]   MAE: 1242.9 | R2: 0.9521 | Bias: 102.2 | RMSE: 2128.0
+
+######## CONFIG 15/25 ########
+Parameters: {'min_samples_leaf': 16, 'max_leaf_nodes': 63, 'max_iter': 600, 'max_depth': 15, 'loss': 'squared_error', 'learning_rate': 0.115, 'l2_regularization': 0.3}
+
+[C15|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9637 | RMSE: 1860 | MAE: 1092 | Bias: 94.3
+  > [VAL]   R2: 0.9582 | RMSE: 1944 | MAE: 1256 | Bias: 53.7
+
+[C15|F2] Processing fold...
+  > [TRAIN] R2: 0.9687 | RMSE: 1724 | MAE: 1067 | Bias: 87.1
+  > [VAL]   R2: 0.9513 | RMSE: 2137 | MAE: 1277 | Bias: 96.7
+
+[C15|F3] Processing fold...
+  > [TRAIN] R2: 0.9674 | RMSE: 1758 | MAE: 1059 | Bias: 88.5
+  > [VAL]   R2: 0.9489 | RMSE: 2191 | MAE: 1269 | Bias: 135.3
+
+[C15|F4] Processing fold...
+  > [TRAIN] R2: 0.9681 | RMSE: 1728 | MAE: 1102 | Bias: 87.4
+  > [VAL]   R2: 0.9331 | RMSE: 2622 | MAE: 1306 | Bias: 134.3
+
+[C15|F5] Processing fold...
+  > [TRAIN] R2: 0.9666 | RMSE: 1777 | MAE: 1096 | Bias: 85.0
+  > [VAL]   R2: 0.9550 | RMSE: 2080 | MAE: 1266 | Bias: 93.8
+
+[C15|F6] Processing fold...
+  > [TRAIN] R2: 0.9683 | RMSE: 1732 | MAE: 1059 | Bias: 86.5
+  > [VAL]   R2: 0.9532 | RMSE: 2123 | MAE: 1245 | Bias: 118.5
+
+[C15|F7] Processing fold...
+  > [TRAIN] R2: 0.9662 | RMSE: 1791 | MAE: 1104 | Bias: 94.0
+  > [VAL]   R2: 0.9568 | RMSE: 2022 | MAE: 1238 | Bias: 120.6
+
+[C15|F8] Processing fold...
+  > [TRAIN] R2: 0.9699 | RMSE: 1694 | MAE: 1055 | Bias: 87.3
+  > [VAL]   R2: 0.9556 | RMSE: 2001 | MAE: 1225 | Bias: 76.2
+
+Config 15 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1079.2 | R2: 0.9674 | Bias: 88.8
+  [VAL AVG]   MAE: 1260.2 | R2: 0.9515 | Bias: 103.6 | RMSE: 2140.1
+
+######## CONFIG 16/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 127, 'max_iter': 800, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 3.0}
+
+[C16|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9655 | RMSE: 1814 | MAE: 1035 | Bias: 88.7
+  > [VAL]   R2: 0.9586 | RMSE: 1936 | MAE: 1235 | Bias: 59.6
+
+[C16|F2] Processing fold...
+  > [TRAIN] R2: 0.9688 | RMSE: 1722 | MAE: 1050 | Bias: 83.1
+  > [VAL]   R2: 0.9505 | RMSE: 2156 | MAE: 1269 | Bias: 85.1
+
+[C16|F3] Processing fold...
+  > [TRAIN] R2: 0.9684 | RMSE: 1732 | MAE: 1023 | Bias: 83.9
+  > [VAL]   R2: 0.9481 | RMSE: 2207 | MAE: 1258 | Bias: 139.6
+
+[C16|F4] Processing fold...
+  > [TRAIN] R2: 0.9693 | RMSE: 1696 | MAE: 1063 | Bias: 82.8
+  > [VAL]   R2: 0.9329 | RMSE: 2625 | MAE: 1289 | Bias: 131.5
+
+[C16|F5] Processing fold...
+  > [TRAIN] R2: 0.9705 | RMSE: 1670 | MAE: 1018 | Bias: 75.2
+  > [VAL]   R2: 0.9574 | RMSE: 2025 | MAE: 1237 | Bias: 76.1
+
+[C16|F6] Processing fold...
+  > [TRAIN] R2: 0.9704 | RMSE: 1672 | MAE: 1015 | Bias: 80.0
+  > [VAL]   R2: 0.9540 | RMSE: 2105 | MAE: 1236 | Bias: 112.1
+
+[C16|F7] Processing fold...
+  > [TRAIN] R2: 0.9658 | RMSE: 1801 | MAE: 1087 | Bias: 91.7
+  > [VAL]   R2: 0.9572 | RMSE: 2013 | MAE: 1234 | Bias: 119.5
+
+[C16|F8] Processing fold...
+  > [TRAIN] R2: 0.9706 | RMSE: 1676 | MAE: 1027 | Bias: 85.0
+  > [VAL]   R2: 0.9567 | RMSE: 1976 | MAE: 1208 | Bias: 71.0
+
+Config 16 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1039.8 | R2: 0.9687 | Bias: 83.8
+  [VAL AVG]   MAE: 1245.8 | R2: 0.9519 | Bias: 99.3 | RMSE: 2130.2
+
+######## CONFIG 17/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 191, 'max_iter': 1000, 'max_depth': None, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 1.0}
+
+[C17|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9675 | RMSE: 1760 | MAE: 995 | Bias: 84.8
+  > [VAL]   R2: 0.9592 | RMSE: 1923 | MAE: 1225 | Bias: 51.5
+
+[C17|F2] Processing fold...
+  > [TRAIN] R2: 0.9684 | RMSE: 1733 | MAE: 1043 | Bias: 84.6
+  > [VAL]   R2: 0.9497 | RMSE: 2173 | MAE: 1269 | Bias: 90.1
+
+[C17|F3] Processing fold...
+  > [TRAIN] R2: 0.9682 | RMSE: 1737 | MAE: 1023 | Bias: 84.5
+  > [VAL]   R2: 0.9463 | RMSE: 2247 | MAE: 1264 | Bias: 137.6
+
+[C17|F4] Processing fold...
+  > [TRAIN] R2: 0.9751 | RMSE: 1528 | MAE: 953 | Bias: 72.1
+  > [VAL]   R2: 0.9336 | RMSE: 2613 | MAE: 1274 | Bias: 121.4
+
+[C17|F5] Processing fold...
+  > [TRAIN] R2: 0.9717 | RMSE: 1637 | MAE: 986 | Bias: 72.8
+  > [VAL]   R2: 0.9577 | RMSE: 2018 | MAE: 1236 | Bias: 76.8
+
+[C17|F6] Processing fold...
+  > [TRAIN] R2: 0.9706 | RMSE: 1667 | MAE: 1003 | Bias: 81.3
+  > [VAL]   R2: 0.9531 | RMSE: 2127 | MAE: 1234 | Bias: 111.0
+
+[C17|F7] Processing fold...
+  > [TRAIN] R2: 0.9680 | RMSE: 1741 | MAE: 1040 | Bias: 85.3
+  > [VAL]   R2: 0.9565 | RMSE: 2028 | MAE: 1222 | Bias: 121.1
+
+[C17|F8] Processing fold...
+  > [TRAIN] R2: 0.9732 | RMSE: 1600 | MAE: 971 | Bias: 78.7
+  > [VAL]   R2: 0.9566 | RMSE: 1980 | MAE: 1202 | Bias: 69.5
+
+Config 17 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1001.8 | R2: 0.9703 | Bias: 80.5
+  [VAL AVG]   MAE: 1240.8 | R2: 0.9516 | Bias: 97.3 | RMSE: 2138.4
+
+######## CONFIG 18/25 ########
+Parameters: {'min_samples_leaf': 16, 'max_leaf_nodes': 127, 'max_iter': 1000, 'max_depth': 15, 'loss': 'squared_error', 'learning_rate': 0.115, 'l2_regularization': 3.0}
+
+[C18|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9681 | RMSE: 1746 | MAE: 999 | Bias: 86.0
+  > [VAL]   R2: 0.9590 | RMSE: 1927 | MAE: 1232 | Bias: 50.3
+
+[C18|F2] Processing fold...
+  > [TRAIN] R2: 0.9691 | RMSE: 1712 | MAE: 1057 | Bias: 85.2
+  > [VAL]   R2: 0.9509 | RMSE: 2146 | MAE: 1278 | Bias: 93.1
+
+[C18|F3] Processing fold...
+  > [TRAIN] R2: 0.9686 | RMSE: 1727 | MAE: 1024 | Bias: 84.6
+  > [VAL]   R2: 0.9487 | RMSE: 2195 | MAE: 1269 | Bias: 145.2
+
+[C18|F4] Processing fold...
+  > [TRAIN] R2: 0.9712 | RMSE: 1642 | MAE: 1035 | Bias: 79.3
+  > [VAL]   R2: 0.9354 | RMSE: 2577 | MAE: 1275 | Bias: 128.7
+
+[C18|F5] Processing fold...
+  > [TRAIN] R2: 0.9739 | RMSE: 1572 | MAE: 964 | Bias: 70.0
+  > [VAL]   R2: 0.9578 | RMSE: 2014 | MAE: 1233 | Bias: 81.2
+
+[C18|F6] Processing fold...
+  > [TRAIN] R2: 0.9749 | RMSE: 1542 | MAE: 936 | Bias: 73.0
+  > [VAL]   R2: 0.9559 | RMSE: 2062 | MAE: 1227 | Bias: 106.5
+
+[C18|F7] Processing fold...
+  > [TRAIN] R2: 0.9685 | RMSE: 1728 | MAE: 1058 | Bias: 88.3
+  > [VAL]   R2: 0.9571 | RMSE: 2014 | MAE: 1225 | Bias: 122.1
+
+[C18|F8] Processing fold...
+  > [TRAIN] R2: 0.9710 | RMSE: 1663 | MAE: 1033 | Bias: 85.8
+  > [VAL]   R2: 0.9571 | RMSE: 1966 | MAE: 1215 | Bias: 65.7
+
+Config 18 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1013.1 | R2: 0.9707 | Bias: 81.5
+  [VAL AVG]   MAE: 1244.2 | R2: 0.9527 | Bias: 99.1 | RMSE: 2112.7
+[NEW BEST RMSE] Config 18
+
+######## CONFIG 19/25 ########
+Parameters: {'min_samples_leaf': 16, 'max_leaf_nodes': 63, 'max_iter': 600, 'max_depth': 25, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 3.0}
+
+[C19|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9642 | RMSE: 1848 | MAE: 1080 | Bias: 94.4
+  > [VAL]   R2: 0.9582 | RMSE: 1945 | MAE: 1244 | Bias: 60.4
+
+[C19|F2] Processing fold...
+  > [TRAIN] R2: 0.9662 | RMSE: 1793 | MAE: 1107 | Bias: 93.1
+  > [VAL]   R2: 0.9506 | RMSE: 2152 | MAE: 1283 | Bias: 92.0
+
+[C19|F3] Processing fold...
+  > [TRAIN] R2: 0.9659 | RMSE: 1800 | MAE: 1083 | Bias: 91.7
+  > [VAL]   R2: 0.9469 | RMSE: 2233 | MAE: 1275 | Bias: 141.7
+
+[C19|F4] Processing fold...
+  > [TRAIN] R2: 0.9680 | RMSE: 1732 | MAE: 1099 | Bias: 88.0
+  > [VAL]   R2: 0.9328 | RMSE: 2626 | MAE: 1293 | Bias: 136.3
+
+[C19|F5] Processing fold...
+  > [TRAIN] R2: 0.9680 | RMSE: 1740 | MAE: 1070 | Bias: 82.4
+  > [VAL]   R2: 0.9570 | RMSE: 2033 | MAE: 1247 | Bias: 88.1
+
+[C19|F6] Processing fold...
+  > [TRAIN] R2: 0.9675 | RMSE: 1752 | MAE: 1070 | Bias: 89.1
+  > [VAL]   R2: 0.9526 | RMSE: 2138 | MAE: 1247 | Bias: 118.7
+
+[C19|F7] Processing fold...
+  > [TRAIN] R2: 0.9684 | RMSE: 1731 | MAE: 1071 | Bias: 91.3
+  > [VAL]   R2: 0.9575 | RMSE: 2006 | MAE: 1227 | Bias: 118.2
+
+[C19|F8] Processing fold...
+  > [TRAIN] R2: 0.9688 | RMSE: 1725 | MAE: 1070 | Bias: 90.3
+  > [VAL]   R2: 0.9560 | RMSE: 1993 | MAE: 1226 | Bias: 82.6
+
+Config 19 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1081.3 | R2: 0.9671 | Bias: 90.0
+  [VAL AVG]   MAE: 1255.3 | R2: 0.9515 | Bias: 104.7 | RMSE: 2140.7
+
+######## CONFIG 20/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 255, 'max_iter': 1200, 'max_depth': 25, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 1.0}
+
+[C20|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9627 | RMSE: 1887 | MAE: 1078 | Bias: 94.3
+  > [VAL]   R2: 0.9584 | RMSE: 1941 | MAE: 1240 | Bias: 58.9
+
+[C20|F2] Processing fold...
+  > [TRAIN] R2: 0.9700 | RMSE: 1687 | MAE: 1019 | Bias: 80.8
+  > [VAL]   R2: 0.9489 | RMSE: 2191 | MAE: 1271 | Bias: 91.5
+
+[C20|F3] Processing fold...
+  > [TRAIN] R2: 0.9663 | RMSE: 1788 | MAE: 1049 | Bias: 87.4
+  > [VAL]   R2: 0.9447 | RMSE: 2279 | MAE: 1274 | Bias: 140.3
+
+[C20|F4] Processing fold...
+  > [TRAIN] R2: 0.9747 | RMSE: 1539 | MAE: 962 | Bias: 72.3
+  > [VAL]   R2: 0.9347 | RMSE: 2590 | MAE: 1274 | Bias: 128.0
+
+[C20|F5] Processing fold...
+  > [TRAIN] R2: 0.9719 | RMSE: 1630 | MAE: 985 | Bias: 72.0
+  > [VAL]   R2: 0.9570 | RMSE: 2033 | MAE: 1238 | Bias: 80.5
+
+[C20|F6] Processing fold...
+  > [TRAIN] R2: 0.9695 | RMSE: 1697 | MAE: 1019 | Bias: 82.6
+  > [VAL]   R2: 0.9513 | RMSE: 2167 | MAE: 1240 | Bias: 109.5
+
+[C20|F7] Processing fold...
+  > [TRAIN] R2: 0.9693 | RMSE: 1707 | MAE: 1021 | Bias: 84.2
+  > [VAL]   R2: 0.9573 | RMSE: 2010 | MAE: 1223 | Bias: 120.9
+
+[C20|F8] Processing fold...
+  > [TRAIN] R2: 0.9736 | RMSE: 1588 | MAE: 969 | Bias: 77.4
+  > [VAL]   R2: 0.9564 | RMSE: 1984 | MAE: 1200 | Bias: 71.4
+
+Config 20 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1012.7 | R2: 0.9698 | Bias: 81.4
+  [VAL AVG]   MAE: 1245.2 | R2: 0.9511 | Bias: 100.1 | RMSE: 2149.4
+
+######## CONFIG 21/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 191, 'max_iter': 1200, 'max_depth': 25, 'loss': 'squared_error', 'learning_rate': 0.115, 'l2_regularization': 0.3}
+
+[C21|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9675 | RMSE: 1762 | MAE: 997 | Bias: 84.4
+  > [VAL]   R2: 0.9593 | RMSE: 1919 | MAE: 1226 | Bias: 48.1
+
+[C21|F2] Processing fold...
+  > [TRAIN] R2: 0.9687 | RMSE: 1724 | MAE: 1043 | Bias: 82.1
+  > [VAL]   R2: 0.9486 | RMSE: 2195 | MAE: 1278 | Bias: 86.2
+
+[C21|F3] Processing fold...
+  > [TRAIN] R2: 0.9694 | RMSE: 1706 | MAE: 1001 | Bias: 81.0
+  > [VAL]   R2: 0.9458 | RMSE: 2256 | MAE: 1267 | Bias: 136.5
+
+[C21|F4] Processing fold...
+  > [TRAIN] R2: 0.9741 | RMSE: 1557 | MAE: 981 | Bias: 73.2
+  > [VAL]   R2: 0.9346 | RMSE: 2593 | MAE: 1278 | Bias: 127.7
+
+[C21|F5] Processing fold...
+  > [TRAIN] R2: 0.9739 | RMSE: 1571 | MAE: 955 | Bias: 67.8
+  > [VAL]   R2: 0.9575 | RMSE: 2022 | MAE: 1235 | Bias: 75.7
+
+[C21|F6] Processing fold...
+  > [TRAIN] R2: 0.9693 | RMSE: 1705 | MAE: 1027 | Bias: 82.2
+  > [VAL]   R2: 0.9511 | RMSE: 2171 | MAE: 1248 | Bias: 110.5
+
+[C21|F7] Processing fold...
+  > [TRAIN] R2: 0.9689 | RMSE: 1718 | MAE: 1031 | Bias: 84.3
+  > [VAL]   R2: 0.9567 | RMSE: 2025 | MAE: 1229 | Bias: 122.3
+
+[C21|F8] Processing fold...
+  > [TRAIN] R2: 0.9731 | RMSE: 1601 | MAE: 979 | Bias: 77.1
+  > [VAL]   R2: 0.9567 | RMSE: 1976 | MAE: 1204 | Bias: 69.0
+
+Config 21 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1001.8 | R2: 0.9706 | Bias: 79.0
+  [VAL AVG]   MAE: 1245.5 | R2: 0.9513 | Bias: 97.0 | RMSE: 2144.4
+
+######## CONFIG 22/25 ########
+Parameters: {'min_samples_leaf': 12, 'max_leaf_nodes': 127, 'max_iter': 800, 'max_depth': 15, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 3.0}
+
+[C22|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9653 | RMSE: 1818 | MAE: 1056 | Bias: 92.9
+  > [VAL]   R2: 0.9581 | RMSE: 1947 | MAE: 1242 | Bias: 57.9
+
+[C22|F2] Processing fold...
+  > [TRAIN] R2: 0.9724 | RMSE: 1618 | MAE: 998 | Bias: 79.7
+  > [VAL]   R2: 0.9514 | RMSE: 2134 | MAE: 1256 | Bias: 89.8
+
+[C22|F3] Processing fold...
+  > [TRAIN] R2: 0.9714 | RMSE: 1648 | MAE: 984 | Bias: 80.1
+  > [VAL]   R2: 0.9516 | RMSE: 2133 | MAE: 1251 | Bias: 130.4
+
+[C22|F4] Processing fold...
+  > [TRAIN] R2: 0.9745 | RMSE: 1544 | MAE: 982 | Bias: 75.9
+  > [VAL]   R2: 0.9347 | RMSE: 2589 | MAE: 1272 | Bias: 133.9
+
+[C22|F5] Processing fold...
+  > [TRAIN] R2: 0.9696 | RMSE: 1695 | MAE: 1042 | Bias: 80.0
+  > [VAL]   R2: 0.9568 | RMSE: 2040 | MAE: 1250 | Bias: 91.5
+
+[C22|F6] Processing fold...
+  > [TRAIN] R2: 0.9704 | RMSE: 1672 | MAE: 1023 | Bias: 83.6
+  > [VAL]   R2: 0.9534 | RMSE: 2119 | MAE: 1241 | Bias: 108.8
+
+[C22|F7] Processing fold...
+  > [TRAIN] R2: 0.9713 | RMSE: 1651 | MAE: 1016 | Bias: 85.2
+  > [VAL]   R2: 0.9577 | RMSE: 2001 | MAE: 1217 | Bias: 121.1
+
+[C22|F8] Processing fold...
+  > [TRAIN] R2: 0.9732 | RMSE: 1600 | MAE: 993 | Bias: 82.4
+  > [VAL]   R2: 0.9571 | RMSE: 1968 | MAE: 1205 | Bias: 72.0
+
+Config 22 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1011.7 | R2: 0.9710 | Bias: 82.5
+  [VAL AVG]   MAE: 1242.0 | R2: 0.9526 | Bias: 100.7 | RMSE: 2116.4
+
+######## CONFIG 23/25 ########
+Parameters: {'min_samples_leaf': 12, 'max_leaf_nodes': 63, 'max_iter': 1000, 'max_depth': 25, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 1.0}
+
+[C23|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9654 | RMSE: 1816 | MAE: 1066 | Bias: 92.5
+  > [VAL]   R2: 0.9586 | RMSE: 1936 | MAE: 1247 | Bias: 59.3
+
+[C23|F2] Processing fold...
+  > [TRAIN] R2: 0.9652 | RMSE: 1818 | MAE: 1128 | Bias: 95.1
+  > [VAL]   R2: 0.9504 | RMSE: 2157 | MAE: 1293 | Bias: 94.4
+
+[C23|F3] Processing fold...
+  > [TRAIN] R2: 0.9669 | RMSE: 1774 | MAE: 1069 | Bias: 91.0
+  > [VAL]   R2: 0.9500 | RMSE: 2167 | MAE: 1267 | Bias: 138.1
+
+[C23|F4] Processing fold...
+  > [TRAIN] R2: 0.9654 | RMSE: 1801 | MAE: 1140 | Bias: 94.3
+  > [VAL]   R2: 0.9313 | RMSE: 2656 | MAE: 1319 | Bias: 139.2
+
+[C23|F5] Processing fold...
+  > [TRAIN] R2: 0.9669 | RMSE: 1769 | MAE: 1096 | Bias: 85.8
+  > [VAL]   R2: 0.9570 | RMSE: 2034 | MAE: 1256 | Bias: 89.7
+
+[C23|F6] Processing fold...
+  > [TRAIN] R2: 0.9662 | RMSE: 1788 | MAE: 1099 | Bias: 93.7
+  > [VAL]   R2: 0.9519 | RMSE: 2154 | MAE: 1257 | Bias: 124.9
+
+[C23|F7] Processing fold...
+  > [TRAIN] R2: 0.9638 | RMSE: 1853 | MAE: 1139 | Bias: 99.9
+  > [VAL]   R2: 0.9562 | RMSE: 2035 | MAE: 1259 | Bias: 127.4
+
+[C23|F8] Processing fold...
+  > [TRAIN] R2: 0.9684 | RMSE: 1736 | MAE: 1082 | Bias: 92.5
+  > [VAL]   R2: 0.9553 | RMSE: 2008 | MAE: 1233 | Bias: 84.0
+
+Config 23 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1102.4 | R2: 0.9660 | Bias: 93.1
+  [VAL AVG]   MAE: 1266.3 | R2: 0.9513 | Bias: 107.1 | RMSE: 2143.3
+
+######## CONFIG 24/25 ########
+Parameters: {'min_samples_leaf': 28, 'max_leaf_nodes': 191, 'max_iter': 600, 'max_depth': None, 'loss': 'squared_error', 'learning_rate': 0.085, 'l2_regularization': 0.3}
+
+[C24|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9681 | RMSE: 1744 | MAE: 980 | Bias: 84.1
+  > [VAL]   R2: 0.9596 | RMSE: 1912 | MAE: 1221 | Bias: 43.2
+
+[C24|F2] Processing fold...
+  > [TRAIN] R2: 0.9666 | RMSE: 1780 | MAE: 1072 | Bias: 86.8
+  > [VAL]   R2: 0.9492 | RMSE: 2184 | MAE: 1283 | Bias: 93.7
+
+[C24|F3] Processing fold...
+  > [TRAIN] R2: 0.9674 | RMSE: 1760 | MAE: 1034 | Bias: 86.2
+  > [VAL]   R2: 0.9464 | RMSE: 2243 | MAE: 1267 | Bias: 137.6
+
+[C24|F4] Processing fold...
+  > [TRAIN] R2: 0.9704 | RMSE: 1666 | MAE: 1031 | Bias: 79.6
+  > [VAL]   R2: 0.9342 | RMSE: 2600 | MAE: 1284 | Bias: 127.3
+
+[C24|F5] Processing fold...
+  > [TRAIN] R2: 0.9715 | RMSE: 1641 | MAE: 990 | Bias: 73.3
+  > [VAL]   R2: 0.9571 | RMSE: 2032 | MAE: 1242 | Bias: 75.4
+
+[C24|F6] Processing fold...
+  > [TRAIN] R2: 0.9714 | RMSE: 1646 | MAE: 992 | Bias: 80.1
+  > [VAL]   R2: 0.9532 | RMSE: 2124 | MAE: 1229 | Bias: 113.3
+
+[C24|F7] Processing fold...
+  > [TRAIN] R2: 0.9664 | RMSE: 1786 | MAE: 1064 | Bias: 89.0
+  > [VAL]   R2: 0.9567 | RMSE: 2024 | MAE: 1230 | Bias: 131.0
+
+[C24|F8] Processing fold...
+  > [TRAIN] R2: 0.9702 | RMSE: 1686 | MAE: 1021 | Bias: 85.3
+  > [VAL]   R2: 0.9560 | RMSE: 1993 | MAE: 1205 | Bias: 72.9
+
+Config 24 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1023.1 | R2: 0.9690 | Bias: 83.0
+  [VAL AVG]   MAE: 1245.0 | R2: 0.9515 | Bias: 99.3 | RMSE: 2138.9
+
+######## CONFIG 25/25 ########
+Parameters: {'min_samples_leaf': 16, 'max_leaf_nodes': 127, 'max_iter': 800, 'max_depth': 15, 'loss': 'squared_error', 'learning_rate': 0.07, 'l2_regularization': 0.3}
+
+[C25|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (13/15) with FS_KEEP_RATIO=0.85
+  > [TRAIN] R2: 0.9682 | RMSE: 1742 | MAE: 998 | Bias: 85.6
+  > [VAL]   R2: 0.9591 | RMSE: 1923 | MAE: 1229 | Bias: 51.6
+
+[C25|F2] Processing fold...
+  > [TRAIN] R2: 0.9727 | RMSE: 1611 | MAE: 994 | Bias: 78.7
+  > [VAL]   R2: 0.9524 | RMSE: 2114 | MAE: 1257 | Bias: 88.1
+
+[C25|F3] Processing fold...
+  > [TRAIN] R2: 0.9705 | RMSE: 1675 | MAE: 992 | Bias: 82.5
+  > [VAL]   R2: 0.9485 | RMSE: 2199 | MAE: 1258 | Bias: 137.0
+
+[C25|F4] Processing fold...
+  > [TRAIN] R2: 0.9683 | RMSE: 1723 | MAE: 1086 | Bias: 87.1
+  > [VAL]   R2: 0.9331 | RMSE: 2622 | MAE: 1295 | Bias: 129.9
+
+[C25|F5] Processing fold...
+  > [TRAIN] R2: 0.9733 | RMSE: 1588 | MAE: 977 | Bias: 72.1
+  > [VAL]   R2: 0.9581 | RMSE: 2007 | MAE: 1229 | Bias: 84.1
+
+[C25|F6] Processing fold...
+  > [TRAIN] R2: 0.9718 | RMSE: 1633 | MAE: 994 | Bias: 79.8
+  > [VAL]   R2: 0.9538 | RMSE: 2111 | MAE: 1230 | Bias: 111.4
+
+[C25|F7] Processing fold...
+  > [TRAIN] R2: 0.9669 | RMSE: 1773 | MAE: 1083 | Bias: 92.9
+  > [VAL]   R2: 0.9570 | RMSE: 2017 | MAE: 1236 | Bias: 133.9
+
+[C25|F8] Processing fold...
+  > [TRAIN] R2: 0.9714 | RMSE: 1653 | MAE: 1023 | Bias: 85.2
+  > [VAL]   R2: 0.9565 | RMSE: 1982 | MAE: 1213 | Bias: 70.2
+
+Config 25 SUMMARY:
+  Selected features (avg): 13 / 10 (note: final space is after encoding)
+  [TRAIN AVG] MAE: 1018.5 | R2: 0.9704 | Bias: 83.0
+  [VAL AVG]   MAE: 1243.6 | R2: 0.9523 | Bias: 100.8 | RMSE: 2121.9
+# END OF SEARCH

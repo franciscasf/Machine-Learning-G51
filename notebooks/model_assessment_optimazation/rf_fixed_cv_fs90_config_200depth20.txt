@@ -1,0 +1,251 @@
+# RandomForest - Fixed Config CV (NO log-target) + FS=0.90
+N_SPLITS = 8
+params = {'n_estimators': 200, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.5, 'max_depth': 20, 'bootstrap': True}
+FS_KEEP_RATIO = 0.9
+
+[FIXED|F1] -- FOLD 1/8
+[FIXED|F1] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[FIXED|F1] y_train shape: (66476,), y_val shape: (9497,)
+[FIXED|F1] NaNs before (just numerical):
+year              1306
+mileage           1252
+engineSize        1344
+tax               6940
+mpg               6961
+previousOwners    1331
+dtype: int64
+[FIXED|F1] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F1] 'UNKNOWN' before (categorical):
+Brand           1328
+model           1314
+transmission    1944
+fuelType        1296
+dtype: Int64
+[FIXED|F1] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F1] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F1] training RandomForestRegressor...
+[FIXED|F1] TRAIN -> RMSE: 1015.7392 | MAE: 642.7144 | R²: 0.9892
+[FIXED|F1] VAL   -> RMSE: 1999.4559 | MAE: 1266.1232 | R²: 0.9558
+
+[FIXED|F2] -- FOLD 2/8
+[FIXED|F2] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[FIXED|F2] y_train shape: (66476,), y_val shape: (9497,)
+[FIXED|F2] NaNs before (just numerical):
+year              1312
+mileage           1289
+engineSize        1316
+tax               6942
+mpg               6941
+previousOwners    1363
+dtype: int64
+[FIXED|F2] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F2] 'UNKNOWN' before (categorical):
+Brand           1337
+model           1330
+transmission    1967
+fuelType        1310
+dtype: Int64
+[FIXED|F2] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F2] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F2] training RandomForestRegressor...
+[FIXED|F2] TRAIN -> RMSE: 1022.1550 | MAE: 642.0918 | R²: 0.9890
+[FIXED|F2] VAL   -> RMSE: 2140.7635 | MAE: 1292.6790 | R²: 0.9512
+
+[FIXED|F3] -- FOLD 3/8
+[FIXED|F3] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[FIXED|F3] y_train shape: (66476,), y_val shape: (9497,)
+[FIXED|F3] NaNs before (just numerical):
+year              1297
+mileage           1292
+engineSize        1326
+tax               6911
+mpg               6935
+previousOwners    1370
+dtype: int64
+[FIXED|F3] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F3] 'UNKNOWN' before (categorical):
+Brand           1336
+model           1334
+transmission    1943
+fuelType        1323
+dtype: Int64
+[FIXED|F3] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F3] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F3] training RandomForestRegressor...
+[FIXED|F3] TRAIN -> RMSE: 1029.2219 | MAE: 640.1276 | R²: 0.9888
+[FIXED|F3] VAL   -> RMSE: 2226.8860 | MAE: 1285.9897 | R²: 0.9472
+
+[FIXED|F4] -- FOLD 4/8
+[FIXED|F4] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[FIXED|F4] y_train shape: (66476,), y_val shape: (9497,)
+[FIXED|F4] NaNs before (just numerical):
+year              1283
+mileage           1272
+engineSize        1330
+tax               6959
+mpg               6976
+previousOwners    1346
+dtype: int64
+[FIXED|F4] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F4] 'UNKNOWN' before (categorical):
+Brand           1340
+model           1320
+transmission    1935
+fuelType        1323
+dtype: Int64
+[FIXED|F4] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F4] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F4] training RandomForestRegressor...
+[FIXED|F4] TRAIN -> RMSE: 993.0739 | MAE: 638.2175 | R²: 0.9895
+[FIXED|F4] VAL   -> RMSE: 2681.9809 | MAE: 1321.9226 | R²: 0.9300
+
+[FIXED|F5] -- FOLD 5/8
+[FIXED|F5] X_train shape: (66476, 10), X_val shape: (9497, 10)
+[FIXED|F5] y_train shape: (66476,), y_val shape: (9497,)
+[FIXED|F5] NaNs before (just numerical):
+year              1307
+mileage           1273
+engineSize        1310
+tax               6902
+mpg               6954
+previousOwners    1357
+dtype: int64
+[FIXED|F5] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F5] 'UNKNOWN' before (categorical):
+Brand           1321
+model           1332
+transmission    1945
+fuelType        1345
+dtype: Int64
+[FIXED|F5] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F5] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F5] training RandomForestRegressor...
+[FIXED|F5] TRAIN -> RMSE: 1025.4349 | MAE: 642.1349 | R²: 0.9889
+[FIXED|F5] VAL   -> RMSE: 2108.8711 | MAE: 1273.5046 | R²: 0.9538
+
+[FIXED|F6] -- FOLD 6/8
+[FIXED|F6] X_train shape: (66477, 10), X_val shape: (9496, 10)
+[FIXED|F6] y_train shape: (66477,), y_val shape: (9496,)
+[FIXED|F6] NaNs before (just numerical):
+year              1307
+mileage           1288
+engineSize        1352
+tax               6887
+mpg               6893
+previousOwners    1358
+dtype: int64
+[FIXED|F6] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F6] 'UNKNOWN' before (categorical):
+Brand           1320
+model           1348
+transmission    1963
+fuelType        1328
+dtype: Int64
+[FIXED|F6] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F6] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F6] training RandomForestRegressor...
+[FIXED|F6] TRAIN -> RMSE: 1027.1363 | MAE: 642.3714 | R²: 0.9888
+[FIXED|F6] VAL   -> RMSE: 2140.0948 | MAE: 1268.4682 | R²: 0.9525
+
+[FIXED|F7] -- FOLD 7/8
+[FIXED|F7] X_train shape: (66477, 10), X_val shape: (9496, 10)
+[FIXED|F7] y_train shape: (66477,), y_val shape: (9496,)
+[FIXED|F7] NaNs before (just numerical):
+year              1311
+mileage           1272
+engineSize        1319
+tax               6885
+mpg               6903
+previousOwners    1358
+dtype: int64
+[FIXED|F7] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F7] 'UNKNOWN' before (categorical):
+Brand           1322
+model           1302
+transmission    1937
+fuelType        1334
+dtype: Int64
+[FIXED|F7] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F7] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F7] training RandomForestRegressor...
+[FIXED|F7] TRAIN -> RMSE: 1020.9277 | MAE: 645.2366 | R²: 0.9890
+[FIXED|F7] VAL   -> RMSE: 2047.8034 | MAE: 1247.1966 | R²: 0.9557
+
+[FIXED|F8] -- FOLD 8/8
+[FIXED|F8] X_train shape: (66477, 10), X_val shape: (9496, 10)
+[FIXED|F8] y_train shape: (66477,), y_val shape: (9496,)
+[FIXED|F8] NaNs before (just numerical):
+year              1314
+mileage           1303
+engineSize        1315
+tax               6902
+mpg               6919
+previousOwners    1367
+dtype: int64
+[FIXED|F8] NaNs before (categorical):
+Brand           0
+model           0
+transmission    0
+fuelType        0
+dtype: int64
+[FIXED|F8] 'UNKNOWN' before (categorical):
+Brand           1343
+model           1339
+transmission    1948
+fuelType        1318
+dtype: Int64
+[FIXED|F8] Após resolver fuelType:
+  Valores distintos (train): ['DIESEL', 'ELECTRIC', 'HYBRID', 'OTHER', 'PETROL']
+[FIXED|F8] FS keep_ratio=0.90: kept 15/16 features
+[FIXED|F8] training RandomForestRegressor...
+[FIXED|F8] TRAIN -> RMSE: 1022.1751 | MAE: 643.1325 | R²: 0.9891
+[FIXED|F8] VAL   -> RMSE: 2053.9976 | MAE: 1251.0509 | R²: 0.9532
+
+# =============================
+# CV SUMMARY (Fixed Config)
+# =============================
+TRAIN RMSE mean: 1019.4830 | MAE: 642.0033 | R²: 0.9890
+VAL   RMSE mean: 2174.9816 | MAE: 1275.8669 | R²: 0.9499
+Logs stored at: rf_fixed_cv_fs90_config_200depth20.txt

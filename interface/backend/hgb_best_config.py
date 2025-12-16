@@ -1,28 +1,10 @@
-# interface/backend/hgb_best_simple.py
 import numpy as np
 import pandas as pd
 
 from sklearn.ensemble import RandomForestRegressor, HistGradientBoostingRegressor
 from sklearn.feature_selection import SelectFromModel
 
-# ============================================================
-# TODO: GARANTE que estas funções/classes estão importáveis aqui
-# (ou cola-as neste ficheiro)
-#
-# fill_unknown
-# column_string_transformer
-# fit_year_median / transform_year_with_model_median
-# fit_mileage_imputer / transform_mileage_imputer
-# fit_engine_size_imputer / transform_engine_size_imputer
-# transform_tax_custom_rules
-# fit_mpg_imputer / transform_mpg_imputer
-# fit_ambiguous_brand_resolver / transform_ambiguous_brands
-# fit_invalid_model_resolver / transform_invalid_models
-# fit_transmission_resolver / transform_transmission_resolver
-# fit_fueltype_resolver / transform_fueltype_resolver
-# create_age_and_drop_year
-# MyTargetEncoder / MyOneHotEncoder
-# ============================================================
+# We converted our preprocessing notebook into a Python module to reuse the same logic
 from .preproc_helpers import (
     cat_feat,
     correct_invalid_brands_in_df,
@@ -43,10 +25,16 @@ from .preproc_helpers import (
     MyTargetEncoder, MyOneHotEncoder,
 )
 
-### the changes made in preproc_helpers.py regarding full_train_dataset
+
+# ----> Dataset loading and deterministic cleanup
+# We load the full training dataset once and apply the same initial
+# cleanup steps used in the notebook. 
 valid_brands = ['FORD', 'MERCEDES', 'VW', 'OPEL', 'BMW', 'AUDI', 'TOYOTA', 'SKODA', 'HYUNDAI']
+
 full_train_dataset = pd.read_csv("project_data/train.csv")
+
 full_train_dataset = full_train_dataset.drop(columns=['carID', 'hasDamage', 'paintQuality%'])
+
 full_train_dataset = preprocess_categorical(
     full_train_dataset,
     cat_feat,
@@ -57,7 +45,6 @@ invalids = sorted(
     [b for b in full_train_dataset['Brand'].unique() if b not in valid_brands],
     key=len
 )
-
 full_train_dataset, corrections, remaining_invalids = correct_invalid_brands_in_df(
     full_train_dataset,
     col='Brand',
@@ -91,39 +78,29 @@ valid_models_by_brand = {
     for brand, models in valid_models_by_brand.items()
 }
 
-
+##
 
 ####
-# this is what we run in the model's files
-TARGET_COL = "price"  
-# separate features and target variable from the full training datase
+# ---> We just replicate what was previously done in our 
+# gradient boosting notebook  
+
+RANDOM_STATE = 42 # seed to control randomness
+TARGET_COL = "price" 
+
+# separate features from target 
 y = full_train_dataset[TARGET_COL].copy()
 X = full_train_dataset.drop(columns=[TARGET_COL]).copy()
 
-# at this point, this are all the features in use 
+# Explicit feature schema for preprocessing and encoding.
 categorical_features = ['Brand', 'model', 'transmission', 'fuelType']              
-numeric_features = ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'previousOwners']
+NUMERIC_FEATURES = ["year", "mileage", "engineSize", "tax", "mpg"]
 
 print("X shape:", X.shape)
 print("y shape:", y.shape)
-print("Num features:", numeric_features)
+print("Num features:", NUMERIC_FEATURES)
 print("Cat features:", categorical_features)
 
-N_SPLITS = 8 # the number of folds for K-Fold cross-validation
-RANDOM_STATE = 42 # seed to control randomness
-
-
-N_SPLITS = 8
-N_ITER = 10
-RANDOM_STATE = 42
-
-###
-
-# CONFIG 
-RANDOM_STATE = 42
-
-NUMERIC_FEATURES = ["year", "mileage", "engineSize", "tax", "mpg"]
-
+# Final tuned parameters for the HGB model (obtained in the notebook)
 FINAL_PARAMS = {
     "min_samples_leaf": 16,
     "max_leaf_nodes": 191,
@@ -134,7 +111,11 @@ FINAL_PARAMS = {
     "l2_regularization": 3.0,
 }
 
-FS_KEEP_RATIO = 1.0  # como no teu teste
+# we are not using feature selection, but this option seemed more modular
+# in case we decided to change our final prediction model
+FS_KEEP_RATIO = 1.0  
+
+# the parameters for the random forest - for feature selection 
 RF_FS_PARAMS = {
     "n_estimators": 500,
     "random_state": RANDOM_STATE,
@@ -147,7 +128,9 @@ RF_FS_PARAMS = {
 }
 
 COLS_TO_NORMALIZE = ["Brand", "model", "transmission", "fuelType"]
-HIGH_CARD = ["Brand", "model"]
+
+HIGH_CARD = ["Brand", "model"] # the ones that will receive target encoding
+
 BASE_YEAR = 2020
 
 
@@ -162,17 +145,31 @@ def fit_hgb_best(
     valid_fueltypes,
 ) -> dict:
     """
-    Faz o teu 'FIT ON FULL TRAIN' + encoding + FS + treino final.
-    Devolve um dict com tudo o que é preciso para inferência.
+    Fit pipeline on the full training data and return all fitted objects needed for inference.
+
+    What is learned here:
+    - cleaning/imputation "states" (medians/rules) for numeric fields
+    - resolvers for categorical inconsistencies (brand/model/transmission/fuelType)
+    - target encoder and one-hot encoder fitted on the full training set
+    - optional feature selection mask (via RF + SelectFromModel)
+    - final HistGradientBoostingRegressor trained in log-space
+
+    Important: the model is trained on log1p(price), so then we must invert predictions
+    back to price using expm1.
     """
     X_full = X.copy()
     y_full = y.copy()
+
+    # Log-target strategy:
+    # - stabilizes variance and reduces the impact of very high prices during training
+    # - requires expm1() at inference time to return predictions in pounds
     y_full_log = np.log1p(y_full.astype(float))
 
     low_card_features = [c for c in categorical_features if c not in HIGH_CARD]
-    low_card_curr = low_card_features  # sem engine_bin
+    low_card_curr = low_card_features  
 
-    # 3) STRING NORMALIZATION (TRAIN)
+    # STRING NORMALIZATION (TRAIN) 
+    # this is not necessary, but is done for safety 
     for col in COLS_TO_NORMALIZE:
         if col in X_full.columns:
             X_full[col] = fill_unknown(X_full[col])
@@ -180,11 +177,14 @@ def fit_hgb_best(
                 X_full, column=col, remove_middle_spaces=True, allow_extra_chars=""
             )
 
-    # schema esperado (como no teu teste)
+    # Restrict to the expected baseline schema, ignoring any unexpected columns
+    # This keeps training and inference aligned even if the raw CSV contains extra columns
     expected_cols = [c for c in (NUMERIC_FEATURES + categorical_features) if c in X_full.columns]
     X_full = X_full[expected_cols].copy()
 
-    # 4) FIT + TRANSFORM ON FULL TRAIN
+
+    # Fit + transform on full train (numerical imputations + categorical resolvers)
+    # Each fit_* produces a "state" learned from the training distribution.
     year_state = fit_year_median(X_full, year_col="year", model_col="model")
     X_full = transform_year_with_model_median(X_full, state=year_state)
 
@@ -211,10 +211,11 @@ def fit_hgb_best(
     fuel_state = fit_fueltype_resolver(X_full, valid_fueltypes)
     X_full, _, _ = transform_fueltype_resolver(X_full, fuel_state)
 
-    # 5) FE: ONLY AGE (drop year)
+    # Feature engineering the age value
+    # we create age and drop year
     X_full = create_age_and_drop_year(X_full, year_col="year", base_year=BASE_YEAR)
 
-    # 6) ENCODING (fit on full train) using LOG TARGET
+    # ENCODING 
     te = MyTargetEncoder(smoothing=5)
     te.fit(X_full[HIGH_CARD], y_full_log)
     X_full_high = te.transform(X_full[HIGH_CARD])
@@ -228,10 +229,12 @@ def fit_hgb_best(
     drop_for_numeric = set(HIGH_CARD + low_card_curr)
     numeric_features_curr = [c for c in X_full.columns if c not in drop_for_numeric]
 
+    # Final training matrix before feature selection
     X_full_final = pd.concat([X_full[numeric_features_curr], X_full_cat], axis=1)
-    train_columns = list(X_full_final.columns)
+    train_columns = list(X_full_final.columns) # store the full column list 
 
-    # 7) FEATURE SELECTION (kept)
+
+    # FEATURE SELECTION (in this specific configuration is not being performed)
     n_feats = X_full_final.shape[1]
     k = int(np.ceil(FS_KEEP_RATIO * n_feats))
     k = max(1, min(k, n_feats))
@@ -249,10 +252,12 @@ def fit_hgb_best(
     selected_cols = list(X_full_final.columns[selector.get_support()])
     X_full_sel = X_full_final[selected_cols]
 
-    # 8) TRAIN FINAL HGB (LOG TARGET)
+
+    # TRAIN FINAL HGB (WITH LOG TARGET)
     hgb_final = HistGradientBoostingRegressor(random_state=RANDOM_STATE, **FINAL_PARAMS)
     hgb_final.fit(X_full_sel, y_full_log)
 
+    # Return everything needed for a deterministic "transform + predict" at inference time
     return {
         "expected_cols": expected_cols,
         "categorical_features": categorical_features,
@@ -278,11 +283,22 @@ def fit_hgb_best(
 
 def predict_hgb_best(df_input: pd.DataFrame, fitted: dict, *, id_col: str = "carID") -> pd.DataFrame:
     """
-    Faz o teu 'TRANSFORM TEST + PREDICT', mas usando df_input em vez de test.csv.
+    Apply the fitted preprocessing/encoding/selection pipeline and return predictions
+
+    This function mirrors the training pipeline:
+    - same string normalization
+    - same schema 
+    - transform-only steps using fitted "states"
+    - same feature engineering (age)
+    - encoding with the fitted encoders
+    - alignment to the exact training columns 
+    - feature selection using the stored selected columns
+    - predict in log-space and invert to euros
     """
+
     df = df_input.copy()
 
-    # Normalização strings (igual)
+    # String normalization 
     for col in COLS_TO_NORMALIZE:
         if col in df.columns:
             df[col] = fill_unknown(df[col])
@@ -290,10 +306,10 @@ def predict_hgb_best(df_input: pd.DataFrame, fitted: dict, *, id_col: str = "car
                 df, column=col, remove_middle_spaces=True, allow_extra_chars=""
             )
 
-    # schema base (igual)
+    # alignment
     X_test = df.reindex(columns=fitted["expected_cols"], fill_value=np.nan).copy()
 
-    # transforms (transform-only)
+    # transform only preprocessing using fitted states
     X_test = transform_year_with_model_median(X_test, state=fitted["year_state"])
     X_test = transform_mileage_imputer(X_test, state=fitted["mileage_state"])
     X_test = transform_engine_size_imputer(X_test, state=fitted["engine_state"])
@@ -305,10 +321,10 @@ def predict_hgb_best(df_input: pd.DataFrame, fitted: dict, *, id_col: str = "car
     X_test, _, _ = transform_transmission_resolver(X_test, fitted["transm_state"])
     X_test, _, _ = transform_fueltype_resolver(X_test, fitted["fuel_state"])
 
-    # FE: ONLY AGE
+    # FE: just AGE
     X_test = create_age_and_drop_year(X_test, year_col="year", base_year=BASE_YEAR)
 
-    # encoding transform-only
+    # encoding transform
     te = fitted["te"]
     ohe = fitted["ohe"]
     low_card_curr = fitted["low_card_curr"]
@@ -320,6 +336,7 @@ def predict_hgb_best(df_input: pd.DataFrame, fitted: dict, *, id_col: str = "car
     drop_for_numeric = set(HIGH_CARD + low_card_curr)
     numeric_features_curr_test = [c for c in X_test.columns if c not in drop_for_numeric]
 
+    # Align to training columns
     X_test_final = pd.concat([X_test[numeric_features_curr_test], X_test_cat], axis=1)
 
     # align to train columns before selecting
@@ -331,7 +348,7 @@ def predict_hgb_best(df_input: pd.DataFrame, fitted: dict, *, id_col: str = "car
     # predict + invert log1p
     pred_log = fitted["model"].predict(X_test_sel)
     pred = np.expm1(pred_log)
-    pred = np.maximum(pred, 0)
+    pred = np.maximum(pred, 0) #prices >= 0, just for safety 
 
     out = pd.DataFrame({"price": pred})
     if id_col in df.columns:

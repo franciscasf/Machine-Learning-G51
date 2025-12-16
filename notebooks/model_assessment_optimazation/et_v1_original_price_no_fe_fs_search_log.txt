@@ -1,0 +1,476 @@
+[2025-12-15 15:06:23] # =======================================
+[2025-12-15 15:06:23] # START ExtraTrees RANDOM SEARCH | et_v1_original_price_no_fe_fs
+[2025-12-15 15:06:23] # Original features, no FE/FS, target=price
+[2025-12-15 15:06:23] # =======================================
+[2025-12-15 15:06:23] N_SPLITS=8 | N_CONFIGS=20
+[2025-12-15 15:06:23] param_space={'n_estimators': [600, 800, 1000], 'max_depth': [None, 20, 30], 'min_samples_split': [2, 4], 'min_samples_leaf': [1, 2, 4], 'max_features': ['sqrt', 0.5, 0.7], 'bootstrap': [False]}
+[2025-12-15 15:06:23] 
+[2025-12-15 15:06:23] ######## CONFIG 1/20 ########
+[2025-12-15 15:06:23] Parameters: {'n_estimators': 1000, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 0.7, 'max_depth': 30, 'bootstrap': False}
+[2025-12-15 15:06:23] 
+[C1|F1] fold start
+[2025-12-15 15:06:54] 
+[C1|F2] fold start
+[2025-12-15 15:07:26] 
+[C1|F3] fold start
+[2025-12-15 15:08:03] 
+[C1|F4] fold start
+[2025-12-15 15:08:34] 
+[C1|F5] fold start
+[2025-12-15 15:09:08] 
+[C1|F6] fold start
+[2025-12-15 15:09:43] 
+[C1|F7] fold start
+[2025-12-15 15:10:16] 
+[C1|F8] fold start
+[2025-12-15 15:10:51] 
+Config 1 SUMMARY:
+[2025-12-15 15:10:51]   [TRAIN AVG] RMSE: 1809.27 | MAE: 1058.46 | R2: 0.9655 | Bias: 0.00
+[2025-12-15 15:10:51]   [VAL AVG]   RMSE: 2343.43 | MAE: 1344.56 | R2: 0.9419 | Bias: -1.86 | Feats: 16
+[2025-12-15 15:10:51] [NEW BEST RMSE] Config 1 | RMSE=2343.4333
+[2025-12-15 15:10:51] 
+[2025-12-15 15:10:51] ######## CONFIG 2/20 ########
+[2025-12-15 15:10:51] Parameters: {'n_estimators': 800, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 30, 'bootstrap': False}
+[2025-12-15 15:10:51] 
+[C2|F1] fold start
+[2025-12-15 15:11:29] 
+[C2|F2] fold start
+[2025-12-15 15:12:06] 
+[C2|F3] fold start
+[2025-12-15 15:12:47] 
+[C2|F4] fold start
+[2025-12-15 15:13:23] 
+[C2|F5] fold start
+[2025-12-15 15:14:05] 
+[C2|F6] fold start
+[2025-12-15 15:14:42] 
+[C2|F7] fold start
+[2025-12-15 15:15:24] 
+[C2|F8] fold start
+[2025-12-15 15:16:03] 
+Config 2 SUMMARY:
+[2025-12-15 15:16:03]   [TRAIN AVG] RMSE: 483.46 | MAE: 231.46 | R2: 0.9975 | Bias: 0.00
+[2025-12-15 15:16:03]   [VAL AVG]   RMSE: 2334.00 | MAE: 1341.36 | R2: 0.9424 | Bias: 0.19 | Feats: 16
+[2025-12-15 15:16:03] [NEW BEST RMSE] Config 2 | RMSE=2333.9979
+[2025-12-15 15:16:03] 
+[2025-12-15 15:16:03] ######## CONFIG 3/20 ########
+[2025-12-15 15:16:03] Parameters: {'n_estimators': 1000, 'min_samples_split': 4, 'min_samples_leaf': 1, 'max_features': 0.5, 'max_depth': 30, 'bootstrap': False}
+[2025-12-15 15:16:03] 
+[C3|F1] fold start
+[2025-12-15 15:16:48] 
+[C3|F2] fold start
+[2025-12-15 15:17:28] 
+[C3|F3] fold start
+[2025-12-15 15:18:11] 
+[C3|F4] fold start
+[2025-12-15 15:18:50] 
+[C3|F5] fold start
+[2025-12-15 15:19:34] 
+[C3|F6] fold start
+[2025-12-15 15:20:15] 
+[C3|F7] fold start
+[2025-12-15 15:20:58] 
+[C3|F8] fold start
+[2025-12-15 15:21:39] 
+Config 3 SUMMARY:
+[2025-12-15 15:21:39]   [TRAIN AVG] RMSE: 867.36 | MAE: 520.09 | R2: 0.9921 | Bias: 0.00
+[2025-12-15 15:21:39]   [VAL AVG]   RMSE: 2205.64 | MAE: 1283.20 | R2: 0.9485 | Bias: 3.31 | Feats: 16
+[2025-12-15 15:21:39] [NEW BEST RMSE] Config 3 | RMSE=2205.6433
+[2025-12-15 15:21:39] 
+[2025-12-15 15:21:39] ######## CONFIG 4/20 ########
+[2025-12-15 15:21:39] Parameters: {'n_estimators': 800, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'sqrt', 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 15:21:39] 
+[C4|F1] fold start
+[2025-12-15 15:22:08] 
+[C4|F2] fold start
+[2025-12-15 15:22:34] 
+[C4|F3] fold start
+[2025-12-15 15:23:00] 
+[C4|F4] fold start
+[2025-12-15 15:23:25] 
+[C4|F5] fold start
+[2025-12-15 15:23:51] 
+[C4|F6] fold start
+[2025-12-15 15:24:17] 
+[C4|F7] fold start
+[2025-12-15 15:24:43] 
+[C4|F8] fold start
+[2025-12-15 15:25:12] 
+Config 4 SUMMARY:
+[2025-12-15 15:25:12]   [TRAIN AVG] RMSE: 1665.08 | MAE: 1096.37 | R2: 0.9708 | Bias: 0.00
+[2025-12-15 15:25:12]   [VAL AVG]   RMSE: 2496.11 | MAE: 1513.56 | R2: 0.9342 | Bias: -2.44 | Feats: 16
+[2025-12-15 15:25:12] 
+[2025-12-15 15:25:12] ######## CONFIG 5/20 ########
+[2025-12-15 15:25:12] Parameters: {'n_estimators': 800, 'min_samples_split': 4, 'min_samples_leaf': 1, 'max_features': 0.7, 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 15:25:12] 
+[C5|F1] fold start
+[2025-12-15 15:25:45] 
+[C5|F2] fold start
+[2025-12-15 15:26:17] 
+[C5|F3] fold start
+[2025-12-15 15:26:53] 
+[C5|F4] fold start
+[2025-12-15 15:27:26] 
+[C5|F5] fold start
+[2025-12-15 15:27:58] 
+[C5|F6] fold start
+[2025-12-15 15:28:34] 
+[C5|F7] fold start
+[2025-12-15 15:29:07] 
+[C5|F8] fold start
+[2025-12-15 15:29:39] 
+Config 5 SUMMARY:
+[2025-12-15 15:29:39]   [TRAIN AVG] RMSE: 1242.51 | MAE: 776.64 | R2: 0.9837 | Bias: -0.00
+[2025-12-15 15:29:39]   [VAL AVG]   RMSE: 2189.71 | MAE: 1294.02 | R2: 0.9492 | Bias: 3.43 | Feats: 16
+[2025-12-15 15:29:39] [NEW BEST RMSE] Config 5 | RMSE=2189.7117
+[2025-12-15 15:29:39] 
+[2025-12-15 15:29:39] ######## CONFIG 6/20 ########
+[2025-12-15 15:29:39] Parameters: {'n_estimators': 1000, 'min_samples_split': 4, 'min_samples_leaf': 2, 'max_features': 0.5, 'max_depth': None, 'bootstrap': False}
+[2025-12-15 15:29:39] 
+[C6|F1] fold start
+[2025-12-15 15:30:19] 
+[C6|F2] fold start
+[2025-12-15 15:30:58] 
+[C6|F3] fold start
+[2025-12-15 15:31:34] 
+[C6|F4] fold start
+[2025-12-15 15:32:13] 
+[C6|F5] fold start
+[2025-12-15 15:32:51] 
+[C6|F6] fold start
+[2025-12-15 15:33:27] 
+[C6|F7] fold start
+[2025-12-15 15:34:05] 
+[C6|F8] fold start
+[2025-12-15 15:34:44] 
+Config 6 SUMMARY:
+[2025-12-15 15:34:44]   [TRAIN AVG] RMSE: 1385.86 | MAE: 837.34 | R2: 0.9797 | Bias: 0.00
+[2025-12-15 15:34:44]   [VAL AVG]   RMSE: 2272.87 | MAE: 1310.94 | R2: 0.9453 | Bias: -0.55 | Feats: 16
+[2025-12-15 15:34:44] 
+[2025-12-15 15:34:44] ######## CONFIG 7/20 ########
+[2025-12-15 15:34:44] Parameters: {'n_estimators': 1000, 'min_samples_split': 4, 'min_samples_leaf': 2, 'max_features': 0.7, 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 15:34:44] 
+[C7|F1] fold start
+[2025-12-15 15:35:20] 
+[C7|F2] fold start
+[2025-12-15 15:35:56] 
+[C7|F3] fold start
+[2025-12-15 15:36:31] 
+[C7|F4] fold start
+[2025-12-15 15:37:07] 
+[C7|F5] fold start
+[2025-12-15 15:37:42] 
+[C7|F6] fold start
+[2025-12-15 15:38:17] 
+[C7|F7] fold start
+[2025-12-15 15:38:53] 
+[C7|F8] fold start
+[2025-12-15 15:39:30] 
+Config 7 SUMMARY:
+[2025-12-15 15:39:30]   [TRAIN AVG] RMSE: 1455.79 | MAE: 898.49 | R2: 0.9776 | Bias: 0.00
+[2025-12-15 15:39:30]   [VAL AVG]   RMSE: 2240.71 | MAE: 1309.53 | R2: 0.9468 | Bias: 0.12 | Feats: 16
+[2025-12-15 15:39:30] 
+[2025-12-15 15:39:30] ######## CONFIG 8/20 ########
+[2025-12-15 15:39:30] Parameters: {'n_estimators': 600, 'min_samples_split': 4, 'min_samples_leaf': 4, 'max_features': 0.7, 'max_depth': None, 'bootstrap': False}
+[2025-12-15 15:39:30] 
+[C8|F1] fold start
+[2025-12-15 15:39:57] 
+[C8|F2] fold start
+[2025-12-15 15:40:24] 
+[C8|F3] fold start
+[2025-12-15 15:40:51] 
+[C8|F4] fold start
+[2025-12-15 15:41:24] 
+[C8|F5] fold start
+[2025-12-15 15:41:59] 
+[C8|F6] fold start
+[2025-12-15 15:42:39] 
+[C8|F7] fold start
+[2025-12-15 15:43:26] 
+[C8|F8] fold start
+[2025-12-15 15:44:05] 
+Config 8 SUMMARY:
+[2025-12-15 15:44:05]   [TRAIN AVG] RMSE: 1809.35 | MAE: 1058.57 | R2: 0.9655 | Bias: -0.00
+[2025-12-15 15:44:05]   [VAL AVG]   RMSE: 2345.15 | MAE: 1345.05 | R2: 0.9418 | Bias: -1.35 | Feats: 16
+[2025-12-15 15:44:05] 
+[2025-12-15 15:44:05] ######## CONFIG 9/20 ########
+[2025-12-15 15:44:05] Parameters: {'n_estimators': 800, 'min_samples_split': 4, 'min_samples_leaf': 2, 'max_features': 0.7, 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 15:44:05] 
+[C9|F1] fold start
+[2025-12-15 15:44:47] 
+[C9|F2] fold start
+[2025-12-15 15:45:29] 
+[C9|F3] fold start
+[2025-12-15 15:46:10] 
+[C9|F4] fold start
+[2025-12-15 15:46:57] 
+[C9|F5] fold start
+[2025-12-15 15:47:37] 
+[C9|F6] fold start
+[2025-12-15 15:48:07] 
+[C9|F7] fold start
+[2025-12-15 15:48:38] 
+[C9|F8] fold start
+[2025-12-15 15:49:09] 
+Config 9 SUMMARY:
+[2025-12-15 15:49:09]   [TRAIN AVG] RMSE: 1456.00 | MAE: 898.74 | R2: 0.9776 | Bias: -0.00
+[2025-12-15 15:49:09]   [VAL AVG]   RMSE: 2241.26 | MAE: 1309.87 | R2: 0.9468 | Bias: 0.41 | Feats: 16
+[2025-12-15 15:49:09] 
+[2025-12-15 15:49:09] ######## CONFIG 10/20 ########
+[2025-12-15 15:49:09] Parameters: {'n_estimators': 600, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.7, 'max_depth': 30, 'bootstrap': False}
+[2025-12-15 15:49:09] 
+[C10|F1] fold start
+[2025-12-15 15:49:55] 
+[C10|F2] fold start
+[2025-12-15 15:50:35] 
+[C10|F3] fold start
+[2025-12-15 15:51:18] 
+[C10|F4] fold start
+[2025-12-15 15:52:00] 
+[C10|F5] fold start
+[2025-12-15 15:52:40] 
+[C10|F6] fold start
+[2025-12-15 15:53:26] 
+[C10|F7] fold start
+[2025-12-15 15:54:07] 
+[C10|F8] fold start
+[2025-12-15 15:54:47] 
+Config 10 SUMMARY:
+[2025-12-15 15:54:47]   [TRAIN AVG] RMSE: 254.00 | MAE: 74.56 | R2: 0.9993 | Bias: -0.00
+[2025-12-15 15:54:47]   [VAL AVG]   RMSE: 2212.48 | MAE: 1304.10 | R2: 0.9482 | Bias: 8.78 | Feats: 16
+[2025-12-15 15:54:47] 
+[2025-12-15 15:54:47] ######## CONFIG 11/20 ########
+[2025-12-15 15:54:47] Parameters: {'n_estimators': 800, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.5, 'max_depth': None, 'bootstrap': False}
+[2025-12-15 15:54:47] 
+[C11|F1] fold start
+[2025-12-15 15:55:46] 
+[C11|F2] fold start
+[2025-12-15 15:56:47] 
+[C11|F3] fold start
+[2025-12-15 15:57:54] 
+[C11|F4] fold start
+[2025-12-15 15:59:05] 
+[C11|F5] fold start
+[2025-12-15 16:00:13] 
+[C11|F6] fold start
+[2025-12-15 16:01:17] 
+[C11|F7] fold start
+[2025-12-15 16:02:16] 
+[C11|F8] fold start
+[2025-12-15 16:03:18] 
+Config 11 SUMMARY:
+[2025-12-15 16:03:18]   [TRAIN AVG] RMSE: 131.62 | MAE: 8.88 | R2: 0.9998 | Bias: -0.00
+[2025-12-15 16:03:18]   [VAL AVG]   RMSE: 2254.61 | MAE: 1323.05 | R2: 0.9462 | Bias: 6.41 | Feats: 16
+[2025-12-15 16:03:18] 
+[2025-12-15 16:03:18] ######## CONFIG 12/20 ########
+[2025-12-15 16:03:18] Parameters: {'n_estimators': 600, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 0.5, 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 16:03:18] 
+[C12|F1] fold start
+[2025-12-15 16:03:47] 
+[C12|F2] fold start
+[2025-12-15 16:04:15] 
+[C12|F3] fold start
+[2025-12-15 16:04:41] 
+[C12|F4] fold start
+[2025-12-15 16:05:06] 
+[C12|F5] fold start
+[2025-12-15 16:05:31] 
+[C12|F6] fold start
+[2025-12-15 16:05:55] 
+[C12|F7] fold start
+[2025-12-15 16:06:20] 
+[C12|F8] fold start
+[2025-12-15 16:06:44] 
+Config 12 SUMMARY:
+[2025-12-15 16:06:45]   [TRAIN AVG] RMSE: 2068.00 | MAE: 1236.87 | R2: 0.9549 | Bias: -0.00
+[2025-12-15 16:06:45]   [VAL AVG]   RMSE: 2472.95 | MAE: 1432.79 | R2: 0.9353 | Bias: -2.51 | Feats: 16
+[2025-12-15 16:06:45] 
+[2025-12-15 16:06:45] ######## CONFIG 13/20 ########
+[2025-12-15 16:06:45] Parameters: {'n_estimators': 600, 'min_samples_split': 4, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': None, 'bootstrap': False}
+[2025-12-15 16:06:45] 
+[C13|F1] fold start
+[2025-12-15 16:07:06] 
+[C13|F2] fold start
+[2025-12-15 16:07:27] 
+[C13|F3] fold start
+[2025-12-15 16:07:49] 
+[C13|F4] fold start
+[2025-12-15 16:08:10] 
+[C13|F5] fold start
+[2025-12-15 16:08:32] 
+[C13|F6] fold start
+[2025-12-15 16:08:53] 
+[C13|F7] fold start
+[2025-12-15 16:09:15] 
+[C13|F8] fold start
+[2025-12-15 16:09:37] 
+Config 13 SUMMARY:
+[2025-12-15 16:09:37]   [TRAIN AVG] RMSE: 2914.53 | MAE: 1820.29 | R2: 0.9104 | Bias: 0.00
+[2025-12-15 16:09:37]   [VAL AVG]   RMSE: 3136.51 | MAE: 1917.50 | R2: 0.8961 | Bias: -1.67 | Feats: 16
+[2025-12-15 16:09:37] 
+[2025-12-15 16:09:37] ######## CONFIG 14/20 ########
+[2025-12-15 16:09:37] Parameters: {'n_estimators': 600, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 16:09:37] 
+[C14|F1] fold start
+[2025-12-15 16:09:58] 
+[C14|F2] fold start
+[2025-12-15 16:10:19] 
+[C14|F3] fold start
+[2025-12-15 16:10:40] 
+[C14|F4] fold start
+[2025-12-15 16:11:02] 
+[C14|F5] fold start
+[2025-12-15 16:11:23] 
+[C14|F6] fold start
+[2025-12-15 16:11:43] 
+[C14|F7] fold start
+[2025-12-15 16:12:03] 
+[C14|F8] fold start
+[2025-12-15 16:12:24] 
+Config 14 SUMMARY:
+[2025-12-15 16:12:24]   [TRAIN AVG] RMSE: 2997.79 | MAE: 1900.89 | R2: 0.9052 | Bias: 0.00
+[2025-12-15 16:12:24]   [VAL AVG]   RMSE: 3196.68 | MAE: 1982.61 | R2: 0.8921 | Bias: -2.25 | Feats: 16
+[2025-12-15 16:12:24] 
+[2025-12-15 16:12:24] ######## CONFIG 15/20 ########
+[2025-12-15 16:12:24] Parameters: {'n_estimators': 600, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 0.5, 'max_depth': None, 'bootstrap': False}
+[2025-12-15 16:12:24] 
+[C15|F1] fold start
+[2025-12-15 16:12:54] 
+[C15|F2] fold start
+[2025-12-15 16:13:26] 
+[C15|F3] fold start
+[2025-12-15 16:13:58] 
+[C15|F4] fold start
+[2025-12-15 16:14:29] 
+[C15|F5] fold start
+[2025-12-15 16:14:59] 
+[C15|F6] fold start
+[2025-12-15 16:15:27] 
+[C15|F7] fold start
+[2025-12-15 16:15:56] 
+[C15|F8] fold start
+[2025-12-15 16:16:24] 
+Config 15 SUMMARY:
+[2025-12-15 16:16:24]   [TRAIN AVG] RMSE: 1385.59 | MAE: 837.31 | R2: 0.9797 | Bias: -0.00
+[2025-12-15 16:16:24]   [VAL AVG]   RMSE: 2273.31 | MAE: 1311.19 | R2: 0.9453 | Bias: -0.75 | Feats: 16
+[2025-12-15 16:16:24] 
+[2025-12-15 16:16:24] ######## CONFIG 16/20 ########
+[2025-12-15 16:16:24] Parameters: {'n_estimators': 600, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 0.5, 'max_depth': None, 'bootstrap': False}
+[2025-12-15 16:16:24] 
+[C16|F1] fold start
+[2025-12-15 16:16:49] 
+[C16|F2] fold start
+[2025-12-15 16:17:14] 
+[C16|F3] fold start
+[2025-12-15 16:17:39] 
+[C16|F4] fold start
+[2025-12-15 16:18:04] 
+[C16|F5] fold start
+[2025-12-15 16:18:29] 
+[C16|F6] fold start
+[2025-12-15 16:18:54] 
+[C16|F7] fold start
+[2025-12-15 16:19:19] 
+[C16|F8] fold start
+[2025-12-15 16:19:44] 
+Config 16 SUMMARY:
+[2025-12-15 16:19:44]   [TRAIN AVG] RMSE: 1985.79 | MAE: 1169.99 | R2: 0.9584 | Bias: -0.00
+[2025-12-15 16:19:44]   [VAL AVG]   RMSE: 2442.55 | MAE: 1401.87 | R2: 0.9369 | Bias: -2.07 | Feats: 16
+[2025-12-15 16:19:44] 
+[2025-12-15 16:19:44] ######## CONFIG 17/20 ########
+[2025-12-15 16:19:44] Parameters: {'n_estimators': 1000, 'min_samples_split': 4, 'min_samples_leaf': 4, 'max_features': 0.5, 'max_depth': 30, 'bootstrap': False}
+[2025-12-15 16:19:44] 
+[C17|F1] fold start
+[2025-12-15 16:20:20] 
+[C17|F2] fold start
+[2025-12-15 16:20:53] 
+[C17|F3] fold start
+[2025-12-15 16:21:24] 
+[C17|F4] fold start
+[2025-12-15 16:21:54] 
+[C17|F5] fold start
+[2025-12-15 16:22:25] 
+[C17|F6] fold start
+[2025-12-15 16:22:58] 
+[C17|F7] fold start
+[2025-12-15 16:23:34] 
+[C17|F8] fold start
+[2025-12-15 16:24:06] 
+Config 17 SUMMARY:
+[2025-12-15 16:24:06]   [TRAIN AVG] RMSE: 1986.92 | MAE: 1170.45 | R2: 0.9584 | Bias: 0.00
+[2025-12-15 16:24:06]   [VAL AVG]   RMSE: 2443.04 | MAE: 1401.90 | R2: 0.9369 | Bias: -1.89 | Feats: 16
+[2025-12-15 16:24:06] 
+[2025-12-15 16:24:06] ######## CONFIG 18/20 ########
+[2025-12-15 16:24:06] Parameters: {'n_estimators': 1000, 'min_samples_split': 2, 'min_samples_leaf': 4, 'max_features': 0.7, 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 16:24:06] 
+[C18|F1] fold start
+[2025-12-15 16:24:39] 
+[C18|F2] fold start
+[2025-12-15 16:25:14] 
+[C18|F3] fold start
+[2025-12-15 16:25:53] 
+[C18|F4] fold start
+[2025-12-15 16:26:28] 
+[C18|F5] fold start
+[2025-12-15 16:27:02] 
+[C18|F6] fold start
+[2025-12-15 16:27:34] 
+[C18|F7] fold start
+[2025-12-15 16:28:04] 
+[C18|F8] fold start
+[2025-12-15 16:28:29] 
+Config 18 SUMMARY:
+[2025-12-15 16:28:29]   [TRAIN AVG] RMSE: 1887.96 | MAE: 1120.58 | R2: 0.9624 | Bias: 0.00
+[2025-12-15 16:28:29]   [VAL AVG]   RMSE: 2364.95 | MAE: 1364.42 | R2: 0.9408 | Bias: -2.07 | Feats: 16
+[2025-12-15 16:28:29] 
+[2025-12-15 16:28:29] ######## CONFIG 19/20 ########
+[2025-12-15 16:28:29] Parameters: {'n_estimators': 1000, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 0.7, 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 16:28:29] 
+[C19|F1] fold start
+[2025-12-15 16:28:57] 
+[C19|F2] fold start
+[2025-12-15 16:29:26] 
+[C19|F3] fold start
+[2025-12-15 16:29:59] 
+[C19|F4] fold start
+[2025-12-15 16:30:28] 
+[C19|F5] fold start
+[2025-12-15 16:31:03] 
+[C19|F6] fold start
+[2025-12-15 16:31:39] 
+[C19|F7] fold start
+[2025-12-15 16:32:09] 
+[C19|F8] fold start
+[2025-12-15 16:32:39] 
+Config 19 SUMMARY:
+[2025-12-15 16:32:39]   [TRAIN AVG] RMSE: 1455.79 | MAE: 898.49 | R2: 0.9776 | Bias: 0.00
+[2025-12-15 16:32:39]   [VAL AVG]   RMSE: 2240.71 | MAE: 1309.53 | R2: 0.9468 | Bias: 0.12 | Feats: 16
+[2025-12-15 16:32:39] 
+[2025-12-15 16:32:39] ######## CONFIG 20/20 ########
+[2025-12-15 16:32:39] Parameters: {'n_estimators': 800, 'min_samples_split': 4, 'min_samples_leaf': 4, 'max_features': 'sqrt', 'max_depth': None, 'bootstrap': False}
+[2025-12-15 16:32:39] 
+[C20|F1] fold start
+[2025-12-15 16:32:56] 
+[C20|F2] fold start
+[2025-12-15 16:33:15] 
+[C20|F3] fold start
+[2025-12-15 16:33:34] 
+[C20|F4] fold start
+[2025-12-15 16:33:52] 
+[C20|F5] fold start
+[2025-12-15 16:34:11] 
+[C20|F6] fold start
+[2025-12-15 16:34:29] 
+[C20|F7] fold start
+[2025-12-15 16:34:52] 
+[C20|F8] fold start
+[2025-12-15 16:35:12] 
+Config 20 SUMMARY:
+[2025-12-15 16:35:12]   [TRAIN AVG] RMSE: 2912.17 | MAE: 1818.87 | R2: 0.9105 | Bias: 0.00
+[2025-12-15 16:35:12]   [VAL AVG]   RMSE: 3134.61 | MAE: 1916.11 | R2: 0.8963 | Bias: -1.79 | Feats: 16
+[2025-12-15 16:35:12] 
+[2025-12-15 16:35:12] # =============================
+[2025-12-15 16:35:12] # END ExtraTrees RANDOM SEARCH | et_v1_original_price_no_fe_fs
+[2025-12-15 16:35:12] # =============================
+[2025-12-15 16:35:12] Best config (min RMSE VAL): {'n_estimators': 800, 'min_samples_split': 4, 'min_samples_leaf': 1, 'max_features': 0.7, 'max_depth': 20, 'bootstrap': False}
+[2025-12-15 16:35:12] Best RMSE (VAL): 2189.7117

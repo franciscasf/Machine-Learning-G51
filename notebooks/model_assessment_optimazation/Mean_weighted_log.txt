@@ -1,0 +1,208 @@
+[2025-12-14 10:39:37] =======================================================
+[2025-12-14 10:39:37] STARTING TREE ENSEMBLE SEARCH WITH FEATURE SELECTION
+[2025-12-14 10:39:37] Search iterations: 1
+[2025-12-14 10:39:37] =======================================================
+[2025-12-14 10:39:37] 
+######## CONFIG 1/1 ########
+[2025-12-14 10:39:37] Parameters: {'n_iter_no_change': 25, 'max_iter': 1200, 'learning_rate_init': 0.05, 'learning_rate': 'adaptive', 'hidden_layer_sizes': (256, 128), 'early_stopping': True, 'batch_size': 128}
+[2025-12-14 10:39:37] 
+[C1|F1] Processing fold...
+[2025-12-14 10:39:52]   > After encoding/scaling: train shape=(66476, 16), val shape=(9497, 16)
+[2025-12-14 10:39:52]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:39:57]   > FULL Feature Importances (before selection):
+[2025-12-14 10:39:57]       model: 0.264865
+[2025-12-14 10:39:57]       engineSize: 0.156726
+[2025-12-14 10:39:57]       year: 0.139735
+[2025-12-14 10:39:57]       mileage: 0.115891
+[2025-12-14 10:39:57]       transmission_MANUAL: 0.101300
+[2025-12-14 10:39:57]       mpg: 0.089589
+[2025-12-14 10:39:57]       Brand: 0.066619
+[2025-12-14 10:39:57]       tax: 0.028645
+[2025-12-14 10:39:57]       transmission_SEMIAUTO: 0.015100
+[2025-12-14 10:39:57]       previousOwners: 0.005673
+[2025-12-14 10:39:57]       fuelType_PETROL: 0.005458
+[2025-12-14 10:39:57]       fuelType_DIESEL: 0.004879
+[2025-12-14 10:39:57]       transmission_AUTOMATIC: 0.004172
+[2025-12-14 10:39:57]       fuelType_HYBRID: 0.001310
+[2025-12-14 10:39:57]       fuelType_OTHER: 0.000037
+[2025-12-14 10:39:57]       fuelType_ELECTRIC: 0.000000
+[2025-12-14 10:39:57]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'previousOwners', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO'] ...
+[2025-12-14 10:39:57]   > Dropped columns (first 10): ['transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL'] ...
+[2025-12-14 10:40:10]   > [TRAIN] RMSE: 1622.51 | MAE: 1008.21 || [VAL] RMSE: 2003.08 | MAE: 1288.22 | Overfit%: 23.46% || FoldTime: 12.22s
+[2025-12-14 10:40:10] 
+[C1|F2] Processing fold...
+[2025-12-14 10:40:24]   > After encoding/scaling: train shape=(66476, 16), val shape=(9497, 16)
+[2025-12-14 10:40:24]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:40:29]   > FULL Feature Importances (before selection):
+[2025-12-14 10:40:29]       model: 0.267634
+[2025-12-14 10:40:29]       engineSize: 0.154652
+[2025-12-14 10:40:29]       year: 0.143162
+[2025-12-14 10:40:29]       mileage: 0.114917
+[2025-12-14 10:40:29]       transmission_MANUAL: 0.097987
+[2025-12-14 10:40:29]       mpg: 0.088529
+[2025-12-14 10:40:29]       Brand: 0.068623
+[2025-12-14 10:40:29]       tax: 0.028419
+[2025-12-14 10:40:29]       transmission_SEMIAUTO: 0.014596
+[2025-12-14 10:40:29]       fuelType_PETROL: 0.005760
+[2025-12-14 10:40:29]       previousOwners: 0.005566
+[2025-12-14 10:40:29]       fuelType_DIESEL: 0.005098
+[2025-12-14 10:40:29]       transmission_AUTOMATIC: 0.003698
+[2025-12-14 10:40:29]       fuelType_HYBRID: 0.001319
+[2025-12-14 10:40:29]       fuelType_OTHER: 0.000039
+[2025-12-14 10:40:29]       fuelType_ELECTRIC: 0.000000
+[2025-12-14 10:40:29]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_PETROL'] ...
+[2025-12-14 10:40:29]   > Dropped columns (first 10): ['previousOwners', 'transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER'] ...
+[2025-12-14 10:40:43]   > [TRAIN] RMSE: 1461.22 | MAE: 938.37 || [VAL] RMSE: 2063.36 | MAE: 1263.84 | Overfit%: 41.21% || FoldTime: 13.63s
+[2025-12-14 10:40:43] 
+[C1|F3] Processing fold...
+[2025-12-14 10:40:58]   > After encoding/scaling: train shape=(66476, 16), val shape=(9497, 16)
+[2025-12-14 10:40:58]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:41:03]   > FULL Feature Importances (before selection):
+[2025-12-14 10:41:03]       model: 0.255155
+[2025-12-14 10:41:03]       engineSize: 0.160662
+[2025-12-14 10:41:03]       year: 0.145364
+[2025-12-14 10:41:03]       mileage: 0.112776
+[2025-12-14 10:41:03]       transmission_MANUAL: 0.099171
+[2025-12-14 10:41:03]       mpg: 0.089636
+[2025-12-14 10:41:03]       Brand: 0.073122
+[2025-12-14 10:41:03]       tax: 0.028029
+[2025-12-14 10:41:03]       transmission_SEMIAUTO: 0.013974
+[2025-12-14 10:41:03]       fuelType_PETROL: 0.005876
+[2025-12-14 10:41:03]       previousOwners: 0.005607
+[2025-12-14 10:41:03]       fuelType_DIESEL: 0.005221
+[2025-12-14 10:41:03]       transmission_AUTOMATIC: 0.004029
+[2025-12-14 10:41:03]       fuelType_HYBRID: 0.001334
+[2025-12-14 10:41:03]       fuelType_OTHER: 0.000044
+[2025-12-14 10:41:03]       fuelType_ELECTRIC: 0.000000
+[2025-12-14 10:41:03]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_PETROL'] ...
+[2025-12-14 10:41:03]   > Dropped columns (first 10): ['previousOwners', 'transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER'] ...
+[2025-12-14 10:41:17]   > [TRAIN] RMSE: 1504.52 | MAE: 946.53 || [VAL] RMSE: 2139.37 | MAE: 1267.44 | Overfit%: 42.20% || FoldTime: 13.40s
+[2025-12-14 10:41:17] 
+[C1|F4] Processing fold...
+[2025-12-14 10:41:31]   > After encoding/scaling: train shape=(66476, 16), val shape=(9497, 16)
+[2025-12-14 10:41:31]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:41:37]   > FULL Feature Importances (before selection):
+[2025-12-14 10:41:37]       model: 0.263204
+[2025-12-14 10:41:37]       engineSize: 0.158143
+[2025-12-14 10:41:37]       year: 0.144068
+[2025-12-14 10:41:37]       mileage: 0.113270
+[2025-12-14 10:41:37]       transmission_MANUAL: 0.097842
+[2025-12-14 10:41:37]       mpg: 0.087641
+[2025-12-14 10:41:37]       Brand: 0.069281
+[2025-12-14 10:41:37]       tax: 0.029355
+[2025-12-14 10:41:37]       transmission_SEMIAUTO: 0.015559
+[2025-12-14 10:41:37]       fuelType_PETROL: 0.006026
+[2025-12-14 10:41:37]       previousOwners: 0.005511
+[2025-12-14 10:41:37]       fuelType_DIESEL: 0.004553
+[2025-12-14 10:41:37]       transmission_AUTOMATIC: 0.004079
+[2025-12-14 10:41:37]       fuelType_HYBRID: 0.001432
+[2025-12-14 10:41:37]       fuelType_OTHER: 0.000038
+[2025-12-14 10:41:37]       fuelType_ELECTRIC: 0.000000
+[2025-12-14 10:41:37]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_PETROL'] ...
+[2025-12-14 10:41:37]   > Dropped columns (first 10): ['previousOwners', 'transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER'] ...
+[2025-12-14 10:41:52]   > [TRAIN] RMSE: 1429.50 | MAE: 945.07 || [VAL] RMSE: 2597.58 | MAE: 1296.95 | Overfit%: 81.71% || FoldTime: 14.43s
+[2025-12-14 10:41:52] 
+[C1|F5] Processing fold...
+[2025-12-14 10:42:06]   > After encoding/scaling: train shape=(66476, 16), val shape=(9497, 16)
+[2025-12-14 10:42:06]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:42:11]   > FULL Feature Importances (before selection):
+[2025-12-14 10:42:11]       model: 0.264170
+[2025-12-14 10:42:11]       engineSize: 0.160598
+[2025-12-14 10:42:11]       year: 0.144503
+[2025-12-14 10:42:11]       mileage: 0.113419
+[2025-12-14 10:42:11]       transmission_MANUAL: 0.096818
+[2025-12-14 10:42:11]       mpg: 0.089575
+[2025-12-14 10:42:11]       Brand: 0.066811
+[2025-12-14 10:42:11]       tax: 0.027736
+[2025-12-14 10:42:11]       transmission_SEMIAUTO: 0.014721
+[2025-12-14 10:42:11]       fuelType_PETROL: 0.005682
+[2025-12-14 10:42:11]       previousOwners: 0.005648
+[2025-12-14 10:42:11]       fuelType_DIESEL: 0.005100
+[2025-12-14 10:42:11]       transmission_AUTOMATIC: 0.003879
+[2025-12-14 10:42:11]       fuelType_HYBRID: 0.001299
+[2025-12-14 10:42:11]       fuelType_OTHER: 0.000040
+[2025-12-14 10:42:11]       fuelType_ELECTRIC: 0.000000
+[2025-12-14 10:42:11]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_PETROL'] ...
+[2025-12-14 10:42:11]   > Dropped columns (first 10): ['previousOwners', 'transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER'] ...
+[2025-12-14 10:42:26]   > [TRAIN] RMSE: 1437.49 | MAE: 926.23 || [VAL] RMSE: 2017.19 | MAE: 1240.69 | Overfit%: 40.33% || FoldTime: 14.60s
+[2025-12-14 10:42:26] 
+[C1|F6] Processing fold...
+[2025-12-14 10:42:41]   > After encoding/scaling: train shape=(66477, 16), val shape=(9496, 16)
+[2025-12-14 10:42:41]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:42:46]   > FULL Feature Importances (before selection):
+[2025-12-14 10:42:46]       model: 0.264034
+[2025-12-14 10:42:46]       engineSize: 0.159070
+[2025-12-14 10:42:46]       year: 0.143013
+[2025-12-14 10:42:46]       mileage: 0.115792
+[2025-12-14 10:42:46]       transmission_MANUAL: 0.094930
+[2025-12-14 10:42:46]       mpg: 0.088885
+[2025-12-14 10:42:46]       Brand: 0.068890
+[2025-12-14 10:42:46]       tax: 0.029072
+[2025-12-14 10:42:46]       transmission_SEMIAUTO: 0.014556
+[2025-12-14 10:42:46]       fuelType_PETROL: 0.005928
+[2025-12-14 10:42:46]       previousOwners: 0.005630
+[2025-12-14 10:42:46]       fuelType_DIESEL: 0.004904
+[2025-12-14 10:42:46]       transmission_AUTOMATIC: 0.003950
+[2025-12-14 10:42:46]       fuelType_HYBRID: 0.001303
+[2025-12-14 10:42:46]       fuelType_OTHER: 0.000044
+[2025-12-14 10:42:46]       fuelType_ELECTRIC: 0.000000
+[2025-12-14 10:42:46]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_PETROL'] ...
+[2025-12-14 10:42:46]   > Dropped columns (first 10): ['previousOwners', 'transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER'] ...
+[2025-12-14 10:42:59]   > [TRAIN] RMSE: 1498.12 | MAE: 955.38 || [VAL] RMSE: 2047.72 | MAE: 1243.41 | Overfit%: 36.69% || FoldTime: 13.41s
+[2025-12-14 10:42:59] 
+[C1|F7] Processing fold...
+[2025-12-14 10:43:14]   > After encoding/scaling: train shape=(66477, 16), val shape=(9496, 16)
+[2025-12-14 10:43:14]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:43:19]   > FULL Feature Importances (before selection):
+[2025-12-14 10:43:19]       model: 0.268249
+[2025-12-14 10:43:19]       engineSize: 0.154318
+[2025-12-14 10:43:19]       year: 0.146175
+[2025-12-14 10:43:19]       mileage: 0.112923
+[2025-12-14 10:43:19]       transmission_MANUAL: 0.097592
+[2025-12-14 10:43:19]       mpg: 0.092519
+[2025-12-14 10:43:19]       Brand: 0.064341
+[2025-12-14 10:43:19]       tax: 0.028098
+[2025-12-14 10:43:19]       transmission_SEMIAUTO: 0.014077
+[2025-12-14 10:43:19]       fuelType_PETROL: 0.006018
+[2025-12-14 10:43:19]       previousOwners: 0.005615
+[2025-12-14 10:43:19]       fuelType_DIESEL: 0.004901
+[2025-12-14 10:43:19]       transmission_AUTOMATIC: 0.003802
+[2025-12-14 10:43:19]       fuelType_HYBRID: 0.001328
+[2025-12-14 10:43:19]       fuelType_OTHER: 0.000043
+[2025-12-14 10:43:19]       fuelType_ELECTRIC: 0.000001
+[2025-12-14 10:43:19]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_PETROL'] ...
+[2025-12-14 10:43:19]   > Dropped columns (first 10): ['previousOwners', 'transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER'] ...
+[2025-12-14 10:43:32]   > [TRAIN] RMSE: 1498.84 | MAE: 959.59 || [VAL] RMSE: 2009.43 | MAE: 1235.14 | Overfit%: 34.07% || FoldTime: 12.97s
+[2025-12-14 10:43:32] 
+[C1|F8] Processing fold...
+[2025-12-14 10:43:46]   > After encoding/scaling: train shape=(66477, 16), val shape=(9496, 16)
+[2025-12-14 10:43:46]   > Feature Selection (SelectFromModel): Keeping top 10/16 features using rf.
+[2025-12-14 10:43:51]   > FULL Feature Importances (before selection):
+[2025-12-14 10:43:51]       model: 0.264759
+[2025-12-14 10:43:51]       engineSize: 0.157218
+[2025-12-14 10:43:51]       year: 0.145208
+[2025-12-14 10:43:51]       mileage: 0.111052
+[2025-12-14 10:43:51]       transmission_MANUAL: 0.096292
+[2025-12-14 10:43:51]       mpg: 0.091904
+[2025-12-14 10:43:51]       Brand: 0.068837
+[2025-12-14 10:43:51]       tax: 0.027802
+[2025-12-14 10:43:51]       transmission_SEMIAUTO: 0.015016
+[2025-12-14 10:43:51]       previousOwners: 0.005642
+[2025-12-14 10:43:51]       fuelType_PETROL: 0.005447
+[2025-12-14 10:43:51]       fuelType_DIESEL: 0.004910
+[2025-12-14 10:43:51]       transmission_AUTOMATIC: 0.004565
+[2025-12-14 10:43:51]       fuelType_HYBRID: 0.001306
+[2025-12-14 10:43:51]       fuelType_OTHER: 0.000043
+[2025-12-14 10:43:51]       fuelType_ELECTRIC: 0.000000
+[2025-12-14 10:43:51]   > Selected features (10): ['year', 'mileage', 'engineSize', 'tax', 'mpg', 'previousOwners', 'Brand', 'model', 'transmission_MANUAL', 'transmission_SEMIAUTO'] ...
+[2025-12-14 10:43:51]   > Dropped columns (first 10): ['transmission_AUTOMATIC', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL'] ...
+[2025-12-14 10:44:05]   > [TRAIN] RMSE: 1510.43 | MAE: 972.20 || [VAL] RMSE: 2030.68 | MAE: 1253.65 | Overfit%: 34.44% || FoldTime: 13.71s
+[2025-12-14 10:44:05] 
+Config 1 SUMMARY (AVG over folds):
+[2025-12-14 10:44:05]   VAL -> RMSE: 2113.5511 | MAE: 1261.1664 | R2: 0.9527 | MedAE: 814.7033 | MAPE: 7.98% | Bias: 1.3004
+[2025-12-14 10:44:05]   TRAIN -> RMSE: 1495.3292 | MAE: 956.4488 | R2: 0.9764 | Avg features after FS: 10
+[2025-12-14 10:44:05]   Avg Overfit%: 41.76% | Total time: 108.36s
+[2025-12-14 10:44:05] [NEW BEST CONFIG]
+[2025-12-14 10:44:05] 
+# END RANDOM SEARCH
+[2025-12-14 10:44:05] Best config: {'n_iter_no_change': 25, 'max_iter': 1200, 'learning_rate_init': 0.05, 'learning_rate': 'adaptive', 'hidden_layer_sizes': (256, 128), 'early_stopping': True, 'batch_size': 128} with RMSE=2113.5511

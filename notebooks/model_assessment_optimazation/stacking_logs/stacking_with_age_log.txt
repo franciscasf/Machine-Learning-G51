@@ -1,0 +1,21 @@
+# =============================
+# START STACKING WITH MINI FEATURE ENGINEERING
+# TOTAL CONFIGS: 10
+# =============================
+
+######## CONFIG 1/10 ########
+Parameters: {'rf_n_estimators': 1000, 'rf_min_samples_split': 2, 'rf_min_samples_leaf': 1, 'rf_max_features': None, 'rf_max_depth': 20, 'rf_bootstrap': True, 'hgb_min_samples_leaf': 16, 'hgb_max_leaf_nodes': 191, 'hgb_max_iter': 1200, 'hgb_max_depth': 20, 'hgb_loss': 'squared_error', 'hgb_learning_rate': 0.07, 'hgb_l2_reg': 3.0, 'et_n_estimators': 1200, 'et_min_samples_split': 4, 'et_min_samples_leaf': 1, 'et_max_features': 0.5, 'et_max_depth': 30, 'et_bootstrap': False}
+
+[C1|F1] Processing fold...
+  > Fold 1 | TRAIN_RMSE=1296.49 | VAL_RMSE=1894.94 | MAE=1203.34 | Time=331.10s
+
+[C1|F2] Processing fold...
+  > Fold 2 | TRAIN_RMSE=1228.76 | VAL_RMSE=2098.08 | MAE=1239.90 | Time=355.23s
+
+[C1|F3] Processing fold...
+  > Fold 3 | TRAIN_RMSE=1221.67 | VAL_RMSE=2158.94 | MAE=1234.41 | Time=357.27s
+
+[C1|F4] Processing fold...
+  > Fold 4 | TRAIN_RMSE=1152.73 | VAL_RMSE=2593.96 | MAE=1257.87 | Time=345.76s
+
+[C1|F5] Processing fold...

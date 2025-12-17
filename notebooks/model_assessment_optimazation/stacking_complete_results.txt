@@ -11,7 +11,7 @@ Parameters: {'hgb': {'max_iter': 600, 'learning_rate': 0.1, 'max_depth': 20, 'ma
 
 ===== FOLD 2/8 =====
 [TRAIN] R2=0.9804 | RMSE=1365 | MAE=901 | Bias=-2.0
-[VAL]   R2=0.9541 | RMSE=2074 | MAE=1269 | Bias=-16.7
+[VAL]   R2=0.9541 | RMSE=2074 | MAE=1269 | Bias=-16.9
 
 ===== FOLD 3/8 =====
 [TRAIN] R2=0.9803 | RMSE=1367 | MAE=888 | Bias=1.0

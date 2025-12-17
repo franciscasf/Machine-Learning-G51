@@ -7,39 +7,39 @@
 [FOLD 1] Processing fold...
   > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
   > Selected features (12/15) with FS_KEEP_RATIO=0.80
-  > [TRAIN] R2: 0.9721 | RMSE: 1631 | MAE: 954 | Bias: 62.3
-  > [VAL]   R2: 0.9590 | RMSE: 1926 | MAE: 1226 | Bias: 49.4
+  > [TRAIN] R2: 0.9724 | RMSE: 1624 | MAE: 946 | Bias: 70.6
+  > [VAL]   R2: 0.9586 | RMSE: 1936 | MAE: 1229 | Bias: 57.3
 
 [FOLD 2] Processing fold...
-  > [TRAIN] R2: 0.9765 | RMSE: 1493 | MAE: 918 | Bias: 54.3
-  > [VAL]   R2: 0.9538 | RMSE: 2083 | MAE: 1242 | Bias: 74.0
+  > [TRAIN] R2: 0.9761 | RMSE: 1505 | MAE: 916 | Bias: 64.3
+  > [VAL]   R2: 0.9535 | RMSE: 2088 | MAE: 1247 | Bias: 84.5
 
 [FOLD 3] Processing fold...
-  > [TRAIN] R2: 0.9753 | RMSE: 1532 | MAE: 920 | Bias: 57.9
-  > [VAL]   R2: 0.9501 | RMSE: 2166 | MAE: 1247 | Bias: 128.6
+  > [TRAIN] R2: 0.9750 | RMSE: 1540 | MAE: 915 | Bias: 67.2
+  > [VAL]   R2: 0.9482 | RMSE: 2207 | MAE: 1250 | Bias: 140.4
 
 [FOLD 4] Processing fold...
-  > [TRAIN] R2: 0.9748 | RMSE: 1537 | MAE: 979 | Bias: 56.5
-  > [VAL]   R2: 0.9330 | RMSE: 2623 | MAE: 1289 | Bias: 119.9
+  > [TRAIN] R2: 0.9751 | RMSE: 1527 | MAE: 963 | Bias: 65.2
+  > [VAL]   R2: 0.9316 | RMSE: 2651 | MAE: 1291 | Bias: 134.9
 
 [FOLD 5] Processing fold...
-  > [TRAIN] R2: 0.9748 | RMSE: 1543 | MAE: 948 | Bias: 58.2
-  > [VAL]   R2: 0.9568 | RMSE: 2040 | MAE: 1238 | Bias: 84.3
+  > [TRAIN] R2: 0.9746 | RMSE: 1549 | MAE: 938 | Bias: 67.0
+  > [VAL]   R2: 0.9552 | RMSE: 2077 | MAE: 1242 | Bias: 97.5
 
 [FOLD 6] Processing fold...
-  > [TRAIN] R2: 0.9755 | RMSE: 1523 | MAE: 928 | Bias: 58.2
-  > [VAL]   R2: 0.9542 | RMSE: 2100 | MAE: 1230 | Bias: 110.2
+  > [TRAIN] R2: 0.9754 | RMSE: 1527 | MAE: 922 | Bias: 67.5
+  > [VAL]   R2: 0.9527 | RMSE: 2136 | MAE: 1235 | Bias: 124.7
 
 [FOLD 7] Processing fold...
-  > [TRAIN] R2: 0.9733 | RMSE: 1591 | MAE: 974 | Bias: 62.2
-  > [VAL]   R2: 0.9577 | RMSE: 2000 | MAE: 1218 | Bias: 109.7
+  > [TRAIN] R2: 0.9734 | RMSE: 1588 | MAE: 960 | Bias: 69.9
+  > [VAL]   R2: 0.9564 | RMSE: 2031 | MAE: 1223 | Bias: 119.7
 
 [FOLD 8] Processing fold...
-  > [TRAIN] R2: 0.9755 | RMSE: 1529 | MAE: 949 | Bias: 58.4
-  > [VAL]   R2: 0.9580 | RMSE: 1946 | MAE: 1200 | Bias: 61.4
+  > [TRAIN] R2: 0.9754 | RMSE: 1533 | MAE: 938 | Bias: 67.2
+  > [VAL]   R2: 0.9572 | RMSE: 1965 | MAE: 1204 | Bias: 71.1
 
 SUMMARY ACROSS FOLDS:
   Selected features (avg): 12 / 15
-  [TRAIN AVG] MAE: 946.4 | R2: 0.9747 | Bias: 58.5
-  [VAL AVG]   MAE: 1236.3 | R2: 0.9528 | Bias: 92.2 | RMSE: 2110.3
+  [TRAIN AVG] MAE: 937.2 | R2: 0.9747 | Bias: 67.4
+  [VAL AVG]   MAE: 1240.1 | R2: 0.9517 | Bias: 103.7 | RMSE: 2136.3
 # END OF PIPELINE

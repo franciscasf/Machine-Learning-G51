@@ -1,0 +1,12 @@
+# =============================
+# START OF NN SEARCH (LOG TARGET + AGE FEATURE + FS 80%)
+# METRICS ON ORIGINAL SCALE: R2, RMSE, MAE, BIAS
+# LOG FILE SAVED TO: NN_noowners_age_log_fs.txt
+# =============================
+
+######## CONFIG 1/15 ########
+Parameters: {'solver': 'adam', 'n_iter_no_change': 25, 'max_iter': 900, 'learning_rate_init': 0.05, 'learning_rate': 'adaptive', 'hidden_layer_sizes': (256, 128), 'early_stopping': True, 'batch_size': 64, 'activation': 'relu'}
+
+[C1|F1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (12/15) with FS_KEEP_RATIO=0.80

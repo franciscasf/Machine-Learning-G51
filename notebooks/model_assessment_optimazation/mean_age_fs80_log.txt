@@ -1,0 +1,29 @@
+# =============================
+# START OF SINGLE CONFIG PIPELINE (LOG TARGET + AGE + FS 80%)
+# METRICS ON ORIGINAL SCALE: R2, RMSE, MAE, BIAS
+# LOG FILE SAVED TO: mean_age_fs80_log.txt
+# =============================
+
+[FOLD 1] Processing fold...
+  > Features before FS (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > Selected features (12/15) with FS_KEEP_RATIO=0.80
+  > [TRAIN] R2: 0.9721 | RMSE: 1631 | MAE: 954 | Bias: 62.3
+  > [VAL]   R2: 0.9590 | RMSE: 1926 | MAE: 1226 | Bias: 49.4
+
+[FOLD 2] Processing fold...
+  > [TRAIN] R2: 0.9765 | RMSE: 1493 | MAE: 918 | Bias: 54.3
+  > [VAL]   R2: 0.9538 | RMSE: 2083 | MAE: 1242 | Bias: 74.0
+
+[FOLD 3] Processing fold...
+  > [TRAIN] R2: 0.9753 | RMSE: 1532 | MAE: 920 | Bias: 57.9
+  > [VAL]   R2: 0.9501 | RMSE: 2166 | MAE: 1247 | Bias: 128.6
+
+[FOLD 4] Processing fold...
+  > [TRAIN] R2: 0.9748 | RMSE: 1537 | MAE: 979 | Bias: 56.5
+  > [VAL]   R2: 0.9330 | RMSE: 2623 | MAE: 1289 | Bias: 119.9
+
+[FOLD 5] Processing fold...
+  > [TRAIN] R2: 0.9748 | RMSE: 1543 | MAE: 948 | Bias: 58.2
+  > [VAL]   R2: 0.9568 | RMSE: 2040 | MAE: 1238 | Bias: 84.3
+
+[FOLD 6] Processing fold...

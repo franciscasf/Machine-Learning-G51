@@ -1,0 +1,2 @@
+config,val_rmse_mean,val_mae_mean,val_r2_mean,val_bias_mean,train_rmse_mean,train_mae_mean,train_r2_mean,train_bias_mean,avg_features
+HGB_RF_ET_FE_NO_FS,2141.5188684392906,1248.7272491223125,0.9514168359749566,93.51209235711076,1512.5072680938154,922.9764540760007,0.9758563854525057,57.149877040613575,25.0

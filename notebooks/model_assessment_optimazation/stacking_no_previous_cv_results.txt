@@ -1,0 +1,43 @@
+# ===============================================
+# SINGLE CONFIG CV — WITHOUT previousOwners
+# ENSEMBLE: HGB + RF + ET (STACKING)
+# ===============================================
+Parameters: {'hgb': {'max_iter': 1000, 'learning_rate': 0.1, 'max_depth': 20, 'max_leaf_nodes': 191, 'min_samples_leaf': 20, 'l2_regularization': 3.0, 'random_state': 42}, 'rf': {'n_estimators': 1000, 'min_samples_split': 2, 'min_samples_leaf': 2, 'max_features': 0.33, 'max_depth': 20, 'bootstrap': True, 'random_state': 42, 'n_jobs': -1}, 'et': {'n_estimators': 800, 'max_depth': 20, 'min_samples_split': 4, 'min_samples_leaf': 1, 'max_features': 0.7, 'bootstrap': False, 'random_state': 42, 'n_jobs': -1}}
+
+
+===== FOLD 1/8 =====
+  > Features Used (15)
+[TRAIN] R2=0.9751 | RMSE=1540 | MAE=887 | Bias=54.1
+[VAL]   R2=0.9604 | RMSE=1894 | MAE=1208 | Bias=39.7
+
+===== FOLD 2/8 =====
+[TRAIN] R2=0.9768 | RMSE=1483 | MAE=908 | Bias=55.0
+[VAL]   R2=0.9538 | RMSE=2081 | MAE=1242 | Bias=76.6
+
+===== FOLD 3/8 =====
+[TRAIN] R2=0.9755 | RMSE=1524 | MAE=903 | Bias=55.6
+[VAL]   R2=0.9501 | RMSE=2166 | MAE=1246 | Bias=124.7
+
+===== FOLD 4/8 =====
+[TRAIN] R2=0.9792 | RMSE=1395 | MAE=896 | Bias=48.5
+[VAL]   R2=0.9337 | RMSE=2610 | MAE=1273 | Bias=115.1
+
+===== FOLD 5/8 =====
+[TRAIN] R2=0.9779 | RMSE=1446 | MAE=885 | Bias=50.1
+[VAL]   R2=0.9575 | RMSE=2021 | MAE=1229 | Bias=77.1
+
+===== FOLD 6/8 =====
+[TRAIN] R2=0.9771 | RMSE=1473 | MAE=891 | Bias=53.7
+[VAL]   R2=0.9560 | RMSE=2059 | MAE=1217 | Bias=103.7
+
+===== FOLD 7/8 =====
+[TRAIN] R2=0.9762 | RMSE=1502 | MAE=920 | Bias=58.0
+[VAL]   R2=0.9587 | RMSE=1976 | MAE=1206 | Bias=110.5
+
+===== FOLD 8/8 =====
+[TRAIN] R2=0.9767 | RMSE=1492 | MAE=917 | Bias=53.1
+[VAL]   R2=0.9582 | RMSE=1941 | MAE=1191 | Bias=55.4
+
+===== FINAL CROSS-VALIDATION RESULTS =====
+[TRAIN AVG] MAE=900.9 | R2=0.9768 | Bias=53.5
+[VAL AVG]   MAE=1226.6 | R2=0.9536 | Bias=87.9 | RMSE=2093.4

@@ -1,0 +1,42 @@
+# =========================================
+# SINGLE CONFIGURATION CROSS-VALIDATION
+# ENSEMBLE: HGB + RF + ET (WEIGHTED MEAN)
+# =========================================
+Parameters: {'hgb': {'max_iter': 600, 'learning_rate': 0.1, 'max_depth': 20, 'max_leaf_nodes': 127, 'min_samples_leaf': 20, 'l2_regularization': 0, 'random_state': 42}, 'rf': {'n_estimators': 1000, 'min_samples_split': 6, 'min_samples_leaf': 1, 'max_features': None, 'max_depth': 15, 'bootstrap': True, 'random_state': 42, 'n_jobs': -1}, 'et': {'n_estimators': 1200, 'max_depth': 20, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 0.7, 'bootstrap': False, 'random_state': 42, 'n_jobs': -1}}
+
+
+===== FOLD 1/8 =====
+[TRAIN] R2=0.9711 | RMSE=1660 | MAE=1040 | Bias=2.3
+[VAL]   R2=0.9574 | RMSE=1964 | MAE=1262 | Bias=-37.4
+
+===== FOLD 2/8 =====
+[TRAIN] R2=0.9743 | RMSE=1562 | MAE=1017 | Bias=0.7
+[VAL]   R2=0.9527 | RMSE=2107 | MAE=1289 | Bias=-13.8
+
+===== FOLD 3/8 =====
+[TRAIN] R2=0.9738 | RMSE=1579 | MAE=1008 | Bias=2.2
+[VAL]   R2=0.9508 | RMSE=2150 | MAE=1288 | Bias=30.0
+
+===== FOLD 4/8 =====
+[TRAIN] R2=0.9767 | RMSE=1478 | MAE=989 | Bias=-0.2
+[VAL]   R2=0.9342 | RMSE=2600 | MAE=1308 | Bias=30.4
+
+===== FOLD 5/8 =====
+[TRAIN] R2=0.9766 | RMSE=1488 | MAE=968 | Bias=-2.6
+[VAL]   R2=0.9567 | RMSE=2041 | MAE=1255 | Bias=-2.7
+
+===== FOLD 6/8 =====
+[TRAIN] R2=0.9733 | RMSE=1589 | MAE=1024 | Bias=0.8
+[VAL]   R2=0.9551 | RMSE=2080 | MAE=1258 | Bias=17.8
+
+===== FOLD 7/8 =====
+[TRAIN] R2=0.9762 | RMSE=1501 | MAE=973 | Bias=0.5
+[VAL]   R2=0.9577 | RMSE=2000 | MAE=1236 | Bias=21.2
+
+===== FOLD 8/8 =====
+[TRAIN] R2=0.9749 | RMSE=1548 | MAE=1008 | Bias=0.9
+[VAL]   R2=0.9553 | RMSE=2007 | MAE=1234 | Bias=-17.2
+
+===== FINAL CROSS-VALIDATION RESULTS =====
+[TRAIN AVG] MAE=1003.4 | R2=0.9746 | Bias=0.6
+[VAL AVG]   MAE=1266.3 | R2=0.9525 | Bias=3.5 | RMSE=2118.7

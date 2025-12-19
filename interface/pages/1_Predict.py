@@ -6,10 +6,9 @@ import streamlit as st
 # - collecting inputs (CSV or single form)
 # - validating schema
 # - calling the backend "fit" (cached) and "predict"
-from interface.backend.hgb_best_config import (
-    fit_hgb_best, predict_hgb_best,
+from backend.stack_best_config import (
+    fit_stacking_best, predict_stacking_best,
     X, y,
-    categorical_features,
     valid_brands, valid_models_by_brand, valid_transmissions, valid_fueltypes
 )
 
@@ -108,12 +107,9 @@ SINGLE_COLS = [
 # We cache the fitted pipeline/model to avoid re-training on every interaction
 # This is important in Streamlit to avoid having to do it again for each script rerun 
 @st.cache_resource
-def get_fitted():
-    # We pass training data + categorical metadata + valid names 
-    # The backend returns a fitted object (e.g., preprocessors + trained model).
-    return fit_hgb_best(
+def get_fitted(_cache_buster: str = "v5"):
+    return fit_stacking_best(
         X, y,
-        categorical_features=categorical_features,
         valid_brands=valid_brands,
         valid_models_by_brand=valid_models_by_brand,
         valid_transmissions=valid_transmissions,
@@ -156,7 +152,7 @@ if mode == "Multiple cars (CSV)":
                     fitted = get_fitted()
                     # Backend handles preprocessing + model inference
                     # We also pass id_col so the output can keep identifiers
-                    out = predict_hgb_best(df, fitted, id_col="carID")
+                    out = predict_stacking_best(df, fitted, id_col="carID")
 
                 st.subheader("Predictions preview")
                 st.dataframe(out.head(50), use_container_width=True)
@@ -325,7 +321,7 @@ else:
         with st.spinner("Training/loading model (cached) + predicting..."):
             fitted = get_fitted()
             # Run the full preprocessing + model inference pipeline.
-            out = predict_hgb_best(df_single, fitted, id_col="carID")
+            out = predict_stacking_best(df_single, fitted, id_col="carID")
 
         st.write("Input:") # display the exact row that went into the model.
         st.dataframe(df_single, use_container_width=True)

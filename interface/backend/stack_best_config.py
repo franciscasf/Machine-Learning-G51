@@ -46,7 +46,7 @@ from .preproc_helpers import (
 )
 
 
-# Dataset loading (done once at import time)
+# Dataset loading 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 TRAIN_PATH = PROJECT_ROOT / "project_data" / "train.csv"
 # Load train once
@@ -157,14 +157,14 @@ def fit_stacking_best(
     valid_transmissions,
     valid_fueltypes,
 ):
-    # --- FULL TRAIN DATA ---
+    # FULL TRAIN DATA 
     X_full = X.copy().reset_index(drop=True)
     y_full = pd.Series(y).copy().reset_index(drop=True)
 
     # Log transform target for training
     y_full_log = np.log1p(y_full.to_numpy())
 
-    # STRING NORMALIZATION (igual ao notebook)
+    # STRING NORMALIZATION (same as notebook)
     for col in ["Brand", "model", "transmission", "fuelType"]:
         if col in X_full.columns:
             X_full[col] = fill_unknown(X_full[col])
@@ -271,13 +271,13 @@ def predict_stacking_best(
 
     X_test = X_test.reset_index(drop=True)
 
-    # STRING NORMALIZATION (igual ao notebook)
+    # STRING NORMALIZATION (same as notebook)
     for col in ["Brand", "model", "transmission", "fuelType"]:
         if col in X_test.columns:
             X_test[col] = fill_unknown(X_test[col])
             X_test = column_string_transformer(X_test, col)
 
-    # TRANSFORM TEST DATA (mesma ordem do notebook)
+    # TRANSFORM TEST DATA 
     X_test = transform_year_with_model_median(X_test, fitted["year_state"])
     X_test = transform_mileage_imputer(X_test, fitted["mileage_state"])
     X_test = transform_engine_size_imputer(X_test, fitted["engine_state"])
@@ -299,7 +299,7 @@ def predict_stacking_best(
 
     X_test_final = pd.concat([X_test_num, X_test_high, X_test_low], axis=1)
 
-    # ALIGN WITH TRAIN FEATURES (igual ao notebook)
+    # ALIGN WITH TRAIN FEATURES 
     X_test_final = X_test_final.reindex(columns=fitted["train_columns"], fill_value=0)
 
     # SCALE + PREDICT

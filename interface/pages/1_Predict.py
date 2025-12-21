@@ -58,7 +58,7 @@ st.markdown(
       }
     </style>
     """,
-    unsafe_allow_html=True,  # Streamlit blocks raw HTML by default; we explicitly allow it for CSS styling
+    unsafe_allow_html=True,  
 )
 
 # Page title
@@ -238,7 +238,7 @@ else:
                 min_value=1900,
                 max_value=2100,
                 step=1,
-                value=None,  # <-- allow blank (returns None)
+                value=None,  # allow blank 
                 help="Registration/manufacture year."
             )
 
@@ -261,7 +261,7 @@ else:
                 "Previous owners",
                 min_value=0,
                 step=1,
-                value=None,  # <-- allow blank
+                value=None,  # allow blank
                 help="Number of previous owners."
             )
 
@@ -272,7 +272,7 @@ else:
                 "Mileage",
                 min_value=0.0,
                 step=1000.0,
-                value=None,  # <-- allow blank
+                value=None,  # allow blank
                 help="Total mileage of the car (in miles)."
             )
         with c2:
@@ -280,7 +280,7 @@ else:
                 "Engine size",
                 min_value=0.0,
                 step=0.1,
-                value=None,  # <-- allow blank
+                value=None,  # allow blank
                 help="Engine displacement (in liters, e.g., 1.6)."
             )
         with c3:
@@ -288,7 +288,7 @@ else:
                 "MPG",
                 min_value=0.0,
                 step=0.1,
-                value=None,  # <-- allow blank
+                value=None,  # allow blank
                 help="Miles per gallon."
             )
 
@@ -299,7 +299,7 @@ else:
                 "Tax (£)",
                 min_value=0.0,
                 step=1.0,
-                value=None,  # <-- allow blank
+                value=None,  # allow blank
                 help="Vehicle tax value."
             )
 

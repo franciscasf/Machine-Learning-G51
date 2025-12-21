@@ -1,6 +1,6 @@
 INSTRUCTIONS
 
-Run in your terminal the following commands:
+Run in the terminal the following commands:
 
 - In case you have not installed it previously
 python -m pip install streamlit

@@ -45,6 +45,7 @@ from .preproc_helpers import (
     MyOneHotEncoder,
 )
 
+
 # Dataset loading (done once at import time)
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 TRAIN_PATH = PROJECT_ROOT / "project_data" / "train.csv"
@@ -111,7 +112,9 @@ categorical_features = ["Brand", "model", "transmission", "fuelType"]
 numeric_features = ["mileage", "engineSize", "tax", "mpg", "year"]
 
 COLS_TO_NORMALIZE = ["Brand", "model", "transmission", "fuelType"]
-HIGH_CARD = ["Brand", "model"]
+high_card_features = ["Brand", "model"]
+low_card_features = [c for c in categorical_features if c not in high_card_features]
+
 DROP_FROM_MODEL = ["previousOwners"]
 
 STACK_PARAMS = {
@@ -122,7 +125,7 @@ STACK_PARAMS = {
         "max_leaf_nodes": 191,
         "min_samples_leaf": 20,
         "l2_regularization": 3.0,
-        "random_state": RANDOM_STATE,
+        "random_state": RANDOM_STATE
     },
     "rf": {
         "n_estimators": 1000,
@@ -132,7 +135,7 @@ STACK_PARAMS = {
         "max_depth": 20,
         "bootstrap": True,
         "random_state": RANDOM_STATE,
-        "n_jobs": -1,
+        "n_jobs": -1
     },
     "et": {
         "n_estimators": 800,
@@ -142,48 +145,32 @@ STACK_PARAMS = {
         "max_features": 0.7,
         "bootstrap": False,
         "random_state": RANDOM_STATE,
-        "n_jobs": -1,
-    },
+        "n_jobs": -1
+    }
 }
-
 
 def fit_stacking_best(
     X: pd.DataFrame,
     y: pd.Series,
-    *,
-    valid_brands: list,
-    valid_models_by_brand: dict,
-    valid_transmissions: list,
-    valid_fueltypes: list,
-    categorical_features: list = categorical_features,
-    numeric_features: list = numeric_features,
-    params: dict = STACK_PARAMS,
-) -> dict:
-    """
-    Fit the full preprocessing + encoding + scaling pipeline and a stacking model.
+    valid_brands,
+    valid_models_by_brand,
+    valid_transmissions,
+    valid_fueltypes,
+):
+    # --- FULL TRAIN DATA ---
+    X_full = X.copy().reset_index(drop=True)
+    y_full = pd.Series(y).copy().reset_index(drop=True)
 
-    This is intentionally aligned with the stacking submission script:
-    - string normalization with column_string_transformer(df, col)
-    - previousOwners imputation, then drop previousOwners for modeling
-    - target encoding (high-card) + one-hot (low-card)
-    - StandardScaler
-    - StackingRegressor(cv=5, passthrough=False) with Ridge(alpha=4.0)
-    - model trained on log1p(price); predictions inverted with expm1
-    """
-    X_full = X.copy()
-    y_full = y.copy().astype(float)
-    y_full_log = np.log1p(y_full)
+    # Log transform target for training
+    y_full_log = np.log1p(y_full.to_numpy())
 
-    # Low-card features are the remaining categoricals
-    low_card_features = [c for c in categorical_features if c not in HIGH_CARD]
-
-    # String normalization (train)
-    for col in COLS_TO_NORMALIZE:
+    # STRING NORMALIZATION (igual ao notebook)
+    for col in ["Brand", "model", "transmission", "fuelType"]:
         if col in X_full.columns:
             X_full[col] = fill_unknown(X_full[col])
             X_full = column_string_transformer(X_full, col)
 
-    # Fit all transforms on full train (states reused at inference)
+    # FIT ALL TRANSFORMS ON FULL TRAIN (states)
     year_state = fit_year_median(X_full, "year", "model")
     X_full = transform_year_with_model_median(X_full, year_state)
 
@@ -213,30 +200,31 @@ def fit_stacking_best(
     fuel_state = fit_fueltype_resolver(X_full, valid_fueltypes)
     X_full, _, _ = transform_fueltype_resolver(X_full, fuel_state)
 
-    # Drop previousOwners (ablation)
+    # DROP PREVIOUSOWNERS
     X_full = X_full.drop(columns=DROP_FROM_MODEL, errors="ignore")
 
-    # Encoding
+    # ENCODING
     te = MyTargetEncoder(smoothing=5)
-    te.fit(X_full[HIGH_CARD], y_full)
-    X_high = te.transform(X_full[HIGH_CARD])
+    te.fit(X_full[high_card_features], y_full_log)
+    X_high = te.transform(X_full[high_card_features]).reset_index(drop=True)
 
     ohe = MyOneHotEncoder()
     ohe.fit(X_full[low_card_features])
-    X_low = ohe.transform(X_full[low_card_features])
+    X_low = ohe.transform(X_full[low_card_features]).reset_index(drop=True)
 
-    X_train_final = pd.concat([X_full[numeric_features], X_high, X_low], axis=1)
-    train_columns = list(X_train_final.columns)
+    X_num = X_full[numeric_features].reset_index(drop=True)
 
-    # Scaling
+    X_train_final = pd.concat([X_num, X_high, X_low], axis=1)
+
+    # SCALE
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train_final)
 
-    # Stacking model
+    # STACKING MODEL
     estimators = [
-        ("hgb", HistGradientBoostingRegressor(**params["hgb"])),
-        ("rf", RandomForestRegressor(**params["rf"])),
-        ("et", ExtraTreesRegressor(**params["et"])),
+        ("hgb", HistGradientBoostingRegressor(**STACK_PARAMS["hgb"])),
+        ("rf", RandomForestRegressor(**STACK_PARAMS["rf"])),
+        ("et", ExtraTreesRegressor(**STACK_PARAMS["et"])),
     ]
 
     stack = StackingRegressor(
@@ -244,17 +232,12 @@ def fit_stacking_best(
         final_estimator=Ridge(alpha=4.0),
         cv=5,
         passthrough=False,
-        n_jobs=1,
+        n_jobs=1
     )
 
     stack.fit(X_train_scaled, y_full_log)
 
     return {
-        "expected_cols": list(X.columns),
-        "numeric_features": numeric_features,
-        "categorical_features": categorical_features,
-        "low_card_features": low_card_features,
-        "train_columns": train_columns,
         "year_state": year_state,
         "mileage_state": mileage_state,
         "engine_state": engine_state,
@@ -267,29 +250,34 @@ def fit_stacking_best(
         "te": te,
         "ohe": ohe,
         "scaler": scaler,
-        "model": stack,
+        "stack": stack,
+        "train_columns": X_train_final.columns.tolist(),
     }
 
 
-def predict_stacking_best(df_input: pd.DataFrame, fitted: dict, *, id_col: str = "carID") -> pd.DataFrame:
-    """
-    Apply the fitted pipeline and return price predictions in the original scale.
-    """
-    df = df_input.copy()
+def predict_stacking_best(
+    df: pd.DataFrame,
+    fitted: dict,
+    id_col: str | None = None
+) -> pd.DataFrame:
+    df_in = df.copy().reset_index(drop=True)
 
-    # Preserve IDs 
-    ids = df[id_col].copy() if id_col in df.columns else None
+    if id_col is not None and id_col in df_in.columns:
+        test_ids = df_in[id_col].to_numpy()
+        X_test = df_in.drop(columns=[id_col])
+    else:
+        test_ids = np.arange(len(df_in))
+        X_test = df_in
 
-    # String normalization (test)
-    for col in COLS_TO_NORMALIZE:
-        if col in df.columns:
-            df[col] = fill_unknown(df[col])
-            df = column_string_transformer(df, col)
+    X_test = X_test.reset_index(drop=True)
 
-    # Align to expected input columns
-    X_test = df.reindex(columns=fitted["expected_cols"], fill_value=np.nan).copy()
+    # STRING NORMALIZATION (igual ao notebook)
+    for col in ["Brand", "model", "transmission", "fuelType"]:
+        if col in X_test.columns:
+            X_test[col] = fill_unknown(X_test[col])
+            X_test = column_string_transformer(X_test, col)
 
-    # Apply transforms with fitted states
+    # TRANSFORM TEST DATA (mesma ordem do notebook)
     X_test = transform_year_with_model_median(X_test, fitted["year_state"])
     X_test = transform_mileage_imputer(X_test, fitted["mileage_state"])
     X_test = transform_engine_size_imputer(X_test, fitted["engine_state"])
@@ -302,30 +290,27 @@ def predict_stacking_best(df_input: pd.DataFrame, fitted: dict, *, id_col: str =
     X_test, _, _ = transform_transmission_resolver(X_test, fitted["transm_state"])
     X_test, _, _ = transform_fueltype_resolver(X_test, fitted["fuel_state"])
 
-    # Drop previousOwners (ablation)
     X_test = X_test.drop(columns=DROP_FROM_MODEL, errors="ignore")
 
-    # Encoding
-    X_test_high = fitted["te"].transform(X_test[HIGH_CARD])
-    X_test_low = fitted["ohe"].transform(X_test[fitted["low_card_features"]])
+    # ENCODING
+    X_test_high = fitted["te"].transform(X_test[high_card_features]).reset_index(drop=True)
+    X_test_low = fitted["ohe"].transform(X_test[low_card_features]).reset_index(drop=True)
+    X_test_num = X_test[numeric_features].reset_index(drop=True)
 
-    X_test_final = pd.concat(
-        [X_test[fitted["numeric_features"]], X_test_high, X_test_low],
-        axis=1,
-    )
+    X_test_final = pd.concat([X_test_num, X_test_high, X_test_low], axis=1)
 
-    # Align columns to training matrix
+    # ALIGN WITH TRAIN FEATURES (igual ao notebook)
     X_test_final = X_test_final.reindex(columns=fitted["train_columns"], fill_value=0)
 
-    # Scale and predict
+    # SCALE + PREDICT
     X_test_scaled = fitted["scaler"].transform(X_test_final)
 
-    pred_log = fitted["model"].predict(X_test_scaled)
+    pred_log = fitted["stack"].predict(X_test_scaled)
     pred = np.expm1(pred_log)
     pred = np.maximum(pred, 0)
 
-    out = pd.DataFrame({"price": pred})
-    if ids is not None:
-        out.insert(0, id_col, ids.values)
-
+    out = pd.DataFrame({
+        (id_col if id_col is not None else "id"): test_ids,
+        "price": pred
+    })
     return out

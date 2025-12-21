@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import streamlit as st
 
@@ -22,7 +23,7 @@ st.set_page_config(page_title="Predict | CARS4YOU", layout="wide")
 # - st.form_submit_button(type="primary")
 #
 # We define a single CSS variable (--c4y-orange) so the color is consistent.
-# this variable represents the hexadecimal of the orange color 
+# this variable represents the hexadecimal of the orange color
 st.markdown(
     """
     <style>
@@ -57,14 +58,14 @@ st.markdown(
       }
     </style>
     """,
-    unsafe_allow_html=True, # Streamlit blocks raw HTML by default; we explicitly allow it for CSS styling
+    unsafe_allow_html=True,  # Streamlit blocks raw HTML by default; we explicitly allow it for CSS styling
 )
 
 # Page title
 st.markdown('<div class="page-title">Predict</div>', unsafe_allow_html=True)
 
 # Input mode selector:
-# - CSV mode supports batch predictions 
+# - CSV mode supports batch predictions
 # - Single form mode supports an interactive single-car prediction
 mode = st.radio(
     "You can choose one of these input modes:",
@@ -104,10 +105,11 @@ SINGLE_COLS = [
     "previousOwners",
 ]
 
+
 # We cache the fitted pipeline/model to avoid re-training on every interaction
-# This is important in Streamlit to avoid having to do it again for each script rerun 
+# This is important in Streamlit to avoid having to do it again for each script rerun
 @st.cache_resource
-def get_fitted(_cache_buster: str = "v5"):
+def get_fitted(_cache_buster: str = "v7"):
     return fit_stacking_best(
         X, y,
         valid_brands=valid_brands,
@@ -118,10 +120,10 @@ def get_fitted(_cache_buster: str = "v5"):
 
 st.divider()
 
-# ---> here we do the csv upload 
+# ---> here we do the csv upload
 if mode == "Multiple cars (CSV)":
     st.subheader("Multiple cars (CSV)")
-    
+
     # File uploader accepts exactly one CSV at a time.
     uploaded = st.file_uploader("Upload CSV", type=["csv"], accept_multiple_files=False)
 
@@ -166,15 +168,14 @@ if mode == "Multiple cars (CSV)":
                     use_container_width=True,
                 )
 
-        # in case there is a problme we display an error message, instead of crashing
+        # in case there is a problem we display an error message, instead of crashing
         except Exception as e:
             st.error(f"Could not read/predict from the CSV: {e}")
-
 
 # this else represents the "selection" of the single car form
 else:
     st.subheader("Single car (form)")
-    st.caption("Please fill in all fields to obtain a more accurate prediction.")
+    st.caption("Fields may be left blank; blank numeric fields are sent as NaN to the backend.")
 
     # We restyle form buttons here too
     st.markdown(
@@ -217,7 +218,7 @@ else:
     with st.form("single_car_form", clear_on_submit=False):
 
         # We group inputs into rows of 3 columns for readability
-        # row 1: brand, model, year 
+        # row 1: brand, model, year
         c1, c2, c3 = st.columns(3)
         with c1:
             Brand = st.text_input(
@@ -234,7 +235,10 @@ else:
         with c3:
             year = st.number_input(
                 "Year",
-                min_value=1900, max_value=2100, step=1, value=2020,
+                min_value=1900,
+                max_value=2100,
+                step=1,
+                value=None,  # <-- allow blank (returns None)
                 help="Registration/manufacture year."
             )
 
@@ -250,12 +254,14 @@ else:
             fuelType = st.text_input(
                 "Fuel type",
                 value="",
-                help="Fuel category (e.g., PETROL, DIESEL, HYBRID, ELETRIC)."
+                help="Fuel category (e.g., PETROL, DIESEL, HYBRID, ELECTRIC)."
             )
         with c3:
             previousOwners = st.number_input(
                 "Previous owners",
-                min_value=0, step=1, value=0,
+                min_value=0,
+                step=1,
+                value=None,  # <-- allow blank
                 help="Number of previous owners."
             )
 
@@ -264,19 +270,25 @@ else:
         with c1:
             mileage = st.number_input(
                 "Mileage",
-                min_value=0.0, step=1000.0, value=0.0,
+                min_value=0.0,
+                step=1000.0,
+                value=None,  # <-- allow blank
                 help="Total mileage of the car (in miles)."
             )
         with c2:
             engineSize = st.number_input(
                 "Engine size",
-                step=0.1, value=0.0,
+                min_value=0.0,
+                step=0.1,
+                value=None,  # <-- allow blank
                 help="Engine displacement (in liters, e.g., 1.6)."
             )
         with c3:
             mpg = st.number_input(
                 "MPG",
-                step=0.1, value=0.0,
+                min_value=0.0,
+                step=0.1,
+                value=None,  # <-- allow blank
                 help="Miles per gallon."
             )
 
@@ -285,48 +297,44 @@ else:
         with c1:
             tax = st.number_input(
                 "Tax (£)",
-                step=1.0, value=0.0,
+                min_value=0.0,
+                step=1.0,
+                value=None,  # <-- allow blank
                 help="Vehicle tax value."
             )
 
-        # The submit button returns a boolean:
-        # - True only on the run where the user clicks "Predict"
-        # - False on all other reruns (e.g., typing in a field, changing a widget)
         submitted = st.form_submit_button("Predict", type="primary", use_container_width=True)
 
     if submitted:
-        # We build a single-row record that matches the training schema
-        # Column names must match what the backend expects 
-        # Types are normalized to reduce downstream parsing issues.
+        # Helpers: keep NaN when the user leaves a numeric field blank
+        def opt_int(v):
+            return np.nan if v is None else int(v)
+
+        def opt_float(v):
+            return np.nan if v is None else float(v)
+
+        # Build a single-row record (match backend schema)
         row = {
-            "Brand": str(Brand),
-            "model": str(model),
-            "year": int(year),
-            "transmission": str(transmission),
-            "mileage": float(mileage),
-            "fuelType": str(fuelType),
-            "tax": float(tax),
-            "mpg": float(mpg),
-            "engineSize": float(engineSize),
-            "previousOwners": int(previousOwners),
+            "Brand": str(Brand).strip(),
+            "model": str(model).strip(),
+            "year": opt_int(year),
+            "transmission": str(transmission).strip(),
+            "mileage": opt_float(mileage),
+            "fuelType": str(fuelType).strip(),
+            "tax": opt_float(tax),
+            "mpg": opt_float(mpg),
+            "engineSize": opt_float(engineSize),
+            "previousOwners": opt_int(previousOwners),
         }
 
-        # Convert the row into a 1-row DataFrame
-        # We then enforce column order using SINGLE_COLS to match the expected schema
         df_single = pd.DataFrame([row], columns=SINGLE_COLS)
 
-        # The backend training is cached (get_fitted), but we still wrap in a spinner:
-        # - first run might fit the model
-        # - later runs reuse the cached model and only do inference
         with st.spinner("Training/loading model (cached) + predicting..."):
             fitted = get_fitted()
-            # Run the full preprocessing + model inference pipeline.
             out = predict_stacking_best(df_single, fitted, id_col="carID")
 
-        st.write("Input:") # display the exact row that went into the model.
+        st.write("Input:")
         st.dataframe(df_single, use_container_width=True)
 
-        # Output is a DataFrame with a "price" column.
-        # We extract the first (and only) prediction.
         st.subheader("Prediction (£)")
         st.write(float(out["price"].iloc[0]))

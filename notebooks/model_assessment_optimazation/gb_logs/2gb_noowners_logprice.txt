@@ -1,0 +1,52 @@
+# =============================
+# START OF HGB SEARCH (DETAILED METRICS: R2, RMSE, MAE, BIAS)
+# LOG FILE SAVED TO: gb_logs/2gb_noowners_logprice.txt
+# Target transform: train on log1p(price); evaluate in euros via expm1(pred).
+# =============================
+
+######## CONFIG 1/15 ########
+Parameters: {'min_samples_leaf': 12, 'max_leaf_nodes': 255, 'max_iter': 800, 'max_depth': 20, 'loss': 'absolute_error', 'learning_rate': 0.085, 'l2_regularization': 0.3}
+
+[C1|F1] Processing fold...
+  > Features Used (15): ['num_year', 'num_mileage', 'num_engineSize', 'num_tax', 'num_mpg', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > [TRAIN] R2: 0.9623 | RMSE: 1896 | MAE: 949 | Bias: 132.6
+  > [VAL]   R2: 0.9557 | RMSE: 2003 | MAE: 1248 | Bias: 101.6
+
+[C1|F2] Processing fold...
+  > [TRAIN] R2: 0.9636 | RMSE: 1858 | MAE: 949 | Bias: 133.5
+  > [VAL]   R2: 0.9516 | RMSE: 2131 | MAE: 1251 | Bias: 136.6
+
+[C1|F3] Processing fold...
+  > [TRAIN] R2: 0.9596 | RMSE: 1958 | MAE: 1009 | Bias: 146.7
+  > [VAL]   R2: 0.9353 | RMSE: 2465 | MAE: 1281 | Bias: 205.8
+
+[C1|F4] Processing fold...
+  > [TRAIN] R2: 0.9662 | RMSE: 1779 | MAE: 943 | Bias: 128.2
+  > [VAL]   R2: 0.9303 | RMSE: 2676 | MAE: 1272 | Bias: 178.7
+
+[C1|F5] Processing fold...
+  > [TRAIN] R2: 0.9645 | RMSE: 1833 | MAE: 926 | Bias: 120.7
+  > [VAL]   R2: 0.9494 | RMSE: 2207 | MAE: 1240 | Bias: 132.7
+
+[C1|F6] Processing fold...
+  > [TRAIN] R2: 0.9652 | RMSE: 1814 | MAE: 938 | Bias: 132.9
+  > [VAL]   R2: 0.9444 | RMSE: 2315 | MAE: 1236 | Bias: 173.4
+
+[C1|F7] Processing fold...
+  > [TRAIN] R2: 0.9609 | RMSE: 1925 | MAE: 979 | Bias: 143.3
+  > [VAL]   R2: 0.9541 | RMSE: 2084 | MAE: 1223 | Bias: 177.0
+
+[C1|F8] Processing fold...
+  > [TRAIN] R2: 0.9611 | RMSE: 1927 | MAE: 986 | Bias: 144.4
+  > [VAL]   R2: 0.9554 | RMSE: 2006 | MAE: 1217 | Bias: 129.4
+
+Config 1 SUMMARY:
+  [TRAIN AVG] RMSE: 1873.7 | MAE: 959.9 | R2: 0.9629 | Bias: 135.3
+  [VAL AVG]   RMSE: 2235.9 | MAE: 1245.9 | R2: 0.9470 | Bias: 154.4
+[NEW BEST RMSE] Config 1
+
+######## CONFIG 2/15 ########
+Parameters: {'min_samples_leaf': 20, 'max_leaf_nodes': 255, 'max_iter': 600, 'max_depth': 15, 'loss': 'absolute_error', 'learning_rate': 0.1, 'l2_regularization': 3.0}
+
+[C2|F1] Processing fold...
+  > Features Used (15): ['num_year', 'num_mileage', 'num_engineSize', 'num_tax', 'num_mpg', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']

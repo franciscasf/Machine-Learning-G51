@@ -1,0 +1,19 @@
+# =============================
+# START OF HGB SEARCH (LOG TARGET + AGE FEATURE)
+# METRICS ON ORIGINAL SCALE: R2, RMSE, MAE, BIAS
+# LOG FILE SAVED TO: gb_logs/2gb_noowners_age_logprice_log2.txt
+# =============================
+
+######## CONFIG 1/15 ########
+Parameters: {'min_samples_leaf': 12, 'max_leaf_nodes': 255, 'max_iter': 800, 'max_depth': 20, 'loss': 'squared_error', 'learning_rate': 0.115, 'l2_regularization': 0.3}
+
+[C1|F1] Processing fold...
+  > Features Used (15): ['mileage', 'engineSize', 'tax', 'mpg', 'age', 'Brand', 'model', 'transmission_AUTOMATIC', 'transmission_MANUAL', 'transmission_SEMIAUTO', 'fuelType_DIESEL', 'fuelType_ELECTRIC', 'fuelType_HYBRID', 'fuelType_OTHER', 'fuelType_PETROL']
+  > [TRAIN] R2: 0.9675 | RMSE: 1761 | MAE: 1007 | Bias: 86.2
+  > [VAL]   R2: 0.9584 | RMSE: 1940 | MAE: 1238 | Bias: 61.7
+
+[C1|F2] Processing fold...
+  > [TRAIN] R2: 0.9733 | RMSE: 1593 | MAE: 973 | Bias: 76.6
+  > [VAL]   R2: 0.9494 | RMSE: 2179 | MAE: 1265 | Bias: 92.5
+
+[C1|F3] Processing fold...

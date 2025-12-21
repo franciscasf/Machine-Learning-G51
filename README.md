@@ -1,6 +1,8 @@
 # Cars4You — Expediting Car Evaluations with ML
 
 ## Github Link: 
+https://github.com/franciscasf/Machine-Learning-G51
+
 
 ## Abstract 
 Cars4You is a car resale company seeking to accelerate price evaluations by reducing reliance on manual mechanic inspections. From a machine learning perspective, the task is a supervised regression problem, where the goal is to estimate a continuous target variable (the vehicle resale price) from attributes available at submission time. This project pursued two objectives: (i) develop a regression model to predict car resale prices using information available at submission time and (ii) deliver a lightweight interface that allows employees to obtain predictions either for a single vehicle (form input) or for multiple vehicles (CSV upload).

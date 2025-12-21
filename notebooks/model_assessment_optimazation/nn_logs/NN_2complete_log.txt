@@ -1,9 +1,0 @@
-# =============================
-# START OF NN SEARCH (DETAILED METRICS: R2, RMSE, MAE, BIAS)
-# LOG FILE SAVED TO: nn_logs\NN_2complete_log.txt
-# =============================
-
-######## CONFIG 1/10 ########
-Parameters: {'solver': 'adam', 'n_iter_no_change': 25, 'max_iter': 900, 'learning_rate_init': 0.01, 'learning_rate': 'adaptive', 'hidden_layer_sizes': (128, 64), 'early_stopping': True, 'batch_size': 128, 'activation': 'relu'}
-
-[C1|F1] Processing fold...

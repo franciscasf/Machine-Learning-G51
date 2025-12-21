@@ -1,9 +1,0 @@
-[2025-12-14 12:54:10] =======================================================
-[2025-12-14 12:54:10] STARTING TREE ENSEMBLE SEARCH WITH FEATURE SELECTION
-[2025-12-14 12:54:10] Search iterations: 1
-[2025-12-14 12:54:10] =======================================================
-[2025-12-14 12:54:10] 
-######## CONFIG 1/1 ########
-[2025-12-14 12:54:10] Parameters: {'n_iter_no_change': 25, 'max_iter': 1200, 'learning_rate_init': 0.05, 'learning_rate': 'adaptive', 'hidden_layer_sizes': (256, 128), 'early_stopping': True, 'batch_size': 128}
-[2025-12-14 12:54:10] 
-[C1|F1] Processing fold...

@@ -1,2 +1,0 @@
-config,train_mae_mean,train_mae_std,val_mae_mean,val_mae_std,selected_mean,selected_std,min_samples_leaf,max_leaf_nodes,max_iter,max_depth,learning_rate,l2_regularization,max_bins,random_state
-final_config,1037.6871648610197,11.583003974823738,1259.5541216955835,25.937631458221098,17.0,0.0,20,127,600,25,0.09,1.4,255,42

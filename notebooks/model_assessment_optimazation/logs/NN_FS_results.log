@@ -1,7 +1,0 @@
-2025-12-17 15:19:28,537 - - 35 iterations | 5-fold | FS_KEEP_RATIO=0.65
-2025-12-17 15:19:28,540 - ######## CONFIG 1/35 ########
-2025-12-17 15:19:28,540 - Params: {'solver': 'adam', 'n_iter_no_change': 25, 'max_iter': 900, 'learning_rate_init': 0.05, 'learning_rate': 'adaptive', 'hidden_layer_sizes': (256, 128), 'early_stopping': True, 'batch_size': 64, 'activation': 'relu'}
-2025-12-17 15:20:43,849 - [CONFIG 1] Mean VAL RMSE: 5098.837 | Avg selected feats: 13
-2025-12-17 15:20:43,850 - [NEW BEST] CONFIG 1 RMSE=5098.837
-2025-12-17 15:20:43,850 - ######## CONFIG 2/35 ########
-2025-12-17 15:20:43,850 - Params: {'solver': 'adam', 'n_iter_no_change': 25, 'max_iter': 900, 'learning_rate_init': 0.01, 'learning_rate': 'adaptive', 'hidden_layer_sizes': (256, 128), 'early_stopping': True, 'batch_size': 64, 'activation': 'relu'}

@@ -30,3 +30,18 @@ Specific Contributions: Categorical Data Preprocessing, Feature Selection, Encod
 
 > Even though these were the main contributions of each member, it is importante to note that every decision was made based on discussions between everyone. When anyone had doubts or uncertainties, we supported each other by reviewing options and solving issues together.
 
+
+## References
+
+Géron, A. (2017). Hands-On Machine Learning with Scikit-Learn and TensorFlow: Concepts, Tools, and Techniques to Build Intelligent Systems (1st ed.). O'Reilly Media.
+
+scikit-learn developers. (n.d.). Common pitfalls and recommended practices. scikit-learn documentation. From https://scikit-learn.org/stable/common_pitfalls
+
+scikit-learn developers. (n.d.). sklearn.ensemble.RandomForestRegressor. scikit-learn documentation. From https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
+
+scikit-learn developers. (n.d.). sklearn.ensemble.HistGradientBoostingRegressor. scikit-learn documentation. From https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html#sklearn.ensemble.HistGradientBoostingRegressor
+
+GOV.UK. (n.d.). Vehicle tax rates: Vehicle tax rate tables. Retrieved December 1, 2025, from
+https://www.gov.uk/vehicle-tax-rate-tables
+https://www.gov.uk/vehicle-tax-rate-tables/rates-for-cars-registered-on-or-after-1-march-2001
+

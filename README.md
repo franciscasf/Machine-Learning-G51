@@ -1,4 +1,4 @@
-# Cars4You — Expediting Car Evaluations with ML
+# Cars4You - Expediting Car Evaluations with ML
 
 ## Github Link: 
 https://github.com/franciscasf/Machine-Learning-G51

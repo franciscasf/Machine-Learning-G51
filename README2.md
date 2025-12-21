@@ -1,4 +1,4 @@
-# Cars 4 You — Expediting Car Evaluations with ML
+# Cars 4 You - Expediting Car Evaluations with ML
 
 ## Project Overview
 **Cars 4 You** is an online car resale company aiming to reduce operational bottlenecks in vehicle valuation by replacing manual mechanical inspections with a fast, data-driven price 

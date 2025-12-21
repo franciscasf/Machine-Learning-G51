@@ -1,7 +1,7 @@
 # Cars4You 
 
 ## Abstract 
-- Cars4You is a car resale company that reached out in hopes to obtain a faster way to get price estimations for there cars. Our main goals were to fins a model that will help with those predictions  and, additionally, an interface that employees can use to send either CSV with many cars or to predict the price for a car by just filling a form. 
+- Cars4You is a car resale company that reached out in hopes to obtain a faster way to get price estimations for their cars. Our main goals were to find a model that helps with those predictions and, additionally, an interface that employees can use to send either CSV with many cars or to predict the price for a car by just filling a form. 
 
 - We started by analysing the dataset provided. We conducted a __univariate analysis__, by seeing individual statistics of the features, such as mean, median, maximum and minimum values (for numerical variables) and counts, frequencies, accessing categories (for ctegorical), as well as analysing box plots, histograms, among other visualizations. We did some __multivariate analysis__ to better understand relationships between features and correlation. 
 
@@ -18,6 +18,7 @@
 - We then compared all models and concluded that .... Stacking got the best result...
 
 - In conclusion, we are very pleasent with the result we got, we have a rubost model predictior using Stacking (combining HGB + RF + ET -> Ridge meta-model) with reasonable RMSE that will aid Cars4You expedicting their cars faster. We were able, as well, to develop the interface for an easier acess for the company employees. 
+- We started by analysing the dataset provided. We conducted a univariate analysis, by seeing individual statistics of the features, such as mean, median, maximum and minimum values (for numerical variables), counts and frequencies (for categorical), as well as analysing box plots, histograms, among other visualizations. We did some multivariate analysis to better understand relationships between features and correlation.
 
 
 ## Project Structure 
@@ -30,3 +31,5 @@ __Specific Contributions:__ Univariate Analysis, Numerical Variables Preprocessi
 __Specific Contributions:__ Multivariate Analysis, Scaling, ExtraTrees and Linear Models, Distribution Shift Between Training and Test Data, Model Visualizations, Feature Importances per Price Segment
 - Mariana Melo (20250414): 33% 
 __Specific Contributions:__ Categorical Data Preprocessing, Feature Selection, Encoding, MLP and Ensemble Models (Bagging, Weighted Average and Stacking)
+Specific Contributions: Categorical Data Preprocessing, Feature Selection, Encoding, MLP and Ensemble Models (Bagging, Weighted Average and Stacking)
+> Even though these were the main contributions of each member, it is importante to note that every decision was made based on discussions between everyone.

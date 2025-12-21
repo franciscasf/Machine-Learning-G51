@@ -28,7 +28,6 @@ __Specific Contributions:__ Multivariate Analysis, Scaling, ExtraTrees and Linea
 - Mariana Melo (20250414): 33% 
 
 __Specific Contributions:__ Categorical Data Preprocessing, Feature Selection, Encoding, MLP and Ensemble Models (Bagging, Weighted Average and Stacking)
-Specific Contributions: Categorical Data Preprocessing, Feature Selection, Encoding, MLP and Ensemble Models (Bagging, Weighted Average and Stacking)
 
 > Even though these were the main contributions of each member, it is importante to note that every decision was made based on discussions between everyone. When anyone had doubts or uncertainties, we supported each other by reviewing options and solving issues together.
 

@@ -14,6 +14,44 @@ Guided by the EDA, we implemented a structured preprocessing pipeline. Operation
 We benchmarked several model families (__tree ensembles__, __linear models__, __MLP__, and __ensemble combinations__) using 8-fold cross-validation with random search, prioritizing RMSE and using MAE as a secondary criterion. The best-performing solution was a stacked ensemble, which achieved the strongest overall generalization while remaining compatible with the deployed interface workflow.
 
 ## Project Structure 
+<pre style="white-space: pre; font-family: monospace; margin: 0;">
+README.md
+</pre>
+
+<pre style="white-space: pre; font-family: monospace; margin: 0;">
+README2.md
+</pre>
+
+<pre style="white-space: pre; font-family: monospace; margin: 0;">
+notebooks/
+├── 00_preproc_helpers.ipynb
+├── 01_EDA.ipynb
+├── 02_visualization_helpers.ipynb
+├── 03_MethodologicalFramework.ipynb
+├── 04_LinearModels.ipynb
+├── 05_RandomForest.ipynb
+├── 06_ExtraTrees.ipynb
+├── 07_HistGradientBoosting.ipynb
+├── 08_NeuralNetworks.ipynb
+├── 09_Weighted_Mean.ipynb
+├── 10_BaggingRegressor.ipynb
+├── 11_Stacking.ipynb
+├── 12_Stacking_elasticnet.ipynb
+├── 13_ModelComparisons.ipynb
+├── 14_Open_Ended.ipynb
+└── final_submission_stacking.csv
+</pre>
+
+<pre style="white-space: pre; font-family: monospace; margin: 0;">
+interface/
+├── README.md
+├── app.py
+├── backend/
+│   ├── preproc_helper.py
+│   └── stack_best_config.py
+└── pages/
+    └── 1_Predict.py
+</pre>
 
 
 ## Group Member Contributions 
